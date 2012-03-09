@@ -1,0 +1,69 @@
+﻿<h3> TIPO E FORMA DE PAGAMENTO </h3>
+		<!- GERENCIAMENTO DE MENSAGENS DE ERRO -->
+	<% if $venda_erro.size > 0 %> 
+		<!-- <div id="error_explanation"> -->
+		<div id="erros">
+			<% if $venda_erro.size == 1 %>
+				<strong><font color="red">Um erro foi encontrado:</font></strong>
+			<% else %>
+				<strong><font color="red"><%= $venda_erro.count %> erros foram encontrados:</font></strong>
+			<% end	%> 
+
+			<ul>
+			<font color="#696969" size=2>
+				<% $venda_erro.each do |msg| %>
+					<li><%= tmsg(msg) %></li>	<!-- funcao para retornar a mensagem formatada -->
+					
+			<% end %>
+			</font>	
+			</ul>
+		</div>
+
+		<% if $venda_erro.size > 0 %> 	
+			<% tam = $venda_erro.size - 1 %>
+			<% for ct in (0..tam) %>
+					<% $venda_erro[ct] = "" %>
+			<% end %>	
+			<% $venda_erro.delete("") %>	
+		<% end %>
+		
+		<HR SIZE = 5 color="blue">
+	<% end %>		
+
+		
+		<div>
+		<form name ="F1" method="get" action="/finalizar">
+			<table><tr><td>
+			<b>Forma de Pagamento:</B></td>
+			<td><select id="tipopag" name="tipopag">
+			<option value="1">Pagamento à Vista - Boleto</option>
+			<option value="2">Pagamento à Vista - Cartão de Débito</option>			
+			<option value="3">Pagamento à Vista - Cartão de Crédito</option>			
+			<option value="4">Pagamento à Prazo - Cartão de Crédito</option>
+			</select></td>
+			
+			<tr><td>
+			<b>Parcelamento:</B></td>
+			<% parc = Veparcela() %>
+			<td><select id="parcelas" name="parcelas">
+				<% for ct in (1..parc) %>
+					<% if ct <= parc %>
+						<%if ct <= 1%>
+							<option value="<%=ct%>"><%=ct%> Vez</option>
+						<% else%>
+							<option value="<%=ct%>"><%=ct%> Vezes</option>
+						<% end %>		
+					<% end %>
+				<% end %>	
+			</select></td>
+			
+			<tr><td>
+			<b>Dados do Cartão:</B></td>
+			<td><input type="text" name="dadoscartao" id="dadoscartao" size="60" value=""  /></td>
+			
+			</tr></table><br>
+
+			<CENTER><input type="submit" id="tipopag" Value="                                   FINALIZAR COMPRA                                   "  /></CENTER>
+			
+		</form>
+		</div>

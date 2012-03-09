@@ -1,0 +1,61 @@
+﻿<%= form_for(@departamento, :url => departamento_path,  :html => {:multipart => true}) do |f| %>
+
+	<!- GERENCIAMENTO DE MENSAGENS DE ERRO -->
+	<% if @departamento.errors.any? %> 
+		<!-- <div id="error_explanation"> -->
+		<div id="erros">
+			<% if @departamento.errors.count == 1 %>
+				<strong><font color="red">Um erro foi encontrado:</font></strong>
+			<% else %>
+				<strong><font color="red"><%= @departamento.errors.count %> erros foram encontrados:</font></strong>
+			<% end	%> 
+
+			<ul>
+			<font color="#696969" size=2>
+				<% @departamento.errors.full_messages.each do |msg| %>
+					<li><%= tmsg(msg) %></li>	<!-- funcao para retornar a mensagem formatada -->
+				<% end %>
+			</font>	
+			</ul>
+		</div>
+		<HR SIZE = 5 color="blue">
+	<% end %>
+
+  <!-- INICIO DO FORMULARIO -->
+
+<strong>IDENTIFICAÇÃO:</STRONG><BR>		    
+  <div class="field">
+    <%= f.label :Nome %><br />
+    <%= f.text_field :nome, :size => 70 %>
+  </div>
+ 
+  <div class="field">
+	  <%= f.label :Departamento_Ativo? %><br />
+	  <%= f.select :ativo, ([["ATIVADO","TRUE"],["DESATIVADO","FALSE"]]) %> 
+  </div>
+  
+  <div class="field">
+    <%= f.label :Destaque %><br />
+    <%= f.text_field :destaque, :size => 5 %>
+  </div>
+
+ 
+  <div class="field">
+    <%= f.label :Imagem %><br />
+    <%= f.file_field :arquivo %>
+  </div>
+  
+    
+<BR><strong>DESCRIÇÃO:</STRONG><BR>		    
+  <div class="field">
+    <%= f.text_area :descricao %>
+  </div>
+  
+  <!-- $$$$$$$$$$$$$$$$$$$$$$$$ -->
+  
+  <BR>
+  <div class="actions">
+    <%= f.submit "Salvar" %>
+  </div>
+  
+<% end %>

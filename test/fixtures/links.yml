@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  texto: MyString
+  arquivo_file_name: MyString
+  ativo: false
+
+two:
+  texto: MyString
+  arquivo_file_name: MyString
+  ativo: false

@@ -1,0 +1,172 @@
+﻿<%= form_for(@produt, :url => produt_path,  :html => {:multipart => true}) do |f| %>
+
+	<!- GERENCIAMENTO DE MENSAGENS DE ERRO -->
+	<% if @produt.errors.any? %> 
+		<!-- <div id="error_explanation"> -->
+		<div id="erros">
+			<% if @produt.errors.count == 1 %>
+				<strong><font color="red">Um erro foi encontrado:</font></strong>
+			<% else %>
+				<strong><font color="red"><%= @produt.errors.count %> erros foram encontrados:</font></strong>
+			<% end	%> 
+
+			<ul>
+			<font color="#696969" size=2>
+				<% @produt.errors.full_messages.each do |msg| %>
+					<li><%= tmsg(msg) %></li>	<!-- funcao para retornar a mensagem formatada -->
+				<% end %>
+			</font>	
+			</ul>
+		</div>
+		<HR SIZE = 5 color="blue">
+	<% end %>
+
+  <!-- INICIO DO FORMULARIO -->
+
+		<strong>IDENTIFICAÇÃO:</STRONG><BR>		    
+		  <div class="field">
+			<%= f.label :Nome %><br />
+			<%= f.text_field :nome, :size => 70 %>
+		  </div>
+		  
+		  <div class="field">
+			<%= f.label :Data_do_Cadastro %><br />
+			<%= f.date_select(:data,  :order => [:day, :month, :year], :start_year => 1900, :end_year => 2100, :use_month_names => %w(Janeiro Fevereiro Março Abril Maio Junho Julho Agosto Setembro Outubro Novembro Dezembro) ) %>
+		  </div>
+		 
+		   <div class="field">
+			<%= f.label :Departamento %><br />
+			<%= f.select :departamento_id, Departamento.find(:all).collect { |item| [item.nome,item.id] } %>
+		  </div>
+			
+			<div class="field">
+			<%= f.label :Seção %><br />
+			<%= f.select :section_id, Section.find(:all).collect { |item| [item.nome,item.id] } %>
+		  </div>
+		  
+		  <div class="field">
+			<%= f.label :Modelo %><br />
+			<%= f.text_field :modelo, :size => 70 %>
+		  </div>
+		  
+		  <div class="field">
+			<%= f.label :Unidade %><br />
+			<%= f.text_field :unidade, :size => 70 %>
+		  </div>
+
+		  <div class="field">
+			  <%= f.label :Produto_Ativo? %><br />
+			  <%= f.select :ativo, ([["ATIVADO","TRUE"],["DESATIVADO","FALSE"]]) %> 
+		  </div>
+		  
+		  <div class="field">
+			<%= f.label :Destaque %><br />
+			<%= f.text_field :destaque, :size => 5 %>
+		  </div>
+
+		  
+		<BR><strong>PREÇOS:</STRONG><BR>		    
+
+		<div class="field">
+			<%= f.label :Preço_de_Custo %><br />
+			<%= f.text_field :custo, :size => 30 %>
+		  </div>
+
+		  <div class="field">
+			<%= f.label :Preço_a_Vista %><br />
+			<%= f.text_field :vista, :size => 30 %>
+		  </div>
+
+		  <div class="field">
+			<%= f.label :Preço_a_Prazo %><br />
+			<%= f.text_field :prazo, :size => 30 %>
+		  </div>
+		  
+		  <div class="field">
+			<%= f.label :Desconto %><br />
+			<%= f.text_field :desconto, :size => 30 %>
+		  </div>
+		  
+		  <div class="field">
+			  <%= f.label :Preço_Oculto? %><br />
+			  <%= f.select :preco_oculto, ([["DESATIVADO","FALSE"],["ATIVADO","TRUE"]]) %> 
+		  </div>
+		  
+		  <BR><strong>NÚMERO MÁXIMO DE PARCELAS:</STRONG><BR>
+		  
+		  <div class="field">
+			<%= f.label :Máximo_de_Parcelas %><br />
+			<%= f.text_field :parcelas, :size => 30 %>
+		  </div>
+		  
+		<BR><strong>CONTROLE DE FRETE:</STRONG><BR>
+
+			<% 
+			# GERENCIANDO FRETE
+			if @produt.fnorte.blank? or @produt.fnorte === nil
+					@produt.fnorte = 0.00 
+			end
+			if @produt.fnordeste.blank? or @produt.fnorte === nil
+					@produt.fnordeste = 0.00 
+			end
+			if @produt.fsul.blank? or @produt.fnorte === nil
+					@produt.fsul = 0.00 
+			end
+			if @produt.fsudeste.blank? or @produt.fnorte === nil
+					@produt.fsudeste = 0.00 
+			end
+			if @produt.fcentro.blank? or @produt.fnorte === nil
+					@produt.fcentro = 0.00 
+			end
+			%>
+			
+		  <div class="field">
+			<%= f.label :Frete_Região_Norte %><br />
+			<%= f.text_field :fnorte, :size => 30 %>
+		  </div>
+
+		  <div class="field">
+			<%= f.label :Frete_Região_Nordeste %><br />
+			<%= f.text_field :fnordeste, :size => 30 %>
+		  </div>
+		  
+		  <div class="field">
+			<%= f.label :Frete_Região_Centro_Oeste %><br />
+			<%= f.text_field :fcentro, :size => 30 %>
+		  </div>
+		  
+		  <div class="field">
+			<%= f.label :Frete_Região_Sudeste %><br />
+			<%= f.text_field :fsudeste, :size => 30 %>
+		  </div>
+		  
+		  <div class="field">
+			<%= f.label :Frete_Região_Sul %><br />
+			<%= f.text_field :fsul, :size => 30 %>
+		  </div>
+		  
+		<BR><strong>IMAGEM:</STRONG><BR>  
+
+		  <div class="field">
+			<%= f.label :Imagem %><br />
+			<%= f.file_field :arquivo %>
+		  </div>
+			
+		 <div class="field">
+			<% @produt.codigo = 0 %>	<!- este campo oculto permite o gerencimento do codigo do produto -->
+			<%= f.hidden_field :codigo %>
+		  </div>
+		  
+		<BR><strong>DESCRIÇÃO:</STRONG><BR>		    
+		  <div class="field">
+			<%= f.text_area :descricao %>
+		  </div>
+		  
+		  <!-- $$$$$$$$$$$$$$$$$$$$$$$$ -->
+		  
+		  <BR>
+		  <div class="actions">
+			<%= f.submit "Salvar" %>
+		  </div>
+		  
+<% end %>

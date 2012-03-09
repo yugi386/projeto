@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Name       : Yellowing   
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20110123
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Aprendendo Ruby On Rails 3</title>
+
+<%= javascript_include_tag "application" %>
+<%= stylesheet_link_tag    "style2", :media => "all" %>  <!-- Chamando CSS -->
+<%= csrf_meta_tags %>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1><font color="white">Loja Virtual</font></h1>
+			<p>Área Administrativa</p>
+		</div>
+		<div id="search">
+			<!--
+			<form method="get" action="">
+				<fieldset>
+					<input type="text" name="s" id="search-text" size="15" value="Pesquisar..." />
+					<input type="submit" id="search-submit" value="GO" />
+				</fieldset>
+			</form>
+			-->
+		</div>
+	</div>
+	<!-- end #header -->
+	<div id="page">
+		<div id="page-bgtop">
+			<div id="page-bgbtm">
+			
+				<div id="menu">
+					<ul>
+						<% if session[:logged] == true %>
+							<!-- <li class="current_page_item"><a href="/clientes">Home</a></li> -->
+							<li><a href="/clientes">Clientes</a></li>
+							<li><a href="/produts">Produtos</a></li>
+							<li><a href="/estoque">Estoque</a></li>
+							<li><a href="/admlojas">Loja</a></li>												
+							<li><a href="/vendas_listar">Pedidos</a></li>
+							<li><a href="/vperiodos">Vendas</a></li> 
+						<% end %>
+					</ul>
+				</div>
+				<!-- end #menu -->
+				<div id="content">
+					<div class="post">
+				
+						<!-- APRESENTAÇÃO DAS MENSAGENS DE ERRO -->
+							<% 	message = flash[:notice]
+							if message != nil %>
+								<div class="message">	
+									<%= message %>
+								</div>	
+							<% end	%>	
+					
+						<!-- AQUI É CARREGADO O CONTEÚDO DA PÁGINA -->
+						<%= yield %>
+
+					</div>
+					
+					<div style="clear: both;">&nbsp;</div>
+				</div>
+				<!-- end #content -->
+				
+				<% if session[:logged] == true %>
+				<div id="sidebar">
+					<ul>
+						<% if session[:logged] %>
+						<li>
+							<h2>Logout</h2>
+							<ul>
+								<li><a href="/logout">Clique aqui sair da área Administrativa!</a></li>
+							</ul>
+						</li>
+						<% end %>
+						
+						<li>
+							<h2>Cadastro de Clientes</h2>
+							<ul>
+								<li><a href="/clientes">Clientes</a></li>
+							</ul>
+						</li>
+						
+						<li>
+							<h2>Cadastro de Produtos</h2>
+							<ul>
+								<li><a href="/departamentos">Departamentos</a></li>
+								<li><a href="/section">Seções</a></li>
+								<li><a href="/produts">Produtos</a></li>
+							</ul>
+						</li>
+						
+						<li>
+							<h2>Controle de Estoque</h2>
+							<ul>
+								<li><a href="/estoque">Entrada | Baixa</a></li>
+							</ul>
+						</li>
+						
+						<li>
+							<h2>Configuração da Loja</h2>
+							<ul>
+								<li><a href="/admlojas">Configuração da Loja</a></li>
+							</ul>
+						</li>
+						
+						<li>
+							<h2>Controle de Pedidos</h2>
+							<ul>
+								<li><a href="/vendas_listar">Gerenciando Pedidos dos Clientes</a></li>
+							</ul>
+
+						</li>
+						
+						<li>
+							<h2>Controle de Vendas</h2>
+							<ul>
+								<li><a href="/vperiodos">Gerenciamento de Vendas</a></li>
+							</ul>
+						</li>
+
+						<li>
+							<h2>Controle de Links</h2>
+							<ul>
+								<li><a href="/links">Gerenciamento de Links</a></li>
+							</ul>
+						</li>
+
+					</ul>
+				</div>
+				<%end%>
+				<!-- end #sidebar -->
+				<div style="clear: both;">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+	<!-- end #page -->
+</div>
+<div id="footer-wrapper">
+	<div id="footer">
+		<p>Copyright (c) Março/2012. All rights reserved. Ruby 1.9.3p0 & Rails 3.2.1. Design by <a href="http://www.freecsstemplates.org/"> CSS Templates</a>.</p>
+	</div>
+</div>
+<!-- end #footer -->
+</body>
+</html>

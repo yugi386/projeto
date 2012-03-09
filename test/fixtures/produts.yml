@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nome: MyString
+  data: 2012-02-21
+  departamento_id: 1
+  section_id: 1
+  modelo: MyString
+  unidade: MyString
+  custo: 
+  prazo: 
+  vista: 
+  desconto: 
+  fnorte: 
+  fnordeste: 
+  fsul: 
+  fsudeste: 
+  fcentro: 
+  arquivo_file_name: MyString
+  destaque: 1
+  ativo: false
+  descricao: MyText
+
+two:
+  nome: MyString
+  data: 2012-02-21
+  departamento_id: 1
+  section_id: 1
+  modelo: MyString
+  unidade: MyString
+  custo: 
+  prazo: 
+  vista: 
+  desconto: 
+  fnorte: 
+  fnordeste: 
+  fsul: 
+  fsudeste: 
+  fcentro: 
+  arquivo_file_name: MyString
+  destaque: 1
+  ativo: false
+  descricao: MyText

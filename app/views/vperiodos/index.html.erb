@@ -1,0 +1,78 @@
+﻿<h2 class="title">Vendas</h2>
+
+<% if @datafim != "" or @dataini != "" %>
+	<HR SIZE = 5 color="blue">
+	ESTATÍSTICAS DE VENDAS NO PERÍODO: <b><%= moeda(CalculaVendas()) %></b>
+<% end %>	
+
+<HR SIZE = 5 color="blue">
+<%= render 'formpesq' %>
+  
+<% if @vendas.size != 0 %>	<!-- CONDICIONAL PARA VERIFICAR SE HÁ REGISTROS A SEREM LISTADOS --> 
+
+		<table border=0, width=100%>
+		  <tr bgcolor="#FFD700">		<!--  bgcolor=”white” color="white" -->
+			<th><h4>DATA</h4></th>
+			<th><h4>CLIENTE</h4></th>
+			<th><h4>VALOR</h4></th>
+			<th><h4>ITENS</h4></th>
+			<th colspan="2"><h4>OPERAÇÕES</h4></th>
+		  </tr>
+
+			<!-- Código Ruby -->  
+			<% cont = 0 %> 	<!-- ATENÇÃO: variáveis começam sempre com letra minúscula -->
+			
+			<% @vendas.each do |registro| %>
+			
+				<% if hPag(registro.id,@colecao) %>
+					<% if cont % 2 == 1 %>
+						<tr bgcolor="#EEE9E9">
+					<% else %>
+						<tr bgcolor="#FFF5EE" >
+					<% end %>
+					
+					<% cont = cont + 1%>	<!--  Incrementando contador para mudança de cor -->
+				
+					<td><%= registro.data.strftime("%d/%m/%Y") %></td>
+					<td><%= registro.cliente_nome %></td>
+					<td><%= moeda(registro.valor) %></td>
+					<td><%= registro.itens %></td>
+
+					
+					<!-- gerenciando links para CRUD -->
+					
+					<% link = "/vperiodos/"+registro.id.to_s  %>
+					<% link = link + "?pd=" + Admloja.first.mcab.to_s   %>
+					
+					<% link2 = "/vperiodos/cancel/"+registro.id.to_s  %>
+					<% link2 = link2 + "?pd=" + Admloja.first.mcab.to_s   %>
+					
+					
+					<% info = 13.chr + 10.chr + 13.chr + 10.chr + "Data: " + registro.data.strftime("%d/%m/%Y") + 13.chr + 10.chr %>
+					<% info = info + "Valor: " + moeda(registro.valor) + 13.chr + 10.chr  + 13.chr + 10.chr%>
+					
+					
+					<th><%= link_to image_tag("mostrar.png", :size => "150x36") , link %></th>
+
+					<th><%= link_to image_tag("apagar.png", :size => "150x36") , link2, confirm: 'Deseja excluir esta Venda?' + info%></th>
+
+					
+				  </tr>
+			<% end %>
+		<% end %>
+			
+		</table>
+<% else %>
+	<h3> Nenhuma Venda Foi Encontrada! </H3>
+<% end %>
+<br>
+
+<HR SIZE = 5 color="blue">
+<center>
+<%= link_to image_tag("inicio.png", :size => "120x40"), "vperiodos" + "?pag=0"  + "&dataini="+@dataini +  "&datafim="+@datafim %>
+<%= link_to image_tag("proximo.png", :size => "120x40"), "vperiodos" + "?pag=" + soma(@pag.to_i,@page,@vendas.size-1)  + "&dataini="+@dataini +  "&datafim="+@datafim %>
+<%= link_to image_tag("anterior.png", :size => "120x40"), "vperiodos" + "?pag=" + minimo(@pag.to_i-@page)  + "&dataini="+@dataini +  "&datafim="+@datafim %>
+<%= link_to image_tag("fim.png", :size => "120x40"), "vperiodos" + "?pag=" + (@vendas.size - @page).to_s  + "&dataini="+@dataini +  "&datafim="+@datafim %>
+</center>
+<HR SIZE = 5 color="blue">
+<%= link_to image_tag("voltar.png", :size => "200x50"), "/vperiodos" %>

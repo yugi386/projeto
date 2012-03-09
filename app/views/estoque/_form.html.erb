@@ -1,0 +1,114 @@
+﻿<%= form_for(@estoque, :url => estoque_path,  :html => {:multipart => true}) do |f| %>
+
+	<!- GERENCIAMENTO DE MENSAGENS DE ERRO -->
+	<% if @estoque.errors.any? %> 
+		<!-- <div id="error_explanation"> -->
+		<div id="erros">
+			<% if @estoque.errors.count == 1 %>
+				<strong><font color="red">Um erro foi encontrado:</font></strong>
+			<% else %>
+				<strong><font color="red"><%= @estoque.errors.count %> erros foram encontrados:</font></strong>
+			<% end	%> 
+
+			<ul>
+			<font color="#696969" size=2>
+				<% @estoque.errors.full_messages.each do |msg| %>
+					<li><%= tmsg(msg) %></li>	<!-- funcao para retornar a mensagem formatada -->
+				<% end %>
+			</font>	
+			</ul>
+		</div>
+		<HR SIZE = 5 color="blue">
+	<% end %>
+
+  <!-- INICIO DO FORMULARIO -->
+
+		<strong>IDENTIFICAÇÃO:</STRONG><BR>		    
+		<strong>Código: </strong>
+		<%= @estoque.codigo %><br>
+		
+		<strong>Nome: </strong>
+		<%= @estoque.nome %><br>
+		<br>
+		<HR SIZE = 5 color="blue">
+		
+		<br><strong>MOVIMENTAÇÃO:</STRONG><BR>		    
+		
+		<strong>Última Entrada: </strong>
+		<% t = @estoque.dataentrada %>
+		<%= if t != nil 
+			t.strftime("%d/%m/%Y - %H:%M:%S")
+		end %><br>
+		
+		<strong>Quant. Última Entrada: </strong>
+		<%= @estoque.entrada %><br>
+		
+		<strong>Última Baixa: </strong>
+		<% t = @estoque.databaixa %>
+		<%= if t != nil 
+			t.strftime("%d/%m/%Y - %H:%M:%S")
+		end %><br>
+		
+		<strong>Quant. Última Baixa: </strong>
+		<%= @estoque.baixa %><br>
+		
+		<strong>Última Saída: </strong>
+		<%	t = @estoque.datasaida 	%>		
+		<%= if t != nil 
+			t.strftime("%d/%m/%Y - %H:%M:%S")
+		end %><br>
+
+		<strong>Quant. Última Saída: </strong>
+		<%= @estoque.saida %><br><br>
+		
+		<HR SIZE = 5 color="blue"><br>
+
+		<strong>ESTOQUE ATUAL:</STRONG><BR>		    		
+
+		<strong>Quant. Estoque Atual: </strong>
+		<%= @estoque.quant %><br><br>
+		
+		<HR SIZE = 5 color="blue"><br>
+		
+		<strong>OPERAÇÃO ATUAL - ENTRADA:</STRONG><BR>		    		
+		
+		   <div class="field">
+
+			<%= f.label :Data_da_Entrada %><br />
+			<%= f.datetime_select(:dataentrada,  :order => [:day, :month, :year], :start_year => 1900, :end_year => 2100, :use_month_names => %w(Janeiro Fevereiro Março Abril Maio Junho Julho Agosto Setembro Outubro Novembro Dezembro) ) %>
+		  </div>
+  
+		<div class="field">
+			<% @estoque.entrada = 0 %>
+			<%= f.label :Quantidade_de_Entrada %><br />
+			<%= f.text_field :entrada, :size => 15 %>
+        </div><br>
+
+		<HR SIZE = 5 color="blue"><br>
+		<strong>OPERAÇÃO ATUAL - BAIXA:</STRONG><BR>		    		
+		
+		 <div class="field">
+
+			<%= f.label :Data_da_Baixa %><br />
+			<%= f.datetime_select(:databaixa,  :order => [:day, :month, :year], :start_year => 1900, :end_year => 2100, :use_month_names => %w(Janeiro Fevereiro Março Abril Maio Junho Julho Agosto Setembro Outubro Novembro Dezembro) ) %>
+		  </div>
+			
+		<div class="field">
+				<% @estoque.baixa = 0 %>
+			<%= f.label :Quantidade_da_Baixa %><br />
+			<%= f.text_field :baixa, :size => 15 %>
+        </div>
+		
+		<div class="field">
+				<% @estoque.verif = false %>
+			<%= f.hidden_field :verif %>	<!-- permite verificar se houve operacao de entra ou baixa no estoque  -->
+        </div>
+		
+		<br><HR SIZE = 5 color="blue"><br>
+		
+		
+		  <div class="actions">
+			<%= f.submit "Confirmar Operação de Entrada | Baixa no Estoque" %>
+		  </div>
+		  
+<% end %>

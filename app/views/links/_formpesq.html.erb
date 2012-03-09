@@ -1,0 +1,13 @@
+﻿
+<!-- Formulario de pesquisa para o Cadastro de Links -->
+Digite o <b>Texto</b> do Link:
+<div>
+	 <form name ="F1" method="get" action="/links"> 
+		<input type="text" name="pesq" id="search-text" size="15" value=""  />
+		<input type="submit" id="search-submit" value="Pesquisar" />
+		<b>Total de Registros:</b> 
+		<%= @links.size %>
+	</form>
+</div>
+
+<HR SIZE = 5 color="blue">

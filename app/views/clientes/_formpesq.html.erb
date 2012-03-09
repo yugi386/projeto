@@ -1,0 +1,13 @@
+﻿
+<!-- Formulario de pesquisa para o Cadastro de Clientes -->
+Você pode pesquisar por <Strong>Nome, E-mail, CPF</Strong> ou <Strong>CNPJ</Strong> (digite somente números).
+<div>
+	<form name ="F1" method="get">
+		<input type="text" name="pesq" id="search-text" size="15" value=""  />
+		<input type="submit" id="search-submit" value="Pesquisar"  />
+		<b>Total de Registros:</b> 
+		<%= @clientes.size %>
+	</form>
+</div>
+
+<HR SIZE = 5 color="blue">

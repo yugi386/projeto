@@ -1,0 +1,185 @@
+﻿<%= form_for(@admloja) do |f| %>
+
+	<!- GERENCIAMENTO DE MENSAGENS DE ERRO -->
+	<% if @admloja.errors.any? %> 
+		<!-- <div id="error_explanation"> -->
+		<div id="erros">
+			<% if @admloja.errors.count == 1 %>
+				<strong><font color="red">Um erro foi encontrado:</font></strong>
+			<% else %>
+				<strong><font color="red"><%= @admloja.errors.count %> erros foram encontrados:</font></strong>
+			<% end	%> 
+
+			<ul>
+			<font color="#696969" size=2>
+				<% @admloja.errors.full_messages.each do |msg| %>
+					<li><%= tmsg(msg) %></li>	<!-- funcao para retornar a mensagem formatada -->
+				<% end %>
+			</font>	
+			</ul>
+		</div>
+		<HR SIZE = 5 color="blue">
+	<% end %>
+
+  <!-- INICIO DO FORMULARIO -->
+
+<strong>IDENTIFICAÇÃO:</STRONG><BR>		    
+  <div class="field">
+    <%= f.label :Nome_Razão_Social %><br />
+    <%= f.text_field :nome, :size => 70 %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :CNPJ %><br />
+    <%= f.text_field :cnpj %>
+  </div>
+  
+  
+<BR><strong>ENDEREÇO:</STRONG><BR>		  
+  <div class="field">
+    <%= f.label :Endereço %><br />
+    <%= f.text_field :endereco, :size => 70 %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :Bairro %><br />
+    <%= f.text_field :bairro, :size => 70 %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :Complemento %><br />
+    <%= f.text_field :complemento, :size => 70 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Cidade %><br />
+    <%= f.text_field :cidade, :size => 70 %>
+  </div>
+  
+  <div class="field">
+	  <%= f.label :Estado %><br />
+	  <%= f.select :estado, ([["Acre","AC"],["Alagoas","AL"],["Amapá","AP"],["Amazonas","AM"],["Bahia","BA"],["Ceará","CE"],["Distrito Federal","DF"],["Espírito Santo","ES"],["Goiás","GO"],["Maranhão","MA"],["Mato Grosso","MT"],["Mato Grosso do Sul","MS"],["Minas Gerais","MG"],["Pará","PA"],["Paraíba","PB"],["Paraná","PR"],["Pernambuco","PE"],["Piauí","PI"],["Rio de Janeiro","RJ"],["Rio Grande do Norte","RN"],["Rio Grande do Sul","RS"],["Rondônia","RO"],["Roraima","RR"],["Santa Catarina","SC"],["São Paulo","SP"],["Sergipe","SE"],["Tocantins","TO"]])  %>
+  </div>
+
+<div class="field">
+    <%= f.label :CEP %><br />
+    <%= f.text_field :cep %>
+  </div>
+
+<div class="field">
+    <%= f.label :Caixa_Postal %><br />
+    <%= f.text_field :cpostal %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :Telefone %><br />
+    <%= f.text_field :tel %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :Celular %><br />
+    <%= f.text_field :cel %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :Fax %><br />
+    <%= f.text_field :fax %>
+  </div>
+  
+<BR><strong>E-MAIL E SENHA:</STRONG><BR>		  
+  
+  <div class="field">
+    <%= f.label :Email %><br />
+    <%= f.text_field :email, :size => 40 %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :Senha %><br />
+    <%= f.password_field :password, :size => 40 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Confirmar_Senha %><br />
+    <%= f.password_field :password_confirmation, :size => 40 %>
+  </div>
+
+<BR><strong>CONFIGURAÇÕES:</STRONG><BR>		    
+  
+  <strong><br>Paginação:<BR></strong>
+  <div class="field">
+    <%= f.label :Paginação_Area_Administrativa %><br />
+    <%= f.text_field :pagadm, :size => 10 %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :Paginação_Area_Loja %><br />
+    <%= f.text_field :pagloja, :size => 10 %>
+  </div>
+
+  <strong><br>Cabeçalho e rodapé:<BR></strong>
+   <div class="field">
+    <%= f.label :Cabeçalho_da_Página %><br />
+    <%= f.text_area :cabecalho,  :rows => 5 %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :Rodapé_da_Página %><br />
+    <%= f.text_area :rodape, :rows => 5 %>
+  </div>
+  
+  <div class="field">
+	  <%= f.label :Modo_de_Exibição_do_Cabeçalho %><br />
+	  <%= f.select :mcab, ([["Mostrar Cabeçalho em Todas as Páginas",0],["Somente na Página Principal",1]]) %> 
+  </div>
+
+  <strong><br>Departamentos e Seções:<BR></strong>
+
+  <div class="field">
+    <%= f.label :Máximo_de_Departamentos_no_Menu %><br />
+    <%= f.text_field :maxdep,  :size => 10 %> <font color="red">** se o valor for 0 então mostra todos!!!</font>
+  </div>
+  
+  <div class="field">
+    <%= f.label :Máximo_de_Seções_no_Menu %><br />
+    <%= f.text_field :maxsec,  :size => 10 %> <font color="red">** se o valor for 0 então mostra todos!!!</font>
+  </div>
+
+  <strong><br>Preços:<BR>  </strong>
+  
+  <div class="field">
+	  <%= f.label :Modo_de_Exibição_de_Preço %><br />
+	  <%= f.select :upreco, ([["Mostrar Preço à Vista",1],["Mostrar Preço à Prazo",2],["Não Mostrar Preço",0] ]) %> 
+  </div>
+
+  <div class="field">
+	  <%= f.label :Configuração_de_Desconto %><br />
+	  <%= f.select :udesconto, ([["Considerar Desconto para Preço à Vista",1],["Considerar Desconto para Preço à Prazo",2],["Ignorar Desconto",0] ]) %> 
+  </div>
+  
+  <strong><br>Frete:<BR>  </strong>
+  
+  <div class="field">
+	  <%= f.label :Frete %><br />
+	  <%= f.select :ufrete, ([["Considerar Frete",1],["Ignorar Frete",0] ]) %> 
+  </div>
+  
+  <div class="field">
+    <%= f.label :Frete_Grátis_a_partir_do_Valor %><br />
+    <%= f.text_field :freefrete, :size => 10 %> <font color="red">** se o valor for 0 então ignora frete grátis!!!</font>
+  </div>
+  
+<BR><strong>OBSERVAÇÕES:</STRONG><BR>		    
+  <div class="field">
+    <%= f.text_area :obs %>
+  </div>
+  
+  <!-- $$$$$$$$$$$$$$$$$$$$$$$$ -->
+  
+  <BR>
+  <div class="actions">
+    <%= f.submit "Salvar" %>
+  </div>
+  
+  
+  
+<% end %>

@@ -1,0 +1,153 @@
+﻿<!--  LISTANDO FICHA INDIVIDUAL DO PRODUTO -->
+
+<h2 class="title">Exibindo Cadastro do Produto</h2>
+<HR SIZE = 5 color="blue">
+
+<table BORDER = 0>
+	<tr bgcolor = "#F5DEB3"><td colspan="2"><strong>IDENTIFICAÇÃO:</STRONG></tR>		  
+	<tr><td>
+		<b>Nome:</b>
+	</td><td>
+		<%= @estoque.nome %>
+	</td></tr>
+
+	<tr><td>
+		<b>Código do Produto:</b>
+	</td><td>
+		<%= @estoque.codigo %>
+	</td></tr>
+
+	<tr><td>
+		<b>Data do Cadastro:</b>
+	</td><td>
+	  <%= @estoque.data.strftime("%d/%m/%Y") %>	<!-- mostra data formato brasileiro -->
+	</td></tr>
+	
+	<tr><td>
+		<b>Departamento:</b>
+	</td><td>
+		<%= Departamento.find(@estoque.departamento_id).nome %>	<!-- nome do departamento a que pertence esta seção -->
+	</td></tr>
+	
+	<tr><td>
+		<b>Seção:</b>
+	</td><td>
+		<%= Section.find(@estoque.section_id).nome %>	<!-- nome da seção a que pertence esta seção -->
+	</td></tr>
+	
+	<tr><td>
+		<b>Modelo:</b>
+	</td><td>
+		<%= @estoque.modelo %>
+	</td></tr>
+
+	<tr><td>
+		<b>Modelo:</b>
+	</td><td>
+		<%= @estoque.unidade %>
+	</td></tr>
+	
+	<tr><td>
+		<b>Produto Ativo?:</b>
+	</td><td>
+		<%= tbol(@estoque.ativo) %>
+	</td></tr>
+
+	<tr><td>
+		<b>Destaque:</b>
+	</td><td>
+		<%= @estoque.destaque %>
+	</td></tr>
+	
+	<tr bgcolor = "#F5DEB3"><td colspan="2"><strong>QUANTIDADE EM ESTOQUE:</STRONG></tR>		  
+	
+	<tr><td>
+		<b>Quantidade em Estoque:</b>
+	</td><td>
+		<%= @estoque.quant %>
+	</td></tr>
+	
+	<tr bgcolor = "#F5DEB3"><td colspan="2"><strong>PREÇOS:</STRONG></tR>		  
+	
+	<tr><td>
+		<b>Preço de Custo:</b>
+	</td><td>
+		<%= @estoque.custo %>
+	</td></tr>
+	
+	<tr><td>
+		<b>Preço a Vista:</b>
+	</td><td>
+		<%= @estoque.vista %>
+	</td></tr>
+	
+	<tr><td>
+		<b>Preço a Prazo:</b>
+	</td><td>
+		<%= @estoque.prazo %>
+	</td></tr>
+	
+	<tr><td>
+		<b>Desconto:</b>
+	</td><td>
+		<%= @estoque.desconto %>
+	</td></tr>
+	<tr><td>
+		<b>Preço Oculto?:</b>
+	</td><td>
+		<%= tbol(@estoque.preco_oculto) %>
+	</td></tr>
+	
+	<tr><td>
+		<b>Máximo de Parcelas:</b>
+	</td><td>
+		<%= @estoque.parcelas %>
+	</td></tr>
+	
+	<tr bgcolor = "#F5DEB3"><td colspan="2"><strong>CONTROLE DE FRETE:</STRONG></tR>		  
+	
+	<tr>
+		<td> <b>Frete - Região Norte:</b> </td>
+		<td> <%= @estoque.fnorte %> </td>
+	</tr>
+	
+	<tr>
+		<td> <b>Frete - Região Nordeste:</b> </td>
+		<td> <%= @estoque.fnordeste %> </td>
+	</tr>
+	
+	<tr>
+		<td> <b>Frete - Região Centro-Oeste:</b> </td>
+		<td> <%= @estoque.fcentro %> </td>
+	</tr>
+	
+	<tr>
+		<td> <b>Frete - Região Sudeste:</b> </td>
+		<td> <%= @estoque.fsudeste %> </td>
+	</tr>
+	
+	<tr>
+		<td> <b>Frete - Região Sul:</b> </td>
+		<td> <%= @estoque.fsul %> </td>
+	</tr>
+	
+	<tr bgcolor = "#F5DEB3"><td colspan="2"><strong>IMAGEM:</STRONG></tR>		  
+	
+	<td colspan="2">
+		<% if @estoque.arquivo_file_name != nil %>
+			<%= image_tag(@estoque.arquivo.url, :size => "300x400") %>		<!-- assim são chamadas as imagens... -->
+		<% else %>
+			Não há imagem para este Produto.
+		<% end %>	
+				
+	</td></tr>
+	
+	<tR bgcolor = "#F5DEB3"><td colspan="2"><strong>DESCRIÇÃO</STRONG></td></tR>	
+	<TR><td COLSPAN=2>
+		<%= @estoque.descricao %>
+	</td></TR>  
+
+</table>
+
+<br><HR SIZE = 5 color="blue">
+<%= link_to image_tag("voltar.png") , "/estoque"  %>

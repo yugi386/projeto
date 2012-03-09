@@ -1,0 +1,198 @@
+﻿<!--  APRESENTANDO OS DADOS DO PEDIDO -->
+
+<h2 class="title">Exibindo Conteúdo do Pedido</h2>
+<HR SIZE = 5 color="blue">
+<BR>
+
+<table BORDER = 1, width=100%>
+	<tr bgcolor = "#F5DEB3"><td colspan="2"><strong><H3>DADOS DO CLIENTE:</H3></STRONG></tR>		  
+	<tr><td>
+		<b>Nome do Cliente:</b>
+	</td><td>
+		<%= @venda.cliente_nome %>
+	</td></tr>
+	
+	<% if Cliente.find(@venda.cliente).pessoa == "F" %>
+		<tr><td>
+			<b>CPF:</b>
+		</td><td>
+			<%= fCpf(Cliente.find(@venda.cliente).cpf) %>
+		</td></tr>
+	<% else %>
+		<tr><td>
+			<b>CPF:</b>
+		</td><td>
+			<%= fCnpj(Cliente.find(@venda.cliente).cnpj) %>
+		</td></tr>
+	<% end %>
+	
+	<% if Cliente.find(@venda.cliente).pessoa == "F" %>
+		<tr><td><b>Endereço:</b>
+		</td><td><%= Cliente.find(@venda.cliente).endereco %></td></tr>
+		
+		<tr><td><b>Bairro:</b>
+		</td><td><%= Cliente.find(@venda.cliente).bairro1 %></td></tr>
+		
+		<tr><td><b>Complemento:</b>
+		</td><td><%= Cliente.find(@venda.cliente).complemento %></td></tr>
+		
+		<tr><td><b>Cidade:</b>
+		</td><td><%= Cliente.find(@venda.cliente).cidade %></td></tr>
+		
+		<tr><td><b>Estado:</b>
+		</td><td><%= Cliente.find(@venda.cliente).estado %></td></tr>
+		
+		<tr><td><b>Telefone:</b>
+		</td><td><%= formata_telefone(Cliente.find(@venda.cliente).tel) %></td></tr>
+		
+		<tr><td><b>Celular:</b>
+		</td><td><%= formata_telefone(Cliente.find(@venda.cliente).cel) %></td></tr>
+
+		
+	<% else %>
+		<tr><td><b>Endereço:</b>
+		</td><td><%= Cliente.find(@venda.cliente).endereco2 %></td></tr>
+		
+		<tr><td><b>Bairro:</b>
+		</td><td><%= Cliente.find(@venda.cliente).bairro2 %></td></tr>
+		
+		<tr><td><b>Complemento:</b>
+		</td><td><%= Cliente.find(@venda.cliente).complemento2 %></td></tr>
+		
+		<tr><td><b>Cidade:</b>
+		</td><td><%= Cliente.find(@venda.cliente).cidade2 %></td></tr>
+		
+		<tr><td><b>Estado:</b>
+		</td><td><%= Cliente.find(@venda.cliente).estado2 %></td></tr>
+		
+		<tr><td><b>Telefone:</b>
+		</td><td><%= formata_telefone(Cliente.find(@venda.cliente).telefone2) %></td></tr>
+		
+		<tr><td><b>Celular:</b>
+		</td><td><%= formata_telefone(Cliente.find(@venda.cliente).celular2) %></td></tr>
+
+		
+	<% end %>
+	
+		<tr><td><b>E-mail:</b>
+		</td><td><%= Cliente.find(@venda.cliente).email %></td></tr>
+	
+</table>
+
+<br>
+<table BORDER = 1, width=100%>
+	<tr bgcolor = "#F5DEB3"><td colspan="2"><strong><H3>DADOS DO PEDIDO:</H3></STRONG></tR>		  
+	<tr><td>
+		<b>Data do Pedido:</b>
+	</td><td>
+		<%= @venda.data.strftime("%d/%m/%Y") %>
+	</td></tr>
+
+	<tr><td>
+		<b>Valor Total:</b>
+	</td><td>
+		<%= moeda(@venda.valor) %>
+	</td></tr>
+
+	<tr><td>
+		<b>Número de Itens:</b>
+	</td><td>
+		<%= @venda.itens %>
+	</td></tr>
+
+	<%	
+	if @venda.tipopag == "1"	
+			@formpag = "Pagamento à Vista - Boleto"
+		elsif	@venda.tipopag == "2"	
+			@formpag = "Pagamento à Vista - Cartão de Débito"
+		elsif	@venda.tipopag == "3"	
+			@formpag = "Pagamento à Vista - Cartão de Crédito"
+		elsif	@venda.tipopag == "4"	
+			@formpag = "Pagamento à Prazo - Cartão de Crédito"
+	end	
+	%>
+	
+	<tr><td>
+		<b>Tipo de Compra:</b>
+	</td><td>
+		<%= @formpag %>
+	</td></tr>
+
+	<tr><td>
+		<b>Dados do cartão:</b>
+	</td><td>
+		<%= @venda.dadoscartao %>
+	</td></tr>
+
+	<tr><td>
+		<b>Parcelas:</b>
+	</td><td>
+		<%= @venda.parcelas %>
+	</td></tr>
+
+	<tr><td>
+		<b>Frete:</b>
+	</td><td>
+		<%= moeda(@venda.frete) %>
+	</td></tr>
+	
+	<tr><td>
+		<b>Pagamento Confirmado?</b>
+	</td><td>
+		<% if @venda.status == "C" %>
+			SIM
+		<% else %>
+			NÃO
+		<% end %>	
+	</td></tr>
+	
+	</table>
+
+	<!-- CONTROLE DE PEDIDOS -->
+	<br>
+<table BORDER = 1, width=100%>
+	<tR bgcolor = "#F5DEB3"><td colspan="5"><strong><H3>ITENS DO PEDIDO:<H3></STRONG></td></tR>	
+	<tR bgcolor = "#F5DEB3">
+		<td><strong>ITEM:</STRONG></td>	
+		<td colspan="1"><strong>NOME DO PRODUTO:</STRONG></td>
+		<td colspan="1"><strong>VALOR:</STRONG></td>
+		<td colspan="1"><strong>QUANTIDADE:</STRONG></td>
+		<td colspan="1"><strong>SUB-TOTAL:</STRONG></td>
+	</TR>
+
+	<% ct = 1 %>
+	<% total = 0 %>
+	<% @item.each do |d| %>
+		<tr>
+		<td><%= ct %></td>
+		<td><%= Produt.find(d.idprod).nome %></td>
+		<td><%= moeda(d.valor) %></td>
+		<td><%= d.quant %></td>
+		<td><%= moeda(d.quant * d.valor) %></td>
+		</tr>
+		<% ct = ct + 1 %>
+		<% total = total + (d.quant * d.valor) %>
+	<% end %>
+		<tr>
+			<td></td><td></td><td></td><td><b>FRETE:</b></td>
+			<td>
+				<%= moeda(@venda.frete) %>
+			</td>
+		</tr>
+
+		<tr>
+			<td></td><td></td><td></td><td><b>TOTAL:</b></td>
+			<td>
+				<%= moeda(total+@venda.frete) %>
+			</td>
+		</tr>
+	
+</table>
+
+<br><br>
+<HR SIZE = 5 color="blue">
+<center>
+<%= link_to image_tag("voltar.png", :size => "150x40") , "/vendas_listar" + "?pd="+Admloja.first.mcab.to_s   %>
+<%= link_to image_tag("fecharpedido.png", :size => "150x40") , "/vendas_listar_fechar/"+@venda.id.to_s + "?pd="+Admloja.first.mcab.to_s   %>
+<%= link_to image_tag("abrirpedido.png", :size => "150x40") , "/vendas_listar_abrir/"+@venda.id.to_s + "?pd="+Admloja.first.mcab.to_s   %>
+</center>

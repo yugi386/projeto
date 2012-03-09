@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Title      : Butterfly 
+Version    : 1.0
+Released   : 20110627
+Description: A two-column web design, best for your personal and business blogging.
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Aprendendo Ruby On Rails 3</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<%= javascript_include_tag "application" %>
+<%= stylesheet_link_tag    "style3", :media => "all"  %>  <!-- Chamando CSS -->
+<%= csrf_meta_tags %>
+
+</head>
+<body>
+<div id="wrapper">
+	<div id="wrapper-bgtop">
+		<!-- start header -->
+		<div id="header">
+			<div id="logo">
+				<h2>Loja Virtual</h2>
+				<p><a href="#"></a></p>
+			</div>
+			<div id="menu">
+				<ul>
+					<li class="active"><a href="/loja">Home</a></li>
+					<li><a href="/compras?pd=<%= Admloja.first.mcab.to_s %>" >Carrinho de Compras</a></li>
+					<% if session[:logcli] == 0 or session[:logcli] == nil%>
+						<li><a href="/cliente_login" >LogIn</a></li>
+						<li><a href="/cadastro" >Cadastrar</a></li>
+					<% else %>
+						<li><a href="/clientes/<%= session[:logcli]%>?pd=<%= Admloja.first.mcab.to_s %>" >Meu Cadastro</a></li>
+						<li><a href="/pedidos?pd=<%= Admloja.first.mcab.to_s %>" >Meus Pedidos</a></li>
+						<li><a href="/cliente_logout" >LogOut</a></li>
+					<% end %>
+				</ul>
+			<br>	
+			</div>
+		</div>
+		<hr />
+		<!-- end header -->
+		<!-- start page -->
+		<div id="page">
+			<!-- start content -->
+			<div id="content">
+				<div class="post">
+
+				<br>				
+				<% xcab = params[:pd] %>
+					<% if xcab != "1"  %>  
+						<br>	
+						<table border = 15 width=100%><tr><td>
+							<h2 class="title"><center>Seja Bem-Vindo!</center></h2><br>
+							<%= raw(Admloja.first.cabecalho.strip + xcab.to_s) %>
+						</td></tr></table>
+					<% end	%>	<!-- a função raw() exibe o texto considerando o HTML -->
+				
+				</div>	
+
+				<div class="post">				
+					<% if Admloja.first.freefrete != 0 %>
+						<div class="aviso">Frete Grátis nas Compras acima de <%= moeda(Admloja.first.freefrete) %> Reais!!!</div>
+					<% end %>	
+
+					<%= yield %>
+					
+				</div>
+								
+			</div>
+			<!-- end content -->
+			<!-- start sidebar -->
+			<div id="sidebar">
+			
+					
+			<% if session[:logcli] == 0 or session[:logcli] == nil%>
+				<H1><font color="green">Olá, Visitante!!!</font></h1>
+			<% else %>
+				<h2><font color="green">Olá, <%=Cliente.find(session[:logcli]).nome%></font></h2>
+			<% end %>
+				<ul>
+					<li>
+						<h2>CONTATO COM A LOJA</h2>
+						<ul>
+
+							<li><strong> TELEFONE: <%= formata_telefone(Admloja.first.tel)%></strong></li>						
+							<li><strong> E-MAIL: <%= Admloja.first.email %></strong></li>						
+						
+						</ul>
+					</li>
+					<li>
+						<h2>DEPARTAMENTOS</h2>
+						<ul>
+
+							<li><strong> <a href="/loja?dep=&ordem=<%=@ordem%>&pesq=<%=@pesq%>" >TODOS OS DEPARTAMENTOS</a></strong></li>						
+							<% cont = 0 
+								tam = @departamentos.size - 1	
+								limite = Admloja.first.maxdep - 1	#  maximo de departamentos a exibir 
+								if tam > limite
+									tam = limite
+								end	
+								if Admloja.first.maxdep == 0
+									tam = @departamentos.size - 1	
+								end	
+							%>
+							<% while TRUE %>
+								<li><strong> <a href="/loja?dep=<%= @departamentos[cont].id%>&ordem=<%=@ordem%>&pesq=<%=@pesq%>" ><%= @departamentos[cont].nome%></a></strong></li>
+								<%	cont = cont + 1 %>
+									<%	if cont > tam %>
+										<%	break %>
+									<%	end %>
+							<%  end %>
+							
+						
+						</ul>
+					</li>
+
+					<li>
+						<h2>SEÇÕES</h2>
+						<ul>
+						
+							<li><strong> <a href="/loja?sec=">TODOS AS SEÇÕES</a></strong></li>
+							
+							<% cont = 0 
+								tam = @secoes.size - 1	
+								limite = Admloja.first.maxsec - 1  # maximo de secoes a exibir
+								if tam > limite 
+									tam = limite
+								end	
+								if Admloja.first.maxsec == 0
+									tam = @secoes.size - 1	
+								end	
+							%>
+							<% while TRUE %>
+								<li><strong><a href="/loja?sec=<%= @secoes[cont].id%>&ordem=<%=@ordem%>&pesq=<%=@pesq%>" ><%= @secoes[cont].nome%></a></strong></li>
+								
+								<%	cont = cont + 1 %>
+									<%	if cont > tam %>
+										<%	break %>
+									<%	end %>
+							<%  end %>
+							
+						</ul>
+					</li>
+					
+					<li>
+							<% cont = 0 
+								@links = Link.where('upper(ativo) = "T"').all
+								tam = @links.size - 1	
+							%>
+						<% if @links.size != 0 %>
+							<h2>LINKS</h2>
+
+						<ul>
+							<% while TRUE %>
+								<li><strong><a href="<%= @links[cont].arquivo.url%>" ><%= @links[cont].texto%></a></strong></li>
+								
+								<%	cont = cont + 1 %>
+									<%	if cont > tam %>
+										<%	break %>
+									<%	end %>
+							<%  end %>
+
+						</ul>
+						<% end %>								
+					</li>
+				</ul>
+
+			</div>
+			<!-- end sidebar -->
+			
+			<br style="clear: both;" />
+		</div>
+		<!-- end page -->
+		<!-- start footer -->
+			
+		<div id="footer">
+			
+			<p id="legal">
+				<%= raw(Admloja.first.rodape.strip) %>	<!-- a função raw() exibe o texto considerando o HTML -->
+			</p>		
+			<!-- end footer -->
+		</div>
+	</div>
+</div>
+</body>
+</html>

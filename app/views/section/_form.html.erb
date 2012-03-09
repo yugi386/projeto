@@ -1,0 +1,64 @@
+﻿<%= form_for(@section, :url => section_path,  :html => {:multipart => true}) do |f| %>
+
+	<!- GERENCIAMENTO DE MENSAGENS DE ERRO -->
+	<% if @section.errors.any? %> 
+		<!-- <div id="error_explanation"> -->
+		<div id="erros">
+			<% if @section.errors.count == 1 %>
+				<strong><font color="red">Um erro foi encontrado:</font></strong>
+			<% else %>
+				<strong><font color="red"><%= @section.errors.count %> erros foram encontrados:</font></strong>
+			<% end	%> 
+
+			<ul>
+			<font color="#696969" size=2>
+				<% @section.errors.full_messages.each do |msg| %>
+					<li><%= tmsg(msg) %></li>	<!-- funcao para retornar a mensagem formatada -->
+				<% end %>
+			</font>	
+			</ul>
+		</div>
+		<HR SIZE = 5 color="blue">
+	<% end %>
+
+  <!-- INICIO DO FORMULARIO -->
+
+<strong>IDENTIFICAÇÃO:</STRONG><BR>		    
+  <div class="field">
+    <%= f.label :Nome %><br />
+    <%= f.text_field :nome, :size => 70 %>
+  </div>
+ 
+  <div class="field">
+	  <%= f.label :Seção_Ativa? %><br />
+	  <%= f.select :ativo, ([["ATIVADA","TRUE"],["DESATIVADA","FALSE"]]) %> 
+  </div>
+  
+  <div class="field">
+    <%= f.label :Destaque %><br />
+    <%= f.text_field :destaque, :size => 5 %>
+  </div>
+ 
+  <div class="field">
+    <%= f.label :Departamento %><br />
+	<%= f.select :departamento_id, Departamento.find(:all).collect { |item| [item.nome,item.id] } %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Imagem %><br />
+    <%= f.file_field :arquivo %>
+  </div>
+    
+<BR><strong>DESCRIÇÃO:</STRONG><BR>		    
+  <div class="field">
+    <%= f.text_area :descricao %>
+  </div>
+  
+  <!-- $$$$$$$$$$$$$$$$$$$$$$$$ -->
+  
+  <BR>
+  <div class="actions">
+    <%= f.submit "Salvar" %>
+  </div>
+  
+<% end %>

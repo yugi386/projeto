@@ -1,0 +1,61 @@
+﻿
+<h2 class="title">Listando Links</h2>
+<HR SIZE = 5 color="blue">
+
+<%= render 'formpesq' %>
+
+<% if @totCli != 0 %>	<!-- CONDICIONAL PARA VERIFICAR SE HÁ REGISTROS A SEREM LISTADOS --> 
+
+		<table border=0>
+		  <tr bgcolor="#FFD700">		<!--  bgcolor=”white” color="white" -->
+			<th>TEXTO</th>
+			<th>ATIVO?</th>
+			<th colspan="3">Operações</th>
+		  </tr>
+
+			<!-- Código Ruby -->  
+			<% cont = 0 %> 	<!-- ATENÇÃO: variáveis começam sempre com letra minúscula -->
+			
+			<% @links.each do |registro| %>
+			
+				<% if hPag(registro.id,@colecao) %>
+				
+				<% if cont % 2 == 1 %>
+					<tr bgcolor="#EEE9E9">
+				<% else %>
+					<tr bgcolor="#FFF5EE" >
+				<% end %>
+				
+				<% cont = cont + 1%>	<!--  Incrementando contador para mudança de cor -->
+			
+				<td><%= registro.texto %></td>
+				<td><%= tbol(registro.ativo) %></td>
+
+				<!-- gerenciando links para CRUD -->
+				
+				<% info = 13.chr + 10.chr + 13.chr + 10.chr + "Link: " + registro.texto + 13.chr + 10.chr %>
+				
+				<th><%= link_to image_tag("mostrar.png", :size => "100x25") , registro, :method => :show %></th>
+				<th><%= link_to image_tag("editar.png", :size => "100x25") , edit_link_path(registro) %></th>
+				<th><%= link_to image_tag("apagar.png", :size => "100x25") , registro, confirm: 'Deseja apagar este Registro?' + info, :method => :delete %></th>
+				
+			  </tr>
+			<% end %>
+			<% end %>
+			
+		</table>
+<% else %>
+	<h3> Nenhum Registro Foi Encontrado! </H3>
+<% end %>
+
+<br><HR SIZE = 5 color="blue">
+<center>
+<% if @pesq == nil %>
+	<% @pesq = "" %>
+<% end %>
+<%= link_to image_tag("inicio.png", :size => "120x40"), link_path + "?pag=0&pesq="+@pesq %>
+<%= link_to image_tag("proximo.png", :size => "120x40"), link_path + "?pag=" + soma(@pag.to_i,@page,@links.size-1) + "&pesq="+@pesq %>
+<%= link_to image_tag("anterior.png", :size => "120x40"), link_path + "?pag=" + minimo(@pag.to_i-@page) + "&pesq="+@pesq%>
+<%= link_to image_tag("fim.png", :size => "120x40"), link_path + "?pag=" + (@links.size - @page).to_s  +  "&pesq="+@pesq%>
+</center><HR SIZE = 5 color="blue">
+<%= link_to image_tag("novoreg.png", :size => "200x50"), 'links/new' %>

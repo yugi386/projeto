@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  venda_id: 1
+  idprod: 1
+  valor: 1.5
+  quant: 1
+
+two:
+  venda_id: 1
+  idprod: 1
+  valor: 1.5
+  quant: 1

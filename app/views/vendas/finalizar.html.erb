@@ -1,0 +1,118 @@
+﻿<!--  FINALIZANDO COMPRA -->
+
+<H1>COMPRA CONCLUÍDA COM SUCESSO</H1>
+<br>
+<H2>Prezado(a) <%= Cliente.find(session[:logcli]).nome %></h2>
+<br>
+Após a confirmação de pagamento o produto será devidamente encaminhado para o seu endereço.
+
+<br>
+
+
+<table>
+		<tr><td colspan=2><h3>DADOS DO CLIENTE:</h3></td></tr>
+		<tr>
+			<td><STRONG>NOME:</STRONG></td>
+			<td><%= Cliente.find(session[:logcli]).nome %></td>
+		</tr>
+		<tr>
+			<td><STRONG>CPF/CNPJ:</STRONG></td>
+			<% if Cliente.find(session[:logcli]).pessoa == "F" %>
+				<td><%= fCpf(Cliente.find(session[:logcli]).cpf) %></td>
+			<% else %>
+				<td><%= fCnpj(Cliente.find(session[:logcli]).cnpj) %></td>
+			<% end %>
+		</tr>
+		
+			<tr><td colspan=2><h3>ENDEREÇO PARA ENTREGA:</h3></td></tr>
+			<tr><td colspan=2><font color ="red">Residencial = Pessoa Física | Comercial = Pessoa Jurídica</font></td></tr>
+		<TR>	
+			<% if Cliente.find(session[:logcli]).pessoa == "F" %>
+				<td>
+					<%= Cliente.find(session[:logcli]).endereco %><br>
+					<%= Cliente.find(session[:logcli]).bairro1 %><br>
+					<% if Cliente.find(session[:logcli]).complemento != nil and Cliente.find(session[:logcli]).complemento != ""%>
+						<%= Cliente.find(session[:logcli]).complemento %><br>
+					<% end %>	
+					<%= Cliente.find(session[:logcli]).cidade %> - 
+					<%= Cliente.find(session[:logcli]).estado %><br>
+					<%= fCep(Cliente.find(session[:logcli]).cep) %><br>
+				</td>
+				<% else %>
+				<td>
+					<%= Cliente.find(session[:logcli]).endereco2 %><br>
+					<%= Cliente.find(session[:logcli]).bairro2 %><br>
+					<% if Cliente.find(session[:logcli]).complemento2 != nil and Cliente.find(session[:logcli]).complemento2 != ""%>
+						<%= Cliente.find(session[:logcli]).complemento2%><br>
+					<% end %>	
+					<%= Cliente.find(session[:logcli]).cidade2%><br>
+					<%= Cliente.find(session[:logcli]).estado2%><br>
+					<%= fCep(Cliente.find(session[:logcli]).cep2) %><br>
+				</td>
+			<% end %>
+		</TR>
+	</table>
+	
+	<!- Informações relativas ao carrinho de compras -->
+	
+	<h1>Carrinho de Compras</h1>
+		<table border=1>
+			
+			<tr bgcolor="#FFD700" align="center">	
+				<td><H4>ITEM:</H4></td>
+				<td><H4>NOME DO PRODUTO:</H4></td>
+				<td><H4>PREÇO À VISTA:</H4></td>
+				<td><H4>PREÇO À PRAZO:</H4></td>
+				<td><H4>QUANTIDADE:</H4></td>
+			</tr>	
+			
+			<% tam = $CarrinhoCompras.size - 1 %>
+			<% ct = 0 %>
+			<% while TRUE %>
+
+					<% if !($CarrinhoCompras[ct] == "" and $CarrinhoComprasQuant[ct] == 0) %>
+					<tr>
+						<td><%= ct + 1 %></td>  <!-- Número do Item -->
+						<td><b><%= Produt.find($CarrinhoCompras[ct]).nome %></b></td>  <!-- Nome do Produto -->
+						<td><%= moeda(desconto(Produt.find($CarrinhoCompras[ct]).vista,$CarrinhoCompras[ct])) %></td>  <!-- Preco vista -->
+						<td><%= moeda(desconto(Produt.find($CarrinhoCompras[ct]).prazo,$CarrinhoCompras[ct])) %></td>  <!-- Preco prazo -->
+						<td><center><%= $CarrinhoComprasQuant[ct] %></center></td>  <!-- QUANTIDADE -->
+					</tr>
+					<% end %>
+					
+					
+					<% ct = ct + 1 %>
+					<% if ct > tam %>
+						<% break %>
+					<% end %>
+			<% end %>
+		</table>
+		
+		<!-- confirmação da compra -->
+		<% if @tipopag.to_i == 1 %>
+		<h2>FRETE (Pgto. à Vista):
+			<%= moeda(calculafrete($CarrinhoCompras,1)) %> </h2>
+		<% else %>
+			<h2>FRETE (Pgto. à Prazo):
+			<%= moeda(calculafrete($CarrinhoCompras,2)) %> </h2>
+		<%	end %>
+
+		<h2>TIPO DE PAGAMENTO:
+			<%= @formpag %> </h2>
+		
+		<% if @tipopag.to_i != 1 %>
+		<h2>PARCELAS:
+			<%= @parcelas %> </h2>
+		<% end %>
+		
+		<!-- GERENCIAMENTO DE OPÇÕES DE COMPRAS -->
+		<% if @tipopag.to_i == 1 %>
+			<center><h1><b>TOTAL À PAGAR (VISTA): </B><%= moeda(totalVista($CarrinhoCompras,$CarrinhoComprasQuant) + calculafrete($CarrinhoCompras,1)) %><br></b></center>
+		<% else %>			
+			<center><h1><b>TOTAL À PAGAR (PRAZO): </B><%= moeda(totalPrazo($CarrinhoCompras,$CarrinhoComprasQuant) + calculafrete($CarrinhoCompras,2)) %><br></b></h1></center>
+		<% end %>	
+
+
+<br>
+<% limpar() %> <!-- limpando o carrinho de compras -->
+<%= link_to image_tag("voltar.png") , "/loja"  %>		

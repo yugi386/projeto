@@ -1,0 +1,51 @@
+﻿<!-- FORMULÁRIO PARA CADASTRAR OU EDITAR LINKS E ARQUIVOS ANEXOS -->
+
+<%= form_for(@link, :url => link_path,  :html => {:multipart => true}) do |f| %>
+
+	<!- GERENCIAMENTO DE MENSAGENS DE ERRO -->
+	<% if @link.errors.any? %> 
+		<!-- <div id="error_explanation"> -->
+		<div id="erros">
+			<% if @link.errors.count == 1 %>
+				<strong><font color="red">Um erro foi encontrado:</font></strong>
+			<% else %>
+				<strong><font color="red"><%= @link.errors.count %> erros foram encontrados:</font></strong>
+			<% end	%> 
+
+			<ul>
+			<font color="#696969" size=2>
+				<% @link.errors.full_messages.each do |msg| %>
+					<li><%= tmsg(msg) %></li>	<!-- funcao para retornar a mensagem formatada -->
+				<% end %>
+			</font>	
+			</ul>
+		</div>
+		<HR SIZE = 5 color="blue">
+	<% end %>
+
+  <!-- INICIO DO FORMULARIO -->
+
+		<strong>DADOS DO LINK:</STRONG><BR>		    
+		  <div class="field">
+			<%= f.label :Texto %><br />
+			<%= f.text_field :texto, :size => 70 %>
+		  </div>
+		  
+		  <div class="field">
+			  <%= f.label :Link_Ativo? %><br />
+			  <%= f.select :ativo, ([["ATIVADO","TRUE"],["DESATIVADO","FALSE"]]) %> 
+		  </div>
+
+		  <div class="field">
+			<%= f.label :Arquivo_Anexo %><br />
+			<%= f.file_field :arquivo %>
+		  </div>
+			
+		  <!-- $$$$$$$$$$$$$$$$$$$$$$$$ -->
+		  
+		  <BR>
+		  <div class="actions">
+			<%= f.submit "Salvar" %>
+		  </div>
+		  
+<% end %>

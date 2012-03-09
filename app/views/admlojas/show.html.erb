@@ -1,0 +1,169 @@
+﻿<!--  LISTANDO FICHA INDIVIDUAL DA LOJA -->
+
+<h2 class="title">Exibindo Cadastro da Loja</h2>
+<HR SIZE = 5 color="blue">
+
+<table BORDER = 0>
+	<tr bgcolor = "#F5DEB3"><td colspan="2"><strong>IDENTIFICAÇÃO:</STRONG></tR>		  
+	<tr><td>
+		<b>Nome | Razão Social:</b>
+	</td><td>
+		<%= @admloja.nome %>
+	</td></tr>
+
+	<tr><td>
+		<b>CNPJ:</b>
+	</td><td>
+		<%= fCnpj(@admloja.cnpj) %>
+	</td></tr>
+
+<tR bgcolor = "#F5DEB3"><td colspan="2"><strong>ENDEREÇO:</STRONG></td></tR>		  	
+	<tr><td>
+		<b>Endereço:</b>
+	 </td><td>
+		<%= @admloja.endereco %>
+	</td></tr>
+
+	<tr><td>
+		<b>Bairro:</b>
+	 </td><td>
+		<%= @admloja.bairro %>
+	</td></tr>
+
+	<tr><td>
+		<b>Complemento:</b>
+	 </td><td>
+		<%= @admloja.complemento%>
+	</td></tr>
+	
+	<tr><td>
+		<b>Cidade:</b>
+	 </td><td>
+		<%= @admloja.cidade%>
+	</td></tr>
+	
+	<tr><td>
+		<b>Estado:</b>
+	</td><td>
+	  <%= @admloja.estado %>
+	</td></TR>
+
+	<tr><td>
+		<b>CEP:</b>	
+	</td><td>	
+	  <%= fCep(@admloja.cep) %>
+	</td></TR>
+	  
+	<tr><td>
+		<b>Caixa Postal:</b>	
+	</td><td>	
+	  <%= @admloja.cpostal %>
+	</td></TR>
+
+	<tr><td>
+	  <b>Fax:</b>
+	</td><td>	  
+	  <%= formata_telefone(@admloja.fax) %>
+	</td></TR>
+	
+	<tr><td>
+	  <b>Telefone:</b>
+	</td><td>	  
+	  <%= formata_telefone(@admloja.tel) %>
+	</td></TR>
+	  
+	<tr><td>
+		<b>Celular:</b>
+	</td><td>	  
+	  <%= formata_telefone(@admloja.cel) %>
+	</td></TR>  
+
+	<tr bgcolor = "#F5DEB3"><td colspan="2"><strong>E-MAIL E SENHA:</STRONG></tR>		  
+	
+	<tr><td>
+		<b>E-mail:</b>
+	</td><td>	  
+	  <%= @admloja.email %>
+	</td></TR>  
+	
+	<tr><td>
+		<b>Senha:</b>
+	</td><td>	  
+	  <%= "*" * @admloja.password.size %>
+	</td></TR>  
+	
+	<tr bgcolor = "#F5DEB3"><td colspan="2"><strong>CONFIGURAÇÕES:</STRONG></tR>		  
+	
+	<tr><td><b>Cabeçalho:</b></td></tr>
+	<TR><td COLSPAN=2>
+		<%= @admloja.cabecalho %>
+	</td></TR>  
+	
+	<tr><td><b>Rodapé:</b></td></tr>
+	<TR><td COLSPAN=2>
+		<%= @admloja.rodape %>
+	</td></TR>  
+	
+	<tr><td>
+		<b>Modo de Exibição do Cabeçalho:</b>
+	</td><td>	  
+	  <%= eCab(@admloja.mcab) %>
+	</td></TR>  
+	
+	<tr><td>
+		<b>Paginação - Área Administrativa:</b>
+	</td><td>	  
+	  <%= @admloja.pagadm %>
+	</td></TR>  
+	
+	<tr><td>
+		<b>Paginação - Área Loja:</b>
+	</td><td>	  
+	  <%= @admloja.pagloja %>
+	</td></TR>  
+	
+	<tr><td>
+		<b>Departamentos a Exibir:</b>
+	</td><td>	  
+	  <%= @admloja.maxdep %>
+	</td></TR>  
+	
+	<tr><td>
+		<b>Seções a Exibir:</b>
+	</td><td>	  
+	  <%= @admloja.maxsec %>
+	</td></TR>  
+	
+	<tr><td>
+		<b>Modo de Exibição de Preço:</b>
+	</td><td>	  
+	  <%= ePreco(@admloja.upreco) %>
+	</td></TR>  
+	
+	<tr><td>
+		<b>Desconto:</b>
+	</td><td>	  
+	  <%= eDesconto(@admloja.udesconto) %>
+	</td></TR>  
+	
+	<tr><td>
+		<b>Frete:</b>
+	</td><td>	  
+	  <%= eFrete(@admloja.ufrete) %>
+	</td></TR>  
+	
+	<tr><td>
+		<b>Frete Grátis a partir de:</b>
+	</td><td>	  
+	  <%= @admloja.freefrete %>
+	</td></TR>  
+	
+	<tR bgcolor = "#F5DEB3"><td colspan="2"><strong>OBSERVAÇÕES</STRONG></td></tR>	
+	<TR><td COLSPAN=2>
+		<%= @admloja.obs %>
+	</td></TR>  
+
+</table>
+
+<br><HR SIZE = 5 color="blue">
+<%= link_to image_tag("voltar.png") , admlojas_path  %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  data: 2012-02-27
+  cliente: 1
+  valor: 1.5
+  itens: 1
+  status: MyString
+
+two:
+  data: 2012-02-27
+  cliente: 1
+  valor: 1.5
+  itens: 1
+  status: MyString

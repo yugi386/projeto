@@ -1,0 +1,60 @@
+﻿<h2 class="title">Listando Pedidos</h2>
+<HR SIZE = 5 color="blue">
+
+<h2> Pedidos de <%= Cliente.find(session[:logcli]).nome %></h2>
+
+<% if @totpedidos != 0 %>	<!-- CONDICIONAL PARA VERIFICAR SE HÁ REGISTROS A SEREM LISTADOS --> 
+
+		<table border=0, width=100%>
+		  <tr bgcolor="#FFD700">		<!--  bgcolor=”white” color="white" -->
+			<th><h2>DATA</h2></th>
+			<th><h2>VALOR</h2></th>
+			<th><h2>ITENS</h2></th>
+			<th colspan="2"><h2>OPERAÇÕES</h2></th>
+		  </tr>
+
+			<!-- Código Ruby -->  
+			<% cont = 0 %> 	<!-- ATENÇÃO: variáveis começam sempre com letra minúscula -->
+			
+			<% @pedidos.each do |registro| %>
+			
+				<% if cont % 2 == 1 %>
+					<tr bgcolor="#EEE9E9">
+				<% else %>
+					<tr bgcolor="#FFF5EE" >
+				<% end %>
+				
+				<% cont = cont + 1%>	<!--  Incrementando contador para mudança de cor -->
+			
+				<td><%= registro.data.strftime("%d/%m/%Y") %></td>
+				<td><%= moeda(registro.valor) %></td>
+				<td><%= registro.itens %></td>
+
+				
+				<!-- gerenciando links para CRUD -->
+				
+				<% link = "/pedidos/"+registro.id.to_s  %>
+				<% link = link + "?pd=" + Admloja.first.mcab.to_s   %>
+				
+				<% link2 = "/pedidos/cancel/"+registro.id.to_s  %>
+				<% link2 = link2 + "?pd=" + Admloja.first.mcab.to_s   %>
+				
+				
+				<% info = 13.chr + 10.chr + 13.chr + 10.chr + "Data: " + registro.data.strftime("%d/%m/%Y") + 13.chr + 10.chr %>
+				<% info = info + "Valor: " + moeda(registro.valor) + 13.chr + 10.chr  + 13.chr + 10.chr%>
+				
+				
+				<th><%= link_to image_tag("mostrar.png", :size => "150x36") , link %></th>
+				<% if registro.status == "A" %>
+					<th><%= link_to image_tag("apagar.png", :size => "150x36") , link2, confirm: 'Deseja excluir este Pedido?' + info%></th>
+				<% end %>	
+				
+			  </tr>
+		<% end %>
+			
+		</table>
+<% else %>
+	<h3> Nenhum Pedido Foi Encontrado! </H3>
+<% end %>
+<br>
+<%= link_to image_tag("voltar.png", :size => "200x50"), "/loja" %>

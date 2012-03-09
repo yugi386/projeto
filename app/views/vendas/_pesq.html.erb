@@ -1,0 +1,14 @@
+﻿
+
+<!-- Formulario de pesquisa para as Vendas -->
+Digite o Nome do Cliente:
+<div>
+	<form name ="F1" method="get">
+		<input type="text" name="pesq" id="search-text" size="15" value=""  />
+		<input type="submit" id="search-submit" value="Pesquisar"  />
+		<b>Total de Registros:</b> 
+		<%= @vendas.size %>
+	</form>
+</div>
+
+<HR SIZE = 5 color="blue">

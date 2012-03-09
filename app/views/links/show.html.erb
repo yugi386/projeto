@@ -1,0 +1,36 @@
+﻿<!--  LISTANDO FICHA INDIVIDUAL DO LINK -->
+
+<h2 class="title">Exibindo Cadastro do Link</h2>
+<HR SIZE = 5 color="blue">
+
+<table BORDER = 0>
+	<tr bgcolor = "#F5DEB3"><td colspan="2"><strong>DADOS DO LINK:</STRONG></tR>		  
+	<tr><td>
+		<b>Texto:</b>
+	</td><td>
+		<%= @link.texto %>
+	</td></tr>
+
+	<tr><td>
+		<b>Link Ativo?:</b>
+	</td><td>
+		<%= tbol(@link.ativo) %>
+	</td></tr>
+
+	<tr><td>
+		<b>Arquivo Associado:</b>
+	</td>
+	<td colspan="1">
+		<% if @link.arquivo_file_name != nil %>
+			<%= link_to(@link.arquivo.url) %>	
+		<% else %>
+			Não há Arquivo associado a este link!
+		<% end %>	
+				
+	</td></tr>
+	
+
+</table>
+
+<br><HR SIZE = 5 color="blue">
+<%= link_to image_tag("voltar.png") , "/links"  %>

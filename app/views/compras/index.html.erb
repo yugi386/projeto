@@ -1,0 +1,58 @@
+﻿<!-- CARRINHO DE COMPRAS -->
+
+<% if $CarrinhoCompras.size != 0 %>	<!-- CONDICIONAL PARA VERIFICAR SE HÁ REGISTROS A SEREM LISTADOS --> 
+
+		<h1>Carrinho de Compras</h1>
+		<table border=1>
+			
+			<tr bgcolor="#FFD700" align="center">	
+				<td><H4>ITEM:</H4></td>
+				<td><H4>NOME DO PRODUTO:</H4></td>
+				<td><H4>PREÇO À VISTA:</H4></td>
+				<td><H4>PREÇO À PRAZO:</H4></td>
+				<td><H4>QUANTIDADE:</H4></td>
+				<td><H4>RETIRAR:</H4></td>
+			</tr>	
+			
+			<% tam = $CarrinhoCompras.size - 1 %>
+			<% ct = 0 %>
+			<% while TRUE %>
+
+					<% if !($CarrinhoCompras[ct] == "" and $CarrinhoComprasQuant[ct] == 0) %>
+					<tr>
+						<td><%= ct + 1 %></td>  <!-- Número do Item -->
+						<td><b><%= Produt.find($CarrinhoCompras[ct]).nome %></b></td>  <!-- Nome do Produto -->
+						<td><%= moeda(desconto(Produt.find($CarrinhoCompras[ct]).vista,$CarrinhoCompras[ct])) %></td>  <!-- Preco vista -->
+						<td><%= moeda(desconto(Produt.find($CarrinhoCompras[ct]).prazo,$CarrinhoCompras[ct])) %></td>  <!-- Preco prazo -->
+						<td><center><%= $CarrinhoComprasQuant[ct] %></center></td>  <!-- QUANTIDADE -->
+						<td><%= link_to image_tag("retirar.png", :size => "100x40"), "/retirar/"+ct.to_s   %></td>  <!-- retirar produto -->
+					</tr>
+					<% end %>
+					
+					
+					<% ct = ct + 1 %>
+					<% if ct > tam %>
+						<% break %>
+					<% end %>
+			<% end %>
+		</table>
+		
+		<%= render "formpesq" %>
+		<BR>
+		<!-- GERENCIAMENTO DE OPÇÕES DE COMPRAS -->
+		<center><h1><b>TOTAL À PAGAR (VISTA): </B><%= moeda(totalVista($CarrinhoCompras,$CarrinhoComprasQuant)) %><br>
+		<b>TOTAL À PAGAR (PRAZO): </B><%= moeda(totalPrazo($CarrinhoCompras,$CarrinhoComprasQuant)) %><br></h1></center>
+		
+		<table ALIGN = CENTER><tr>
+			<td WIDTH=33%><%= link_to image_tag("comprarmais.png", :size => "200x50"), "/loja"   %></td>  <!-- comprar mais -->
+			<td WIDTH=33%><%= link_to image_tag("limparcarrinho.png", :size => "200x50"), "/limparcarrinho"   %></td>  <!-- limpar carrinho -->
+			<td WIDTH=33%><%= link_to image_tag("comprarfim.png", :size => "200x50"), "/vendas?pd="+ Admloja.first.mcab.to_s   %></td>  <!-- finalizar a compra -->
+		</tr></table>
+		
+<% else %>
+	<h1> O Carrinho está Vazio! </H1>
+	<br>
+	<td><%= link_to image_tag("voltar.png", :size => "200x50"), "/loja"   %></td>  <!-- retirar produto -->
+<% end %>
+
+

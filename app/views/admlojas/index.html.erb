@@ -1,0 +1,54 @@
+﻿<h2 class="title">Listando Loja</h2>
+<HR SIZE = 5 color="blue">
+
+<% if @totCli != 0 %>	<!-- CONDICIONAL PARA VERIFICAR SE HÁ REGISTROS A SEREM LISTADOS --> 
+
+		<table border=0>
+		  <tr bgcolor="#FFD700">		<!--  bgcolor=”white” color="white" -->
+			<th>NOME</th>
+			<th>CNPJ/CPF</th>
+			<th colspan="3">Operações</th>
+		  </tr>
+
+			<!-- Código Ruby -->  
+			<% cont = 0 %> 	<!-- ATENÇÃO: variáveis começam sempre com letra minúscula -->
+			
+			<% @admlojas.each do |registro| %>
+			
+				<% if hPag(registro.id,@colecao) %>
+				
+				<% if cont % 2 == 1 %>
+					<tr bgcolor="#EEE9E9">
+				<% else %>
+					<tr bgcolor="#FFF5EE" >
+				<% end %>
+				
+				<% cont = cont + 1%>	<!--  Incrementando contador para mudança de cor -->
+			
+				<td><%= registro.nome %></td>
+
+				<!-- VERIFICANDO SE EXIBE CNPJ OU CPF -->	
+				<td><%= fCnpj(registro.cnpj) %></td>
+				
+				<% info = (13.chr + 10.chr) + (13.chr + 10.chr) + "CNPJ: " + fCnpj(registro.cnpj) %>
+				
+				<!-- gerenciando links para CRUD -->
+				
+				<th><%= link_to image_tag("mostrar.png", :size => "100x25") , registro, :method => :show %></th>
+				<th><%= link_to image_tag("editar.png", :size => "100x25") , edit_admloja_path(registro) %></th>
+				<th><%= link_to image_tag("apagar.png", :size => "100x25") , registro, confirm: 'Deseja apagar este Registro?' + info, :method => :delete %></th>
+				
+			  </tr>
+			<% end %>
+			<% end %>
+			
+		</table>
+<% else %>
+	<h3> Nenhum Registro Foi Encontrado! </H3>
+<% end %>
+
+<br><HR SIZE = 5 color="blue">
+
+<% if @admlojas.size < 1 %>
+	<%= link_to image_tag("novoreg.png", :size => "200x50"), new_admloja_path %>
+<% end %>	

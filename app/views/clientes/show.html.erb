@@ -1,0 +1,195 @@
+﻿<!--  LISTANDO FICHA INDIVIDUAL DO CLIENTE -->
+
+<h2 class="title">Exibindo Cadastro do Cliente</h2>
+<HR SIZE = 5 color="blue">
+
+<table BORDER = 0>
+	<tr bgcolor = "#F5DEB3"><td colspan="2"><strong>IDENTIFICAÇÃO:</STRONG></tR>		  
+	<tr><td>
+		<b>Nome | Razão Social:</b>
+	</td><td>
+		<%= @cliente.nome %>
+	</td></tr>
+
+	<tr><td>
+		<b>Pessoa:</b>
+	</td><td>
+		<%= @cliente.pessoa %>
+	</td></tr>
+
+	<tR bgcolor = "#F5DEB3"><td colspan="2"><strong>PESSOA JURÍDICA:</STRONG></td></tR>	
+	<tr><td>
+		<b>CNPJ:</b>
+	</td><td>
+		<%= fCnpj(@cliente.cnpj) %>
+	</td></tr>
+	<tr><td>
+		<b>Responsável:</b>
+	</td><td>
+		<%= @cliente.contato %>
+	</td></tr>
+	
+	<tR bgcolor = "#F5DEB3"><td colspan="2"><strong>PESSOA FÍSICA / RESPONSÁVEL JURÍDICO</STRONG></td></tR>	
+	<tr><td>
+		<b>CPF:</b>
+	</td><td>
+		<%= fCpf(@cliente.cpf) %>
+	</td></tr>
+
+	<tr><td>
+		<b>RG:</b>
+	</td><td>
+		<%= @cliente.rg %>
+	</td></tr>
+
+	<tr><td>
+		<b>Data de Nascimento:</b>
+	</td><td>
+	  <%= @cliente.data_nasc.strftime("%d/%m/%Y") %>	<!-- mostra data formato brasileiro -->
+	</td></tr>
+
+	<tr><td>
+		<b>Sexo:</b>
+	</td><td>
+	  <%= @cliente.sexo %>
+	</td></tr>
+
+<tR bgcolor = "#F5DEB3"><td colspan="2"><strong>ENDEREÇO RESIDENCIAL:</STRONG></td></tR>		  	
+	<tr><td>
+		<b>Endereço:</b>
+	 </td><td>
+		<%= @cliente.endereco %>
+	</td></tr>
+
+	<tr><td>
+		<b>Bairro:</b>
+	 </td><td>
+		<%= @cliente.bairro1 %>
+	</td></tr>
+
+	<tr><td>
+		<b>Complemento:</b>
+	 </td><td>
+		<%= @cliente.complemento%>
+	</td></tr>
+	
+	<tr><td>
+		<b>Cidade:</b>
+	 </td><td>
+		<%= @cliente.cidade%>
+	</td></tr>
+	
+	<tr><td>
+		<b>Estado:</b>
+	</td><td>
+	  <%= @cliente.estado %>
+	</td></TR>
+
+	<tr><td>
+		<b>CEP:</b>	
+	</td><td>	
+	  <%= fCep(@cliente.cep) %>
+	</td></TR>
+	  
+	<tr><td>
+		<b>Caixa Postal:</b>	
+	</td><td>	
+	  <%= @cliente.cpostal %>
+	</td></TR>
+	
+	<tr><td>
+	  <b>Telefone:</b>
+	</td><td>	  
+	  <%= formata_telefone(@cliente.tel) %>
+	</td></TR>
+	  
+	<tr><td>
+		<b>Celular:</b>
+	</td><td>	  
+	  <%= formata_telefone(@cliente.cel) %>
+	</td></TR>  
+
+	<tR bgcolor = "#F5DEB3"><td colspan="2"><strong>ENDEREÇO COMERCIAL:</STRONG></td></tR>		  
+	
+	<tr><td>
+		<b>Endereço:</b>
+	 </td><td>
+		<%= @cliente.endereco2 %>
+	</td></tr>
+
+	<tr><td>
+		<b>Bairro:</b>
+	 </td><td>
+		<%= @cliente.bairro2%>
+	</td></tr>
+
+	<tr><td>
+		<b>Complemento:</b>
+	 </td><td>
+		<%= @cliente.complemento2%>
+	</td></tr>
+	
+	<tr><td>
+		<b>Cidade:</b>
+	 </td><td>
+		<%= @cliente.cidade2%>
+	</td></tr>
+
+	<tr><td>
+		<b>Estado:</b>
+	</td><td>
+	  <%= @cliente.estado2 %>
+	</td></TR>
+
+	<tr><td>
+		<b>CEP:</b>	
+	</td><td>	
+	  <%= fCep(@cliente.cep2) %>
+	</td></TR>
+	  
+	<tr><td>
+		<b>Caixa Postal:</b>	
+	</td><td>	
+	  <%= @cliente.cpostal2 %>
+	</td></TR>
+	
+	<tr><td>
+	  <b>Telefone:</b>
+	</td><td>	  
+	  <%= formata_telefone(@cliente.telefone2) %>
+	</td></TR>
+	  
+	<tr><td>
+		<b>Celular:</b>
+	</td><td>	  
+	  <%= formata_telefone(@cliente.celular2) %>	<!-- metodo de formatacao de telefones contido em helper -->
+	</td></TR>  
+	
+	<tr bgcolor = "#F5DEB3"><td colspan="2"><strong>E-MAIL E SENHA:</STRONG></tR>		  
+	
+	<tr><td>
+		<b>E-mail:</b>
+	</td><td>	  
+	  <%= @cliente.email %>
+	</td></TR>  
+	
+	<tr><td>
+		<b>Senha:</b>
+	</td><td>	  
+	  <%= "*" * @cliente.password.size %>
+	</td></TR>  
+
+<% if session[:logged] == true %>	
+	<tR bgcolor = "#F5DEB3"><td colspan="2"><strong>OBSERVAÇÕES</STRONG></td></tR>	
+	<TR><td COLSPAN=2>
+		<%= @cliente.obs %>
+	</td></TR>  
+<% end %>
+
+</table>
+
+<br><HR SIZE = 5 color="blue">
+<%= link_to image_tag("voltar.png") , clientes_path  %>
+<% if session[:logged] != true %>
+	<%= link_to image_tag("editar.png") , :action => "edit"  %>
+<% end %>

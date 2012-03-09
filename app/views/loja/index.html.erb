@@ -1,0 +1,198 @@
+﻿
+<% IniciaArea()	%> <!-- Rotina para dar acesso a area administrativa na primeira vez -->
+
+<br>
+<%= render 'formpesq' %>
+
+<br>
+
+<%= render 'order' %>
+
+
+<!-- exibição do controle de paginação -->
+<% if @pesq == nil %>
+	<% @pesq = "" %>
+<% end %>
+<!-- verificando departamentos: -->
+<% if @dep == nil %>
+	<% @dep = "" %>
+<% end %>
+
+<!-- verificando secões: -->
+<% if @sec == nil %>
+	<% @sec = "" %>
+<% end %>
+
+<!-- verificando ordem dos registros: -->
+<% if @ordem == nil %>
+	<% @ordem = "1" %>
+<% end %>
+
+<% if @totReg != 0 %>
+<!-- EXIBINDO INFORMAÇÕES DO DEPARTAMENTO -->
+<% if @dep != ""%>
+	<table><tr>
+	<td>	
+		<% if Departamento.find(@dep.to_i).arquivo_file_name != nil %>
+			<%= image_tag(Departamento.find(@dep.to_i).arquivo.url, :size => "300x400") %>		<!-- assim são chamadas as imagens... -->
+		<% end %>
+	</td><td>	
+		<h1>DEPARTAMENTO:<br> <%= Departamento.find(@dep.to_i).nome %></h1>	
+		<br><br>
+		<h4><%= raw(Departamento.find(@dep.to_i).descricao) %></h4>
+	</td></tr>	
+		<br><br>
+<% end%>
+
+<!-- EXIBINDO INFORMAÇÕES DA SEÇÃO -->
+<% if @sec != ""%>
+	<table><tr>
+	<td>	
+		<% if Section.find(@sec.to_i).arquivo_file_name != nil %>
+			<%= image_tag(Section.find(@sec.to_i).arquivo.url, :size => "300x400") %>		<!-- assim são chamadas as imagens... -->
+		<% end %>
+	</td><td>	
+			<h1>SEÇÃO: <BR><%= Section.find(@sec.to_i).nome %></h1>
+	<br><br>
+		<h4><%= raw(Section.find(@sec.to_i).descricao) %></h4>
+	</td></tr>	
+	<br><br>
+<% end%>
+<% end %>
+
+<CENTER>
+<%= link_to image_tag("inicio.png", :size => "120x40"), loja_path + "?pag=0&pesq="+@pesq+"&dep="+@dep+"&sec="+@sec +"&ordem="+@ordem %>
+<%= link_to image_tag("proximo.png", :size => "120x40"), loja_path + "?pag=" + soma(@pag.to_i,@page,@produtos.size-1) + "&pesq="+@pesq+"&dep="+@dep+"&sec="+@sec +"&ordem="+@ordem %>
+<%= link_to image_tag("anterior.png", :size => "120x40"), loja_path + "?pag=" + minimo(@pag.to_i-@page) + "&pesq="+@pesq+"&dep="+@dep+"&sec="+@sec  +"&ordem="+@ordem %>
+<%= link_to image_tag("fim.png", :size => "120x40"), loja_path + "?pag=" + (@produtos.size - @page).to_s  +  "&pesq="+@pesq+"&dep="+@dep+"&sec="+@sec +"&ordem="+@ordem %>
+</CENTER>
+
+
+<% if @totReg != 0 %>	<!-- CONDICIONAL PARA VERIFICAR SE HÁ REGISTROS A SEREM LISTADOS --> 
+
+		<table border=0>
+			
+			<% tam = @produtos.size - 1 %>
+			<% ct = 0 %>
+			<% while TRUE %>
+
+					<tr>
+					<!-- PRIMEIRA COLUNA -->
+				<% while TRUE %>		
+						<% if hPag(@produtos[ct].id,@colecao) %>
+							<!-- Verificando se departamento e seção do produto estão ativos -->
+							<% if Departamento.find(@produtos[ct].departamento_id).ativo == true and Section.find(@produtos[ct].section_id).ativo == true %>
+									<td width=20%>
+									
+										<% if @produtos[ct].arquivo_file_name != nil %>
+											<%= image_tag(@produtos[ct].arquivo.url, :size => "130x130", :border => 0, :id => @produtos[ct].id, :align => 'left' ) %>
+										<% else %>
+											Não há imagem para este Produto.
+										<% end %>
+									</td>							
+									<td width=30%>
+										
+										<h4 align=left><b> <a href="/loja/<%= @produtos[ct].id.to_s %>?pd=<%= Admloja.first.mcab %>" > <%= @produtos[ct].nome %> </a> </b></h4>
+										
+										<h3><%= precoOculto(@produtos[ct].id,preco(@produtos[ct].vista, @produtos[ct].prazo, @produtos[ct].id)) %></h3>
+										<% if @produtos[ct].parcelas > 1 %>
+											<CENTER> Pague em até <%= @produtos[ct].parcelas %> vezes!<br></CENTER>
+										<% end %>	
+										
+									</td>
+									
+									<% ct = ct + 1 %>
+									<%	break	%>
+							<% end %>
+						<% end %>
+						
+						<!-- codigo para o avanco do ponteiro dos registros -->
+						<% ct = ct + 1 %>
+						
+						<!-- sai fora do laco atual -->
+						<%	if ct > tam %>
+							<%	break %>
+						<% end	%>				
+				<% end %>
+			<!-- ****************************************************************************************************** -->		
+					<!-- codigo para sair do laco mestre -->
+				<%	if ct > tam %>
+					<%	break %>
+				<% end	%>				
+							
+					<!-- SEGUNDA COLUNA -->
+				<% while TRUE %>							
+					<% if hPag(@produtos[ct].id,@colecao) %>
+						<% if Departamento.find(@produtos[ct].departamento_id).ativo == true and Section.find(@produtos[ct].section_id).ativo == true %>
+							<td width=20%>
+								<% if @produtos[ct].arquivo_file_name != nil %>
+									<%= image_tag(@produtos[ct].arquivo.url, :size => "130x130", :border => 0, :id => @produtos[ct].id, :align => 'left' ) %>
+								<% else %>
+									Não há imagem para este Produto.
+								<% end %>
+														
+							</td>							
+							<td width=30%>
+								<h4 align=left><b> <a href="/loja/<%= @produtos[ct].id.to_s %>?pd=<%= Admloja.first.mcab %>" > <%= @produtos[ct].nome %> </a> </b></h4>
+								<h3><%= precoOculto(@produtos[ct].id,preco(@produtos[ct].vista, @produtos[ct].prazo, @produtos[ct].id)) %></h3>
+								<% if @produtos[ct].parcelas > 1 %>
+									<CENTER> Pague em até <%= @produtos[ct].parcelas %> vezes!<br></CENTER>
+								<% end %>	
+							</td>
+									<!-- codigo para o avanco do ponteiro dos registros -->
+									<% ct = ct + 1 %>
+									<%	break	%>
+						<% end %>
+					<% end %>
+						
+						<!-- codigo para o avanco do ponteiro dos registros -->
+						<% ct = ct + 1 %>
+						
+						<!-- sai fora do laco atual -->
+						<%	if ct > tam %>
+							<%	break %>
+						<% end	%>				
+				<% end %>
+			<!-- ****************************************************************************************************** -->							
+				
+				<!-- codigo para sair do laco mestre -->
+				<%	if ct > tam %>
+					</tr>
+					<%	break %>
+				<% end	%>				
+					
+				</tr>
+
+			<% end %>
+		</table>
+<% else %>
+	<h3> Nenhum Registro Foi Encontrado! </H3>
+<% end %>
+
+
+<!-- exibição do controle de paginação -->
+<% if @pesq == nil %>
+	<% @pesq = "" %>
+<% end %>
+
+<!-- verificando departamentos: -->
+<% if @dep == nil %>
+	<% @dep = "" %>
+<% end %>
+
+<!-- verificando secões: -->
+<% if @sec == nil %>
+	<% @sec = "" %>
+<% end %>
+
+<!-- verificando ordem dos registros: -->
+<% if @ordem == nil %>
+	<% @ordem = "1" %>
+<% end %>
+
+<CENTER>
+<%= link_to image_tag("inicio.png", :size => "120x40"), loja_path + "?pag=0&pesq="+@pesq+"&dep="+@dep+"&sec="+@sec +"&ordem="+@ordem %>
+<%= link_to image_tag("proximo.png", :size => "120x40"), loja_path + "?pag=" + soma(@pag.to_i,@page,@produtos.size-1) + "&pesq="+@pesq+"&dep="+@dep+"&sec="+@sec +"&ordem="+@ordem %>
+<%= link_to image_tag("anterior.png", :size => "120x40"), loja_path + "?pag=" + minimo(@pag.to_i-@page) + "&pesq="+@pesq+"&dep="+@dep+"&sec="+@sec  +"&ordem="+@ordem %>
+<%= link_to image_tag("fim.png", :size => "120x40"), loja_path + "?pag=" + (@produtos.size - @page).to_s  +  "&pesq="+@pesq+"&dep="+@dep+"&sec="+@sec +"&ordem="+@ordem %>
+</CENTER>

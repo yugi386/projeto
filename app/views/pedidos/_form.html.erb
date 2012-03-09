@@ -1,0 +1,193 @@
+﻿<%= form_for(@cliente) do |f| %>
+
+	<!- GERENCIAMENTO DE MENSAGENS DE ERRO -->
+	<% if @cliente.errors.any? %> 
+		<!-- <div id="error_explanation"> -->
+		<div id="erros">
+			<% if @cliente.errors.count == 1 %>
+				<strong><font color="red">Um erro foi encontrado:</font></strong>
+			<% else %>
+				<strong><font color="red"><%= @cliente.errors.count %> erros foram encontrados:</font></strong>
+			<% end	%> 
+
+			<ul>
+			<font color="#696969" size=2>
+				<% @cliente.errors.full_messages.each do |msg| %>
+					<li><%= tmsg(msg) %></li>	<!-- funcao para retornar a mensagem formatada -->
+				<% end %>
+			</font>	
+			</ul>
+		</div>
+		<HR SIZE = 5 color="blue">
+	<% end %>
+
+  <!-- INICIO DO FORMULARIO -->
+
+<strong>IDENTIFICAÇÃO:</STRONG><BR>		    
+  <div class="field">
+    <%= f.label :Nome_Razão_Social %><br />
+    <%= f.text_field :nome, :size => 70 %>
+  </div>
+
+  <div class="field">
+	  <%= f.label :Pessoa %><br />
+	  <%= f.select :pessoa, ([["FÍSICA","F"],["JURÍDICA","J"]]) %> 
+  </div>
+  
+
+  <BR><strong>PESSOA JURÍDICA:</STRONG><BR>	
+  <div class="field">
+    <%= f.label :CNPJ %><br />
+    <%= f.text_field :cnpj %>
+  </div>
+  <div class="field">
+    <%= f.label :Responsável %><br />
+    <%= f.text_field :contato, :size => 70 %>
+  </div>
+
+<BR><strong>PESSOA FÍSICA / RESPONSÁVEL JURÍDICO</STRONG><BR>		
+  <div class="field">
+    <%= f.label :CPF %><br />
+    <%= f.text_field :cpf %>
+  </div>
+
+  <div class="field">
+    <%= f.label :RG %><br />
+    <%= f.text_field :rg %>
+  </div>
+ 
+  <div class="field">
+    <%= f.label :Data_de_Nascimento %><br />
+    <%= f.date_select(:data_nasc,  :order => [:day, :month, :year], :start_year => 1900, :end_year => 2100, :use_month_names => %w(Janeiro Fevereiro Março Abril Maio Junho Julho Agosto Setembro Outubro Novembro Dezembro) ) %>
+  </div>
+  
+  <div class="field">
+	  <%= f.label :Sexo %><br />
+	  <%= f.select :sexo, ([["Masculino","M"],["Feminino","F"]]) %> 
+  </div>
+
+<BR><strong>ENDEREÇO RESIDENCIAL:</STRONG><BR>		  
+  <div class="field">
+    <%= f.label :Endereço %><br />
+    <%= f.text_field :endereco, :size => 70 %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :Bairro %><br />
+    <%= f.text_field :bairro1, :size => 70 %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :Complemento %><br />
+    <%= f.text_field :complemento, :size => 70 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Cidade %><br />
+    <%= f.text_field :cidade, :size => 70 %>
+  </div>
+  
+  <div class="field">
+	  <%= f.label :Estado %><br />
+	  <%= f.select :estado, ([["Acre","AC"],["Alagoas","AL"],["Amapá","AP"],["Amazonas","AM"],["Bahia","BA"],["Ceará","CE"],["Distrito Federal","DF"],["Espírito Santo","ES"],["Goiás","GO"],["Maranhão","MA"],["Mato Grosso","MT"],["Mato Grosso do Sul","MS"],["Minas Gerais","MG"],["Pará","PA"],["Paraíba","PB"],["Paraná","PR"],["Pernambuco","PE"],["Piauí","PI"],["Rio de Janeiro","RJ"],["Rio Grande do Norte","RN"],["Rio Grande do Sul","RS"],["Rondônia","RO"],["Roraima","RR"],["Santa Catarina","SC"],["São Paulo","SP"],["Sergipe","SE"],["Tocantins","TO"]])  %>
+  </div>
+
+<div class="field">
+    <%= f.label :CEP %><br />
+    <%= f.text_field :cep %>
+  </div>
+
+<div class="field">
+    <%= f.label :Caixa_Postal %><br />
+    <%= f.text_field :cpostal %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :Telefone %><br />
+    <%= f.text_field :tel %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :Celular %><br />
+    <%= f.text_field :cel %>
+  </div>
+  
+<BR><strong>ENDEREÇO COMERCIAL:</STRONG><BR>		  
+
+  <div class="field">
+    <%= f.label :Endereço %><br />
+    <%= f.text_field :endereco2, :size => 70 %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :Bairro %><br />
+    <%= f.text_field :bairro2, :size => 70 %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :Complemento %><br />
+    <%= f.text_field :complemento2, :size => 70 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Cidade %><br />
+    <%= f.text_field :cidade2, :size => 70 %>
+  </div>
+  
+  <div class="field">
+	  <%= f.label :Estado %><br />
+	  <%= f.select :estado2, ([["Acre","AC"],["Alagoas","AL"],["Amapá","AP"],["Amazonas","AM"],["Bahia","BA"],["Ceará","CE"],["Distrito Federal","DF"],["Espírito Santo","ES"],["Goiás","GO"],["Maranhão","MA"],["Mato Grosso","MT"],["Mato Grosso do Sul","MS"],["Minas Gerais","MG"],["Pará","PA"],["Paraíba","PB"],["Paraná","PR"],["Pernambuco","PE"],["Piauí","PI"],["Rio de Janeiro","RJ"],["Rio Grande do Norte","RN"],["Rio Grande do Sul","RS"],["Rondônia","RO"],["Roraima","RR"],["Santa Catarina","SC"],["São Paulo","SP"],["Sergipe","SE"],["Tocantins","TO"]])  %>
+  </div>
+
+<div class="field">
+    <%= f.label :CEP %><br />
+    <%= f.text_field :cep2 %>
+  </div>
+
+<div class="field">
+    <%= f.label :Caixa_Postal %><br />
+    <%= f.text_field :cpostal2 %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :Telefone %><br />
+    <%= f.text_field :telefone2 %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :Celular %><br />
+    <%= f.text_field :celular2 %>
+  </div>  
+ 
+<BR><strong>E-MAIL E SENHA:</STRONG><BR>		  
+  
+  <div class="field">
+    <%= f.label :Email %><br />
+    <%= f.text_field :email, :size => 40 %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :Senha %><br />
+    <%= f.password_field :password, :size => 40 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Confirmar_Senha %><br />
+    <%= f.password_field :password_confirmation, :size => 40 %>
+  </div>
+  
+<BR><strong>OBSERVAÇÕES:</STRONG><BR>		    
+  <div class="field">
+    <%= f.text_area :obs %>
+  </div>
+  
+  <!-- $$$$$$$$$$$$$$$$$$$$$$$$ -->
+  
+  <BR>
+  <div class="actions">
+    <%= f.submit "Salvar" %>
+  </div>
+  
+  
+  
+<% end %>

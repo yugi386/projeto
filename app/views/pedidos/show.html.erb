@@ -1,0 +1,116 @@
+﻿<!--  APRESENTANDO OS DADOS DO PEDIDO -->
+
+<h2 class="title">Exibindo Conteúdo do Pedido</h2>
+<HR SIZE = 5 color="blue">
+<BR>
+<table BORDER = 1, width=100%>
+	<tr bgcolor = "#F5DEB3"><td colspan="2"><strong><H2>IDENTIFICAÇÃO:</H2></STRONG></tR>		  
+	<tr><td>
+		<b>Data do Pedido:</b>
+	</td><td>
+		<%= @pedido.data.strftime("%d/%m/%Y") %>
+	</td></tr>
+
+	<tr><td>
+		<b>Valor Total:</b>
+	</td><td>
+		<%= moeda(@pedido.valor) %>
+	</td></tr>
+
+	<tr><td>
+		<b>Número de Itens:</b>
+	</td><td>
+		<%= @pedido.itens %>
+	</td></tr>
+
+	<%	
+	if @pedido.tipopag == "1"	
+			@formpag = "Pagamento à Vista - Boleto"
+		elsif	@pedido.tipopag == "2"	
+			@formpag = "Pagamento à Vista - Cartão de Débito"
+		elsif	@pedido.tipopag == "3"	
+			@formpag = "Pagamento à Vista - Cartão de Crédito"
+		elsif	@pedido.tipopag == "4"	
+			@formpag = "Pagamento à Prazo - Cartão de Crédito"
+	end	
+	%>
+	
+	<tr><td>
+		<b>Tipo de Compra:</b>
+	</td><td>
+		<%= @formpag %>
+	</td></tr>
+
+	<tr><td>
+		<b>Dados do cartão:</b>
+	</td><td>
+		<%= @pedido.dadoscartao %>
+	</td></tr>
+
+	<tr><td>
+		<b>Parcelas:</b>
+	</td><td>
+		<%= @pedido.parcelas %>
+	</td></tr>
+
+	<tr><td>
+		<b>Frete:</b>
+	</td><td>
+		<%= moeda(@pedido.frete) %>
+	</td></tr>
+	
+	<tr><td>
+		<b>Pagamento Confirmado?</b>
+	</td><td>
+		<% if @pedido.status == "C" %>
+			SIM
+		<% else %>
+			NÃO
+		<% end %>	
+	</td></tr>
+	
+	</table>
+
+	<!-- CONTROLE DE PEDIDOS -->
+	<br>
+<table BORDER = 1, width=100%>
+	<tR bgcolor = "#F5DEB3"><td colspan="5"><strong><H2>ITENS DO PEDIDO:<H2></STRONG></td></tR>	
+	<tR bgcolor = "#F5DEB3">
+		<td><strong>ITEM:</STRONG></td>	
+		<td colspan="1"><strong>NOME DO PRODUTO:</STRONG></td>
+		<td colspan="1"><strong>VALOR:</STRONG></td>
+		<td colspan="1"><strong>QUANTIDADE:</STRONG></td>
+		<td colspan="1"><strong>SUB-TOTAL:</STRONG></td>
+	</TR>
+
+	<% ct = 1 %>
+	<% total = 0 %>
+	<% @item.each do |d| %>
+		<tr>
+		<td><%= ct %></td>
+		<td><%= Produt.find(d.idprod).nome %></td>
+		<td><%= moeda(d.valor) %></td>
+		<td><%= d.quant %></td>
+		<td><%= moeda(d.quant * d.valor) %></td>
+		</tr>
+		<% ct = ct + 1 %>
+		<% total = total + (d.quant * d.valor) %>
+	<% end %>
+		<tr>
+			<td></td><td></td><td></td><td><b>FRETE:</b></td>
+			<td>
+				<%= moeda(@pedido.frete) %>
+			</td>
+		</tr>
+
+		<tr>
+			<td></td><td></td><td></td><td><b>TOTAL:</b></td>
+			<td>
+				<%= moeda(total+@pedido.frete) %>
+			</td>
+		</tr>
+	
+</table>
+
+<br><HR SIZE = 5 color="blue">
+<%= link_to image_tag("voltar.png") , pedidos_path + "?pd="+Admloja.first.mcab.to_s   %>

@@ -1,0 +1,13 @@
+﻿
+
+<!-- Formulario de pesquisa para o Cadastro de Produtos -->
+<center>
+	 <form name ="F1" method="get" action="/loja"> 
+		<b>Nome</b> | <b>Código</b> do Produto:
+		<input type="text" name="pesq" id="search-text" size="30" value=""  />
+		<input type="submit" id="search-submit" value="Pesquisar" />
+		<b>Total de Registros:</b> 
+		<%= @produtos.size %>
+	</form>
+</center>
+

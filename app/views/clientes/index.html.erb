@@ -1,0 +1,92 @@
+﻿<h2 class="title">Listando Clientes</h2>
+<HR SIZE = 5 color="blue">
+
+<%= render 'formpesq' %>
+
+<% if @totCli != 0 %>	<!-- CONDICIONAL PARA VERIFICAR SE HÁ REGISTROS A SEREM LISTADOS --> 
+
+		<table border=0>
+		  <tr bgcolor="#FFD700">		<!--  bgcolor=”white” color="white" -->
+			<th>NOME</th>
+			<th>CNPJ/CPF</th>
+			<th colspan="3">Operações</th>
+		  </tr>
+
+			<!-- Código Ruby -->  
+			<% cont = 0 %> 	<!-- ATENÇÃO: variáveis começam sempre com letra minúscula -->
+			
+			<% @clientes.each do |registro| %>
+			
+				<% if hPag(registro.id,@colecao) %>
+				
+				<% if cont % 2 == 1 %>
+					<tr bgcolor="#EEE9E9">
+				<% else %>
+					<tr bgcolor="#FFF5EE" >
+				<% end %>
+				
+				<% cont = cont + 1%>	<!--  Incrementando contador para mudança de cor -->
+			
+				<td><%= registro.nome %></td>
+
+				<!-- VERIFICANDO SE EXIBE CNPJ OU CPF -->	
+				<td><% 
+				if registro.cnpj != nil
+					if registro.cnpj.strip.size == 0 %>
+						<%= fCpf(registro.cpf) %>
+					<% else %>
+						<%= fCnpj(registro.cnpj) %>
+				<%  end	
+				else %>
+					<%= fCpf(registro.cpf) %>
+				<% end %></td>
+				
+				<!-- VERIFICANDO A OPERAÇÃO DE CONFIRMAÇÃO DE EXCLUSÃO PARA CNPJ OU CPF -->
+				
+				<% if registro.cpf == nil
+					info = 13.chr + 10.chr + 13.chr + 10.chr + "Nome: " + registro.nome + 13.chr + 10.chr +  "CNPJ: " + registro.cnpj 
+				else
+					if registro.cpf.size == 0
+						info = 13.chr + 10.chr + 13.chr + 10.chr + "Nome: " + registro.nome + 13.chr + 10.chr +  "CNPJ: " + registro.cnpj 
+					else
+						info = 13.chr + 10.chr + 13.chr + 10.chr + "Nome: " + registro.nome + 13.chr + 10.chr +  "CPF: " + registro.cpf 
+					end	
+				end	%>
+				
+				<% if registro.cnpj == nil
+					info = 13.chr + 10.chr + 13.chr + 10.chr + "Nome: " + registro.nome + 13.chr + 10.chr +  "CPF: " + registro.cpf 
+				else
+					if registro.cnpj.size == 0
+						info = 13.chr + 10.chr + 13.chr + 10.chr + "Nome: " + registro.nome + 13.chr + 10.chr +  "CPF: " + registro.cpf 
+					else
+						info = 13.chr + 10.chr + 13.chr + 10.chr + "Nome: " + registro.nome + 13.chr + 10.chr +  "CNPJ: " + registro.cnpj 
+					end		
+				end	%>
+				
+				<!-- gerenciando links para CRUD -->
+				
+				<th><%= link_to image_tag("mostrar.png", :size => "100x25") , registro, :method => :show %></th>
+				<th><%= link_to image_tag("editar.png", :size => "100x25") , edit_cliente_path(registro) %></th>
+				<th><%= link_to image_tag("apagar.png", :size => "100x25") , registro, confirm: 'Deseja apagar este Registro?' + info, :method => :delete %></th>
+				
+			  </tr>
+			<% end %>
+			<% end %>
+			
+		</table>
+<% else %>
+	<h3> Nenhum Registro Foi Encontrado! </H3>
+<% end %>
+
+<br><HR SIZE = 5 color="blue">
+<% if @pesq == nil %>
+	<% @pesq = "" %>
+<% end %>
+
+<center>
+<%= link_to image_tag("inicio.png", :size => "120x40"), cliente_path + "?pag=0"  + "&pesq="+@pesq %>
+<%= link_to image_tag("proximo.png", :size => "120x40"), cliente_path + "?pag=" + soma(@pag.to_i,@page,@clientes.size-1) + "&pesq="+@pesq %>
+<%= link_to image_tag("anterior.png", :size => "120x40"), cliente_path + "?pag=" + minimo(@pag.to_i-@page)+ "&pesq="+@pesq %>
+<%= link_to image_tag("fim.png", :size => "120x40"), cliente_path + "?pag=" + (@clientes.size - @page).to_s + "&pesq="+@pesq%>
+</center><HR SIZE = 5 color="blue">
+<%= link_to image_tag("novoreg.png", :size => "200x50"), new_cliente_path %>

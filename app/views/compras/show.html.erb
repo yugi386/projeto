@@ -1,0 +1,76 @@
+﻿<!--  APRESENTANDO CARRINHO DE COMPRAS -->
+
+
+<% if Departamento.find(@produt.departamento_id).ativo == true and Section.find(@produt.section_id).ativo == true and @produt.ativo == true %>
+
+		<strong><%= Departamento.find(@produt.departamento_id).nome %> - <%= Section.find(@produt.section_id).nome %></strong>
+		<br><h2><%=@produt.nome %></strong></h2>
+
+		<table BORDER =0>
+
+			<tr>
+			<td width=50%>
+				<% if @produt.arquivo_file_name != nil %>
+					<%= image_tag(@produt.arquivo.url, :size => "300x400") %>		<!-- assim são chamadas as imagens... -->
+				<% else %>
+					Não há imagem para este Produto.
+				<% end %>	
+			</td>
+			
+			<td>		
+				
+				<b>Código do Produto:</b> <div class="title"> <%= @produt.codigo %></div></h4><br>
+				<% if !@produt.preco_oculto %>
+					<!-- APRESENTA PRECO A VISTA -->
+					<b>Preço à Vista:</b> <div class="title"> <%= moeda(desconto(@produt.vista,@produt.id)) %> </div> <br>
+					<!-- APRESENTA PRECO A PRAZO -->
+					<b>Preço à Prazo:</b> 
+					<STRONG><%= moeda(desconto(@produt.prazo,@produt.id)) %></STRONG><br><br>
+					
+					<!-- APRESENTACAO DOA DADOS DE PAGAMENTO PARCELADO -->
+					<TABLE>
+						<% cont = 1 %>
+						<% while TRUE and @produt.parcelas > 1%>
+						<tr>
+							<td>
+								<%=cont%> x <strong><%= dParcela(desconto(@produt.prazo,@produt.id),cont) %></strong>
+							</td>
+							<% cont = cont + 1
+								if cont > @produt.parcelas
+									break
+								end
+							%>	
+						</tr>		
+						<% end %>
+					</TABLE>
+					
+					<BR>
+				<% else %>
+					<b>Preço:</b> <h4> Preço sob Consulta </h4> <br>
+				<% end %>	
+				<b>Modelo:</b> <h4><%= @produt.modelo %></h4><br>
+				
+				<% if @produt.quant == 0 %>
+					<div class="aviso">Item Indisponível</div>
+				<% else %>
+					<center><%= link_to image_tag("comprar.png") , "/loja"  %></center>
+				<% end	%>
+				
+				
+			</td>
+			</tr>
+
+			<tR bgcolor = "#9FAFD0"><td colspan="2"><h2>DESCRIÇÃO</h2></td></tR>
+			<TR><td COLSPAN=2>
+				<br>	
+				<%= raw(@produt.descricao) %>
+			</td></TR>  
+
+		</table>
+
+		<br>
+<% else %>
+		<h1> Item Indisponível </h1>
+<% end %>		
+
+<%= link_to image_tag("voltar.png") , "/loja"  %>

@@ -1,0 +1,13 @@
+﻿<!-- FILTRANDO VENDAS POR UMA DATA -->
+
+Digite a <b>data de início</b> e a <b>data final</b> para filtrar as vendas:
+<div>
+	<form name ="F1" method="get">
+		<input type="text" name="dataini"  size="10" value=""  />
+		- <input type="text" name="datafim"  size="10" value=""  />
+		<input type="submit" id="search-submit" value="Filtrar" />
+		<b>Total de Registros:</b> 
+		<%= @vendas.size %>
+	</form>
+</div>
+<HR SIZE = 5 color="blue">

@@ -1,0 +1,36 @@
+﻿
+<!-- Formulario para trocar ordem dos produtos frente de loja-->
+
+<div>
+<form name ="F1" method="get" action="/loja?<%=@dep%>&ordem=<%=@ordem%>&pesq=<%=@pesq%>" > 
+<center>	 
+		<b>Ordem de Exibição:</b>
+
+		<td><select id="ordem" name="ordem">
+			<option value="1">Padrão</option>
+			<option value="2">Preço à Vista(Menor - Maior) </option>			
+			<option value="3">Preço à Vista(Maior - Menor) </option>			
+			<option value="4">Preço à Prazo(Menor - Maior)  </option>			
+			<option value="5">Preço à Prazo(Maior - Menor)  </option>			
+			</select></td>
+		<input type="hidden" name="dep" value="<%=@dep%>" >	
+		<input type="hidden" name="sec" value="<%=@sec%>" >	
+		<input type="hidden" name="pag" value="<%=@pag%>" >	
+		
+		<input type="submit" id="search-submit" value="Trocar Ordem" />
+		<br>
+		<b> Ordem Atual: </b> 
+		<% if @ordem == "1" %>
+			PADRÃO
+		<% elsif @ordem == "2" %>			
+			PREÇO À VISTA (MENOR - MAIOR)
+		<% elsif @ordem == "3" %>			
+			PREÇO À VISTA (MAIOR - MENOR)			
+		<% elsif @ordem == "4" %>			
+			PREÇO À PRAZO (MENOR - MAIOR)			
+		<% elsif @ordem == "5" %>			
+			PREÇO À PRAZO (MAIOR - MENOR)
+		<%end%>	
+	</form>
+</center>
+</div>
