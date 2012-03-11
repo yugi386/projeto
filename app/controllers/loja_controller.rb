@@ -30,43 +30,43 @@
 		if @dep == "" and @sec == ""
 			@produtosx ||= Produt.send(:with_exclusive_scope) do  
 				if @ordem == "1"
-					Produt.all(:conditions => [ 'upper(ativo) = ?', "T" ], :order => 'destaque DESC' )
+					Produt.all(:conditions => [ 'ativo = ?', "t" ], :order => 'destaque DESC' )
 				elsif @ordem == "2"	
-					Produt.all(:conditions => [ 'upper(ativo) = ?', "T" ], :order => 'vista ASC' )
+					Produt.all(:conditions => [ 'ativo = ?', "t" ], :order => 'vista ASC' )
 				elsif @ordem == "3"	
-					Produt.all(:conditions => [ 'upper(ativo) = ?', "T" ], :order => 'vista DESC' )
+					Produt.all(:conditions => [ 'ativo = ?', "t" ], :order => 'vista DESC' )
 				elsif @ordem == "4"	
-					Produt.all(:conditions => [ 'upper(ativo) = ?', "T" ], :order => 'prazo ASC' )
+					Produt.all(:conditions => [ 'ativo = ?', "t" ], :order => 'prazo ASC' )
 				elsif @ordem == "5"	
-					Produt.all(:conditions => [ 'upper(ativo) = ?', "T" ], :order => 'prazo DESC' )					
+					Produt.all(:conditions => [ 'ativo = ?', "t" ], :order => 'prazo DESC' )					
 				end
 			end
 		elsif @dep != ""  and @sec == ""
 			@produtosx ||= Produt.send(:with_exclusive_scope) do 
 				if @ordem == "1"
-					Produt.all(:conditions => [ 'upper(ativo) = ? and departamento_id = ?', "T", @dep ], :order => 'destaque DESC')
+					Produt.all(:conditions => [ 'ativo = ? and departamento_id = ?', "t", @dep ], :order => 'destaque DESC')
 				elsif @ordem == "2"						
-					Produt.all(:conditions => [ 'upper(ativo) = ? and departamento_id = ?', "T", @dep ], :order => 'vista ASC')
+					Produt.all(:conditions => [ 'ativo = ? and departamento_id = ?', "t", @dep ], :order => 'vista ASC')
 				elsif @ordem == "3"											
-					Produt.all(:conditions => [ 'upper(ativo) = ? and departamento_id = ?', "T", @dep ], :order => 'vista DESC')					
+					Produt.all(:conditions => [ 'ativo = ? and departamento_id = ?', "t", @dep ], :order => 'vista DESC')					
 				elsif @ordem == "4"																
-					Produt.all(:conditions => [ 'upper(ativo) = ? and departamento_id = ?', "T", @dep ], :order => 'prazo ASC')										
+					Produt.all(:conditions => [ 'ativo = ? and departamento_id = ?', "t", @dep ], :order => 'prazo ASC')										
 				elsif @ordem == "4"																					
-					Produt.all(:conditions => [ 'upper(ativo) = ? and departamento_id = ?', "T", @dep ], :order => 'prazo DESC')
+					Produt.all(:conditions => [ 'ativo = ? and departamento_id = ?', "t", @dep ], :order => 'prazo DESC')
 				end
 			end	
 		elsif @sec != "" and @dep == ""		
 			@produtosx ||= Produt.send(:with_exclusive_scope) do 
 				if @ordem == "1"
-					Produt.all(:conditions => [ 'upper(ativo) = ? and section_id = ?', "T", @sec ], :order => 'destaque DESC')
+					Produt.all(:conditions => [ 'ativo = ? and section_id = ?', "t", @sec ], :order => 'destaque DESC')
 				elsif @ordem == "2"					
-					Produt.all(:conditions => [ 'upper(ativo) = ? and section_id = ?', "T", @sec ], :order => 'vista ASC')				
+					Produt.all(:conditions => [ 'ativo = ? and section_id = ?', "t", @sec ], :order => 'vista ASC')				
 				elsif @ordem == "3"										
-					Produt.all(:conditions => [ 'upper(ativo) = ? and section_id = ?', "T", @sec ], :order => 'vista DESC')								
+					Produt.all(:conditions => [ 'ativo = ? and section_id = ?', "t", @sec ], :order => 'vista DESC')								
 				elsif @ordem == "4"														
-					Produt.all(:conditions => [ 'upper(ativo) = ? and section_id = ?', "T", @sec ], :order => 'prazo ASC')												
+					Produt.all(:conditions => [ 'ativo = ? and section_id = ?', "t", @sec ], :order => 'prazo ASC')												
 				elsif @ordem == "5"																			
-					Produt.all(:conditions => [ 'upper(ativo) = ? and section_id = ?', "T", @sec ], :order => 'prazo DESC')																
+					Produt.all(:conditions => [ 'ativo = ? and section_id = ?', "t", @sec ], :order => 'prazo DESC')																
 				end	
 			end
 		end
