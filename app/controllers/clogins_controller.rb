@@ -5,8 +5,8 @@ class CloginsController < ApplicationController
 
 	def new
   		# Mapeando Departamentos e Seções ativas
-		@secoes = Section.where('upper(ativo) = "T"')
-		@departamentos = Departamento.where('upper(ativo) = "T"')
+		@secoes = Section.where('ativo  = "t"')
+		@departamentos = Departamento.where('ativo  = "t"')
 	end
 
   def create	# Cria na verdade uma sessão de login na area dos clientes

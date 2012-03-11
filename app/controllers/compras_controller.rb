@@ -5,8 +5,8 @@
 	def index
 	
 		# Mapeando Departamentos e Seções ativas
-		@secoes = Section.where('upper(ativo) = "T"')
-		@departamentos = Departamento.where('upper(ativo) = "T"')
+		@secoes = Section.where('ativo  = "t"')
+		@departamentos = Departamento.where('ativo  = "t"')
 
 		# Aqui criamos o Carrinho de Compras se ele não existir...
 		if !defined?($CarrinhoCompras)
@@ -40,8 +40,8 @@
 	# Adiciona um item no carrinho de compras
 	def create
 		# Mapeando Departamentos e Seções ativas
-		@secoes = Section.where('upper(ativo) = "T"')
-		@departamentos = Departamento.where('upper(ativo) = "T"')
+		@secoes = Section.where('ativo  = "t"')
+		@departamentos = Departamento.where('ativo  = "t"')
 		if !defined?($CarrinhoCompras)
 			$CarrinhoCompras = Array.new()
 			@totReg = 0

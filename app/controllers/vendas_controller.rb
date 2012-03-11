@@ -15,8 +15,8 @@
 	
 	def index
 		# Mapeando Departamentos e Seções ativas
-		@secoes = Section.where('upper(ativo) = "T"')
-		@departamentos = Departamento.where('upper(ativo) = "T"')
+		@secoes = Section.where('ativo  = "t"')
+		@departamentos = Departamento.where('ativo  = "t"')
 		if !defined?($venda_erro)
 			$venda_erro = Array.new
 		end	
@@ -76,8 +76,8 @@
 	# Finaliza um pedido do cliente pela INTERNET ---------------------------------------------------------------------------------------
 	def finalizar
 			# Mapeando Departamentos e Seções ativas
-		@secoes = Section.where('upper(ativo) = "T"')
-		@departamentos = Departamento.where('upper(ativo) = "T"')
+		@secoes = Section.where('ativo  = "t"')
+		@departamentos = Departamento.where('ativo  = "t"')
 
 		@tipopag = params[:tipopag]				# tipo de pagamento (vista, prazo)
 
@@ -183,8 +183,8 @@
 			return
 		end
 				# Mapeando Departamentos e Seções ativas
-		@secoes = Section.where('upper(ativo) = "T"')
-		@departamentos = Departamento.where('upper(ativo) = "T"')
+		@secoes = Section.where('ativo  = "t"')
+		@departamentos = Departamento.where('ativo  = "t"')
 
 		
 		@pesq = params[:pesq]	# Aqui recebemos o parametro via URL
@@ -292,8 +292,8 @@
 			return
 		end
 		# Mapeando Departamentos e Seções ativas
-		@secoes = Section.where('upper(ativo) = "T"')
-		@departamentos = Departamento.where('upper(ativo) = "T"')
+		@secoes = Section.where('ativo  = "t"')
+		@departamentos = Departamento.where('ativo  = "t"')
 
 		@venda = Venda.find(params[:id])
 		@item = Item.where('venda_id = ?',@venda.id.to_s).all
@@ -310,8 +310,8 @@
 			return
 		end
 		# Mapeando Departamentos e Seções ativas
-		@secoes = Section.where('upper(ativo) = "T"')
-		@departamentos = Departamento.where('upper(ativo) = "T"')
+		@secoes = Section.where('ativo  = "t"')
+		@departamentos = Departamento.where('ativo  = "t"')
 
 		@venda = Venda.find(params[:id])
 		@venda.status = "C"
@@ -327,8 +327,8 @@
 			return
 		end
 		# Mapeando Departamentos e Seções ativas
-		@secoes = Section.where('upper(ativo) = "T"')
-		@departamentos = Departamento.where('upper(ativo) = "T"')
+		@secoes = Section.where('ativo  = "t"')
+		@departamentos = Departamento.where('ativo  = "t"')
 
 		@venda = Venda.find(params[:id])
 		@venda.status = "A"

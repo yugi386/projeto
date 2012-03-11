@@ -6,8 +6,8 @@
 	def index
 	
 		# Mapeando Departamentos e Seções ativas
-		@secoes = Section.where('upper(ativo) = "T"')
-		@departamentos = Departamento.where('upper(ativo) = "T"')
+		@secoes = Section.where('ativo  = "t"')
+		@departamentos = Departamento.where('ativo  = "t"')
 
 		# Verificando a ordem dos produtos:
 		@ordem = params[:ordem]	
@@ -169,8 +169,8 @@
 	# mostra um produto individual:	
 	def show
 		# Mapeando Secoes:
-		@secoes = Section.where('upper(ativo) = "T"')
-		@departamentos = Departamento.where('upper(ativo) = "T"')
+		@secoes = Section.where('ativo  = "t"')
+		@departamentos = Departamento.where('ativo  = "t"')
 		
 		@produt = Produt.find(params[:id])
 		

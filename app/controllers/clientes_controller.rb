@@ -14,8 +14,8 @@
    end
 	
 	def PesqSecDep()	# Carrega informações do layout da loja
-		@secoes = Section.where('upper(ativo) = "T"')
-		@departamentos = Departamento.where('upper(ativo) = "T"')		
+		@secoes = Section.where('ativo  = "t"')
+		@departamentos = Departamento.where('ativo  = "t"')		
 	end
 		
 	# APRESENTANDO TODOS OS REGISTROS:
