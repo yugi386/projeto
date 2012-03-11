@@ -1,0 +1,101 @@
+2012-03-10T23:43:20+00:00 app[run.1]: Awaiting client
+2012-03-10T23:43:21+00:00 heroku[run.1]: State changed from starting to up
+2012-03-10T23:43:22+00:00 app[run.1]: Starting process with command `bundle exec rake db:migrate`
+2012-03-10T23:43:26+00:00 heroku[run.1]: Process exited with status 1
+2012-03-10T23:43:26+00:00 heroku[run.1]: State changed from up to complete
+2012-03-10T23:44:13+00:00 heroku[run.1]: State changed from created to starting
+2012-03-10T23:44:23+00:00 app[run.1]: Awaiting client
+2012-03-10T23:44:23+00:00 app[run.1]: Starting process with command `bundle exec rake db:setup`
+2012-03-10T23:44:24+00:00 heroku[run.1]: State changed from starting to up
+2012-03-10T23:44:27+00:00 heroku[run.1]: Process exited with status 0
+2012-03-10T23:44:27+00:00 heroku[run.1]: State changed from up to complete
+2012-03-10T23:44:53+00:00 heroku[web.1]: State changed from up to bouncing
+2012-03-10T23:44:53+00:00 heroku[web.1]: State changed from bouncing to created
+2012-03-10T23:44:53+00:00 heroku[web.1]: State changed from created to starting
+2012-03-10T23:44:56+00:00 heroku[web.1]: Stopping process with SIGTERM
+2012-03-10T23:44:56+00:00 app[web.1]: [2012-03-10 23:44:56] ERROR SignalException: SIGTERM
+2012-03-10T23:44:56+00:00 app[web.1]: 	/app/vendor/ruby-1.9.3-p0/lib/ruby/1.9.1/webrick/server.rb:98:in `select'
+2012-03-10T23:45:05+00:00 heroku[web.1]: Starting process with command `bundle exec rails server -p 6925`
+2012-03-10T23:45:06+00:00 heroku[web.1]: Error R12 (Exit timeout) -> Process failed to exit within 10 seconds of SIGTERM
+2012-03-10T23:45:06+00:00 heroku[web.1]: Stopping process with SIGKILL
+2012-03-10T23:45:06+00:00 heroku[web.1]: Stopping process with SIGTERM
+2012-03-10T23:45:06+00:00 app[web.1]: [2012-03-10 23:45:06] ERROR SignalException: SIGTERM
+2012-03-10T23:45:06+00:00 app[web.1]: 	/app/vendor/ruby-1.9.3-p0/lib/ruby/1.9.1/webrick/server.rb:98:in `select'
+2012-03-10T23:45:07+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/01/04/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
+2012-03-10T23:45:07+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/01/04/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
+2012-03-10T23:45:08+00:00 heroku[web.1]: Process exited with status 137
+2012-03-10T23:45:09+00:00 app[web.1]: => Rails 3.2.1 application starting in production on http://0.0.0.0:6925
+2012-03-10T23:45:09+00:00 app[web.1]: => Booting WEBrick
+2012-03-10T23:45:09+00:00 app[web.1]: => Call with -d to detach
+2012-03-10T23:45:09+00:00 app[web.1]: => Ctrl-C to shutdown server
+2012-03-10T23:45:09+00:00 app[web.1]: [paperclip] Duplicate URL for arquivo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Departamento class
+2012-03-10T23:45:09+00:00 app[web.1]: [paperclip] Duplicate URL for arquivo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Link class
+2012-03-10T23:45:09+00:00 app[web.1]: [paperclip] Duplicate URL for arquivo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Produt class
+2012-03-10T23:45:09+00:00 app[web.1]: [2012-03-10 23:45:09] INFO  WEBrick::HTTPServer#start: pid=1 port=6925
+2012-03-10T23:45:09+00:00 app[web.1]: [2012-03-10 23:45:09] INFO  WEBrick 1.3.1
+2012-03-10T23:45:09+00:00 app[web.1]: [2012-03-10 23:45:09] INFO  ruby 1.9.3 (2011-10-30) [x86_64-linux]
+2012-03-10T23:45:10+00:00 heroku[web.1]: State changed from starting to up
+2012-03-10T23:45:20+00:00 heroku[router]: GET miniloja.herokuapp.com/ dyno=web.1 queue=0 wait=0ms service=42ms status=200 bytes=5906
+2012-03-10T23:45:20+00:00 app[web.1]: cache: [GET /] miss, store
+2012-03-10T23:45:22+00:00 app[web.1]: cache: [GET /assets/rails.png] miss, store
+2012-03-10T23:45:22+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/rails.png dyno=web.1 queue=0 wait=0ms service=8ms status=200 bytes=6646
+2012-03-10T23:45:23+00:00 app[web.1]: cache: [GET /favicon.ico] miss, store
+2012-03-10T23:45:23+00:00 heroku[router]: GET miniloja.herokuapp.com/favicon.ico dyno=web.1 queue=0 wait=0ms service=8ms status=200 bytes=0
+2012-03-10T23:45:40+00:00 app[web.1]: 
+2012-03-10T23:45:40+00:00 app[web.1]: 
+2012-03-10T23:45:40+00:00 app[web.1]: Started GET "/loja" for 187.43.229.212 at 2012-03-10 23:45:40 +0000
+2012-03-10T23:45:40+00:00 app[web.1]: Processing by LojaController#index as HTML
+2012-03-10T23:45:40+00:00 app[web.1]: Completed 500 Internal Server Error in 20ms
+2012-03-10T23:45:40+00:00 app[web.1]: HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+2012-03-10T23:45:40+00:00 app[web.1]: 
+2012-03-10T23:45:40+00:00 app[web.1]: : SELECT "produts".* FROM "produts"  WHERE (upper(ativo) = 'T') ORDER BY destaque DESC):
+2012-03-10T23:45:40+00:00 app[web.1]: ActiveRecord::StatementInvalid (PG::Error: ERROR:  function upper(boolean) does not exist
+2012-03-10T23:45:40+00:00 app[web.1]:                                                   ^
+2012-03-10T23:45:40+00:00 app[web.1]: LINE 1: SELECT "produts".* FROM "produts"  WHERE (upper(ativo) = 'T'...
+2012-03-10T23:45:40+00:00 app[web.1]:   app/controllers/loja_controller.rb:31:in `index'
+2012-03-10T23:45:40+00:00 app[web.1]:   app/controllers/loja_contro
+ller.rb:33:in `block in index'
+2012-03-10T23:45:40+00:00 app[web.1]: 
+2012-03-10T23:45:40+00:00 app[web.1]: cache: [GET /loja] miss
+2012-03-10T23:45:40+00:00 app[web.1]: 
+2012-03-10T23:45:40+00:00 heroku[router]: GET miniloja.herokuapp.com/loja dyno=web.1 queue=0 wait=0ms service=134ms status=500 bytes=643
+2012-03-10T23:45:48+00:00 app[web.1]: 
+2012-03-10T23:45:48+00:00 app[web.1]: 
+2012-03-10T23:45:48+00:00 app[web.1]: Started GET "/login" for 187.43.229.212 at 2012-03-10 23:45:48 +0000
+2012-03-10T23:45:48+00:00 app[web.1]: Processing by SessionsController#new as HTML
+2012-03-10T23:45:48+00:00 app[web.1]:   Rendered sessions/new.html.erb within layouts/pad2 (3.0ms)
+2012-03-10T23:45:48+00:00 app[web.1]: Completed 500 Internal Server Error in 62ms
+2012-03-10T23:45:48+00:00 app[web.1]: 
+2012-03-10T23:45:48+00:00 app[web.1]: ActionView::Template::Error (style2.css isn't precompiled):
+2012-03-10T23:45:48+00:00 app[web.1]:     18: <title>Aprendendo Ruby On Rails 3</title>
+2012-03-10T23:45:48+00:00 app[web.1]:     20: <%= javascript_include_tag "application" %>
+2012-03-10T23:45:48+00:00 app[web.1]:     19: 
+2012-03-10T23:45:48+00:00 app[web.1]:     22: <%= csrf_meta_tags %>
+2012-03-10T23:45:48+00:00 app[web.1]:     21: <%= stylesheet_link_tag    "style2", :media => "all" %>  <!-- Chamando CSS -->
+2012-03-10T23:45:48+00:00 app[web.1]:     23: </head>
+2012-03-10T23:45:48+00:00 app[web.1]:     24: <body>
+2012-03-10T23:45:48+00:00 app[web.1]:   app/views/layouts/pad2.html.erb:21:in `_app_views_layouts_pad__html_erb___911801276605202159_22238180'
+2012-03-10T23:45:48+00:00 app[web.1]: 
+2012-03-10T23:45:48+00:00 app[web.1]: 
+2012-03-10T23:45:48+00:00 app[web.1]: cache: [GET /login] miss
+2012-03-10T23:45:48+00:00 heroku[router]: GET miniloja.herokuapp.com/login dyno=web.1 queue=0 wait=0ms service=74ms status=500 bytes=643
+2012-03-10T23:45:53+00:00 app[web.1]: 
+2012-03-10T23:45:53+00:00 app[web.1]: 
+2012-03-10T23:45:53+00:00 app[web.1]: Started GET "/login" for 187.43.229.212 at 2012-03-10 23:45:53 +0000
+2012-03-10T23:45:53+00:00 app[web.1]: Processing by SessionsController#new as HTML
+2012-03-10T23:45:53+00:00 app[web.1]:   Rendered sessions/new.html.erb within layouts/pad2 (0.6ms)
+2012-03-10T23:45:53+00:00 app[web.1]: Completed 500 Internal Server Error in 2ms
+2012-03-10T23:45:53+00:00 app[web.1]: ActionView::Template::Error (style2.css isn't precompiled):
+2012-03-10T23:45:53+00:00 app[web.1]: 
+2012-03-10T23:45:53+00:00 app[web.1]:     18: <title>Aprendendo Ruby On Rails 3</title>
+2012-03-10T23:45:53+00:00 app[web.1]:     19: 
+2012-03-10T23:45:53+00:00 app[web.1]:     20: <%= javascript_include_tag "application" %>
+2012-03-10T23:45:53+00:00 app[web.1]:     21: <%= stylesheet_link_tag    "style2", :media => "all" %>  <!-- Chamando CSS -->
+2012-03-10T23:45:53+00:00 app[web.1]:     22: <%= csrf_meta_tags %>
+2012-03-10T23:45:53+00:00 app[web.1]:     23: </head>
+2012-03-10T23:45:53+00:00 app[web.1]:     24: <body>
+2012-03-10T23:45:53+00:00 app[web.1]:   app/views/layouts/pad2.html.erb:21:in `_app_views_layouts_pad__html_erb___911801276605202159_22238180'
+2012-03-10T23:45:53+00:00 app[web.1]: 
+2012-03-10T23:45:53+00:00 app[web.1]: 
+2012-03-10T23:45:53+00:00 app[web.1]: cache: [GET /login] miss
+2012-03-10T23:45:53+00:00 heroku[router]: GET miniloja.herokuapp.com/login dyno=web.1 queue=0 wait=0ms service=31ms status=500 bytes=643
