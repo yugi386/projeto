@@ -52,8 +52,8 @@
 <% if @pesq == nil %>
 	<% @pesq = "" %>
 <% end %>
-<%= link_to image_tag("inicio.png", :size => "120x40"), estoque_path + "?pag=0&pesq="+@pesq %>
-<%= link_to image_tag("proximo.png", :size => "120x40"), estoque_path + "?pag=" + soma(@pag.to_i,@page,@estoques.size-1)  + "&pesq="+@pesq%>
-<%= link_to image_tag("anterior.png", :size => "120x40"), estoque_path + "?pag=" + minimo(@pag.to_i-@page) + "&pesq="+@pesq %>
-<%= link_to image_tag("fim.png", :size => "120x40"), estoque_path + "?pag=" + (@estoques.size - @page).to_s  + "&pesq="+@pesq%>
+<%= link_to image_tag("inicio.png", :size => "120x40"), "/estoque" + "?pag=0&pesq="+@pesq %>
+<%= link_to image_tag("proximo.png", :size => "120x40"), "/estoque" + "?pag=" + soma(@pag.to_i,@page,@estoques.size-1)  + "&pesq="+@pesq%>
+<%= link_to image_tag("anterior.png", :size => "120x40"), "/estoque" + "?pag=" + minimo(@pag.to_i-@page) + "&pesq="+@pesq %>
+<%= link_to image_tag("fim.png", :size => "120x40"), "/estoque" + "?pag=" + (@estoques.size - @page).to_s  + "&pesq="+@pesq%>
 </center><HR SIZE = 5 color="blue">
