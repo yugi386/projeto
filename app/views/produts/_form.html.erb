@@ -1,4 +1,6 @@
-﻿<%= form_for(@produt, :url => produt_path,  :html => {:multipart => true}) do |f| %>
+﻿<%= form_for(@produt,  :html => {:multipart => true}) do |f| %>
+
+<!-- :url => produt_path -->
 
 	<!- GERENCIAMENTO DE MENSAGENS DE ERRO -->
 	<% if @produt.errors.any? %> 
