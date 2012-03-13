@@ -155,7 +155,7 @@ Description: A two-column web design, best for your personal and business bloggi
 					
 					<li>
 							<% cont = 0 
-								@links = Link.where('upper(ativo) = "T"').all
+								@links = Link.where("ativo = 'T'").all
 								tam = @links.size - 1	
 							%>
 						<% if @links.size != 0 %>

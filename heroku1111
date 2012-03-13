@@ -1,60 +1,5 @@
-2012-03-13T15:51:15+00:00 app[web.1]:   app/views/layouts/loja.html.erb:107:in `_app_views_layouts_loja_html_erb___4567856046216391658_15580920'
-2012-03-13T15:51:15+00:00 app[web.1]:   app/controllers/loja_controller.rb:120:in `index'
-2012-03-13T15:51:15+00:00 app[web.1]: 
-2012-03-13T15:51:15+00:00 app[web.1]: 
-2012-03-13T15:51:15+00:00 app[web.1]: cache: [GET /loja] miss
-2012-03-13T15:51:15+00:00 heroku[router]: GET miniloja.herokuapp.com/loja dyno=web.1 queue=0 wait=0ms service=521ms status=500 bytes=643
-2012-03-13T15:51:28+00:00 app[web.1]: 
-2012-03-13T15:51:28+00:00 app[web.1]: Started GET "/clientes" for 187.77.15.252 at 2012-03-13 15:51:28 +0000
-2012-03-13T15:51:28+00:00 app[web.1]: 
-2012-03-13T15:51:28+00:00 app[web.1]: Processing by ClientesController#index as HTML
-2012-03-13T15:51:28+00:00 app[web.1]:   Rendered clientes/_formpesq.html.erb (0.3ms)
-2012-03-13T15:51:28+00:00 app[web.1]:   Rendered clientes/index.html.erb within layouts/pad2 (4.6ms)
-2012-03-13T15:51:28+00:00 app[web.1]: Completed 200 OK in 18ms (Views: 11.0ms | ActiveRecord: 4.3ms)
-2012-03-13T15:51:28+00:00 app[web.1]: cache: [GET /clientes] miss
-2012-03-13T15:51:28+00:00 app[web.1]: [2012-03-13 15:51:28] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
-2012-03-13T15:51:28+00:00 heroku[router]: GET miniloja.herokuapp.com/clientes dyno=web.1 queue=0 wait=0ms service=27ms status=304 bytes=0
-2012-03-13T15:51:29+00:00 app[web.1]: cache: [GET /assets/application-e766efe4c7b586f25a8b79897e30f9f3.js] miss
-2012-03-13T15:51:29+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/application-e766efe4c7b586f25a8b79897e30f9f3.js dyno=web.1 queue=0 wait=0ms service=7ms status=200 bytes=99860
-2012-03-13T15:51:30+00:00 app[web.1]: 
-2012-03-13T15:51:30+00:00 app[web.1]: 
-2012-03-13T15:51:30+00:00 app[web.1]: Started GET "/assets/style2-eee9a0b3ffa5de09952e899973cfaf7a.css" for 187.77.15.252 at 2012-03-13 15:51:30 +0000
-2012-03-13T15:51:30+00:00 app[web.1]: cache: [GET /assets/style2-eee9a0b3ffa5de09952e899973cfaf7a.css] miss
-2012-03-13T15:51:30+00:00 app[web.1]: [2012-03-13 15:51:30] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
-2012-03-13T15:51:30+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/style2-eee9a0b3ffa5de09952e899973cfaf7a.css dyno=web.1 queue=0 wait=0ms service=5ms status=304 bytes=0
-2012-03-13T15:51:42+00:00 app[web.1]: cache: [GET /assets/inicio-3d8605e34ea1f2d46a5e71751ce45ee8.png] miss
-2012-03-13T15:51:42+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/inicio-3d8605e34ea1f2d46a5e71751ce45ee8.png dyno=web.1 queue=0 wait=0ms service=4ms status=200 bytes=2224
-2012-03-13T15:51:42+00:00 app[web.1]: cache: [GET /assets/proximo-43eb1b2a5339ac23678f1779c2074bd0.png] miss
-2012-03-13T15:51:42+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/proximo-43eb1b2a5339ac23678f1779c2074bd0.png dyno=web.1 queue=0 wait=0ms service=3ms status=200 bytes=3020
-2012-03-13T15:51:43+00:00 app[web.1]: cache: [GET /assets/anterior-7f42b17b9aef86e80c63ab88f42585db.png] miss
-2012-03-13T15:51:43+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/anterior-7f42b17b9aef86e80c63ab88f42585db.png dyno=web.1 queue=0 wait=0ms service=6ms status=200 bytes=2536
-2012-03-13T15:51:43+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/fim-7ae721f0f700eb7e42ad02d68eda105d.png dyno=web.1 queue=0 wait=0ms service=4ms status=200 bytes=1017
-2012-03-13T15:51:43+00:00 app[web.1]: cache: [GET /assets/fim-7ae721f0f700eb7e42ad02d68eda105d.png] miss
-2012-03-13T15:51:44+00:00 app[web.1]: cache: [GET /assets/novoreg-e06b3743303ca087e8889656c1f0566f.png] miss
-2012-03-13T15:51:44+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/novoreg-e06b3743303ca087e8889656c1f0566f.png dyno=web.1 queue=0 wait=0ms service=4ms status=200 bytes=6257
-2012-03-13T15:51:44+00:00 app[web.1]: cache: [GET /assets/images2/img02.jpg] miss
-2012-03-13T15:51:44+00:00 app[web.1]: cache: [GET /assets/images2/img01.jpg] miss
-2012-03-13T15:51:44+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img02.jpg dyno=web.1 queue=0 wait=0ms service=4ms status=200 bytes=17330
-2012-03-13T15:51:44+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img01.jpg dyno=web.1 queue=0 wait=0ms service=5ms status=200 bytes=439
-2012-03-13T15:51:45+00:00 app[web.1]: cache: [GET /assets/images2/img07.gif] miss
-2012-03-13T15:51:45+00:00 app[web.1]: cache: [GET /assets/images2/img08.jpg] miss
-2012-03-13T15:51:45+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img07.gif dyno=web.1 queue=0 wait=0ms service=3ms status=200 bytes=50
-2012-03-13T15:51:45+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img08.jpg dyno=web.1 queue=0 wait=0ms service=5ms status=200 bytes=16203
-2012-03-13T15:51:45+00:00 app[web.1]: cache: [GET /assets/images2/img04.gif] miss
-2012-03-13T15:51:45+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img04.gif dyno=web.1 queue=0 wait=1ms service=8ms status=200 bytes=80
-2012-03-13T15:53:38+00:00 heroku[slugc]: Slug compilation started
-2012-03-13T15:54:28+00:00 heroku[api]: Deploy c7a0eae by yugi386@yahoo.com.br
-2012-03-13T15:54:28+00:00 heroku[api]: Release v46 created by yugi386@yahoo.com.br
-2012-03-13T15:54:28+00:00 heroku[web.1]: State changed from up to bouncing
-2012-03-13T15:54:28+00:00 heroku[web.1]: State changed from bouncing to created
-2012-03-13T15:54:28+00:00 heroku[web.1]: State changed from created to starting
-2012-03-13T15:54:31+00:00 heroku[web.1]: Stopping process with SIGTERM
-2012-03-13T15:54:31+00:00 app[web.1]: [2012-03-13 15:54:31] ERROR SignalException: SIGTERM
-2012-03-13T15:54:31+00:00 app[web.1]: 	/app/vendor/ruby-1.9.3-p0/lib/ruby/1.9.1/webrick/server.rb:98:in `select'
-2012-03-13T15:54:33+00:00 heroku[slugc]: Slug compilation finished
 2012-03-13T15:54:38+00:00 heroku[web.1]: Starting process with command `bundle exec rails server -p 6541`
-2012-03-13T15:54:4
-0+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/01/04/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
+2012-03-13T15:54:40+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/01/04/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
 2012-03-13T15:54:40+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/01/04/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
 2012-03-13T15:54:41+00:00 heroku[web.1]: Error R12 (Exit timeout) -> Process failed to exit within 10 seconds of SIGTERM
 2012-03-13T15:54:41+00:00 heroku[web.1]: Stopping process with SIGKILL
@@ -99,3 +44,57 @@
 2012-03-13T15:54:45+00:00 app[web.1]: 
 2012-03-13T15:54:45+00:00 app[web.1]: cache: [GET /loja] miss
 2012-03-13T15:54:45+00:00 heroku[router]: GET miniloja.herokuapp.com/loja dyno=web.1 queue=0 wait=0ms service=438ms status=500 bytes=643
+2012-03-13T15:57:02+00:00 heroku[slugc]: Slug compilation started
+2012-03-13T15:57:53+00:00 heroku[api]: Deploy 796d7a5 by yugi386@yahoo.com.br
+2012-03-13T15:57:53+00:00 heroku[api]: Release v47 created by yugi386@yahoo.com.br
+2012-03-13T15:57:53+00:00 heroku[web.1]: State changed from up to bouncing
+2012-03-13T15:57:53+00:00 heroku[web.1]: State changed from bouncing to created
+2012-03-13T15:57:53+00:00 heroku[web.1]: State changed from created to starting
+2012-03-13T15:57:54+00:00 heroku[slugc]: Slug compilation finished
+2012-03-13T15:57:55+00:00 heroku[web.1]: Stopping process with SIGTERM
+2012-03-13T15:57:55+00:00 app[web.1]: [2012-03-13 15:57:55] ERROR SignalException: SIGTERM
+2012-03-13T15:57:55+00:00 app[web.1]: 	/app/vendor/ruby-1.9.3-p0/lib/ruby/1.9.1/webrick/server.rb:98:in `select'
+2012-03-13T15:58:03+00:00 heroku[web.1]: Starting process with command `bundle exec rails server -p 17940`
+2012-03-13T15:58:05+00:00 heroku[web.1]: Stopping process with SIGKILL
+2012-03-13T15:58:05+00:00 heroku[web.1]: Error R12 (Exit timeout) -> Process failed to exit within 10 seconds of SIGTERM
+2012-03-13T15:58:06+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/01/04/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
+2012-03-13T15:58:06+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/01/04/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
+2012-03-13T15:58:07+00:00 heroku[web.1]: Process exited with status 137
+2012-03-13T15:58:11+00:00 app[web.1]: => Booting WEBrick
+2012-03-13T15:58:11+00:00 app[web.1]: => Rails 3.2.1 application starting in production on http://0.0.0.0:17940
+2012-03-13T15:58:11+00:00 app[web.1]: => Call with -d to detach
+2012-03-13T15:58:11+00:00 app[web.1]: => Ctrl-C to shutdown server
+2012-03-13T15:58:11+00:00 app[web.1]: [paperclip] Duplicate URL for arquivo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Departamento class
+2012-03-13T15:58:11+00:00 app[web.1]: [paperclip] Duplicate URL for arquivo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Link class
+2012-03-13T15:58:11+00:00 app[web.1]: [paperclip] Duplicate URL for arquivo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Produt class
+2012-03-13T15:58:12+00:00 app[web.1]: [2012-03-13 15:58:12] INFO  WEBrick 1.3.1
+2012-03-13T15:58:12+00:00 app[web.1]: [2012-03-13 15:58:12] INFO  ruby 1.9.3 (2011-10-30) [x86_64-linux]
+2012-03-13T15:58:12+00:00 app[web.1]: [2012-03-13 15:58:12] INFO  WEBrick::HTTPServer#start: pid=1 port=17940
+2012-03-13T15:58:14+00:00 heroku[web.1]: State changed from starting to up
+2012-03-13T15:58:14+00:00 app[web.1]: 
+2012-03-13T15:58:14+00:00 app[web.1]: 
+2012-03-13T15:58:14+00:00 app[web.1]: Started GET "/loja" for 187.77.15.252 at 2012-03-13 15:58:14 +0000
+2012-03-13T15:58:15+00:00 app[web.1]: Processing by LojaController#index as HTML
+2012-03-13T15:58:16+00:00 app[web.1]:   Rendered loja/_formpesq.html.erb (0.4ms)
+2012-03-13T15:58:16+00:00 app[web.1]:   Rendered loja/_order.html.erb (0.6ms)
+2012-03-13T15:58:16+00:00 app[web.1]:   Rendered loja/index.html.erb within layouts/loja (55.7ms)
+2012-03-13T15:58:16+00:00 app[web.1]: Completed 500 Internal Server Error in 1138ms
+2012-03-13T15:58:16+00:00 app[web.1]: 
+2012-03-13T15:58:16+00:00 app[web.1]: ActionView::Template::Error (PG::Error: ERROR:  function upper(boolean) does not exist
+2012-03-13T15:58:16+00:00 app[web.1]: LINE 1: SELECT "links".* FROM "links"  WHERE (upper(ativo) = "T") OR...
+2012-03-13T15:58:16+00:00 app[web.1]: HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+2012-03-13T15:58:16+00:00 app[web.1]:                                               ^
+2012-03-13T15:58:16+00:00 app[web.1]: : SELECT "links".* FROM "links"  WHERE (upper(ativo) = "T") ORDER BY upper(texto) ASC):
+2012-03-13T15:58:16+00:00 app[web.1]:     155: 					
+2012-03-13T15:58:16+00:00 app[web.1]:     156: 					<li>
+2012-03-13T15:58:16+00:00 app[web.1]:     157: 							<% cont = 0 
+2012-03-13T15:58:16+00:00 app[web.1]:     158: 								@links = Link.where('upper(ativo) = "T"').all
+2012-03-13T15:58:16+00:00 app[web.1]:     159: 								tam = @links.size - 1	
+2012-03-13T15:58:16+00:00 app[web.1]:     160: 							%>
+2012-03-13T15:58:16+00:00 app[web.1]:     161: 						<% if @links.size != 0 %>
+2012-03-13T15:58:16+00:00 app[web.1]:   app/views/layouts/loja.html.erb:158:in `_app_views_layouts_loja_html_erb__2301321682318363785_22554560'
+2012-03-13T15:58:16+00:00 app[web.1]:   app/controllers/loja_controller.rb:120:in `index'
+2012-03-13T15:58:16+00:00 app[web.1]: cache: [GET /loja] miss
+2012-03-13T15:58:16+00:00 app[web.1]: 
+2012-03-13T15:58:16+00:00 app[web.1]: 
+2012-03-13T15:58:16+00:00 heroku[router]: GET miniloja.herokuapp.com/loja dyno=web.1 queue=0 wait=0ms service=1694ms status=500 bytes=643
