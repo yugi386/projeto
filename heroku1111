@@ -1,100 +1,100 @@
-2012-03-13T03:02:16+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.1/lib/active_support/file_update_checker.rb:78:in `call'
-2012-03-13T03:02:16+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/application/routes_reloader.rb:16:in `reload!'
-2012-03-13T03:02:16+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.1/lib/active_support/file_update_checker.rb:78:in `execute'
-2012-03-13T03:02:16+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/application/finisher.rb:66:in `block in <module:Finisher>'
-2012-03-13T03:02:16+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/application/routes_reloader.rb:27:in `updater'
-2012-03-13T03:02:16+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/application/routes_reloader.rb:7:in `execute_if_updated'
-2012-03-13T03:02:16+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/initializable.rb:30:in `instance_exec'
-2012-03-13T03:02:16+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/initializable.rb:30:in `run'
-2012-03-13T03:02:16+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/initializable.rb:55:in `block in run_initializers'
-2012-03-13T03:02:16+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/initializable.rb:54:in `each'
-2012-03-13T03:02:16+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/initializable.rb:54:in `run_initializers'
-2012-03-13T03:02:16+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/application.rb:136:in `initialize!'
-2012-03-13T03:02:16+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/railtie/configurable.rb:30:in `method_missing'
-2012-03-13T03:02:16+00:00 app[web.1]: 	from /app/config/environment.rb:5:in `<top (required)>'
-2012-03-13T03:02:16+00:00 app[web.1]: 	from /app/config.ru:4:in `require'
-2012-03-13T03:02:16+00:00 app[web.1]: 	from /app/config.ru:4:in `block in <main>'
-2012-03-13T03:02:16+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/builder.rb:51:in `instance_eval'
-2012-03-13T03:02:16+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/builder.rb:51:in `initialize'
-2012-03-13T03:02:16+00:00 app[web.1]: 	from /app/config.ru:1:in `<main>'
-2012-03-13T03:02:16+00:00 app[web.1]: 	from /app/config.ru:1:in `new'
-2012-03-13T03:02:16+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/builder.rb:40:in `eval'
-2012-03-13T03:02:16+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/builder.rb:40:in `parse_file'
-2012-03-13T03:02:16+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/server.rb:200:in `app'
-2012-03-13T03:02:16+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/commands/server.rb:46:in `app'
-2012-03-13T03:02:16+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/server.rb:301:in `wrapped_app'
-2012-03-13T03:02:16+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/server.rb:252:in `start'
-2012-03-13T03:02:16+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/commands/server.rb:70:in `start'
-2012-03-13T03:02:16+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/commands.rb:55:in `block in <top (required)>'
-2012-03-13T03:02:16+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/commands.rb:50:in `tap'
-2012-03-13T03:02:16+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/commands.rb:50:in `<top (required)>'
-2012-03-13T03:02:16+00:00 app[web.1]: 	from script/rails:6:in `require'
-2012-03-13T03:02:16+00:00 app[web.1]: 	from script/rails:6:in `<main>'
-2012-03-13T03:02:17+00:00 heroku[web.1]: Process exited with status 137
-2012-03-13T03:02:18+00:00 heroku[web.1]: Process exited with status 1
-2012-03-13T03:02:18+00:00 heroku[web.1]: State changed from starting to crashed
-2012-03-13T03:02:18+00:00 heroku[web.1]: State changed from crashed to created
-2012-03-13T03:02:18+00:00 heroku[web.1]: State changed from created to starting
-2012-03-13T03:02:27+00:00 heroku[web.1]: Starting process with command `bundle exec rails server -p 29261`
-2012-03-13T03:02:29+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/01/04/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-03-13T03:02:29+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/01/04/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-03-13T03:02:29+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/01/04/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-03-13T03:02:32+00:00 app[web.1]: => Booting WEBrick
-2012-03-13T03:02:32+00:00 app[web.1]: => Rails 3.2.1 application starting in production on http://0.0.0.0:29261
-2012-03-13T03:02:32+00:00 app[web.1]: => Call with -d to detach
-2012-03-13T03:02:32+00:00 app[web.1]: => Ctrl-C to shutdown server
-2012-03-13T03:02:32+00:00 app[web.1]: [paperclip] Duplicate URL for arquivo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Departamento class
-2012-03-13T03:02:32+00:00 app[web.1]: [paperclip] Duplicate URL for arquivo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Link class
-2012-03-13T03:02:32+00:00 app[web.1]: [paperclip] Duplicate URL for arquivo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Produt class
-2012-03-13T03:02:32+00:00 app[web.1]: Exiting
-2012-03-13T03:02:32+00:00 app[web.1]: /app/config/routes.rb:16:in `block in <top (required)>': undefined local variable or method `map' for #<ActionDispatch::Routing::Mapper:0x00000003a62c20> (NameError)
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/routing/route_set.rb:272:in `instance_exec'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/routing/route_set.rb:249:in `draw'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/routing/route_set.rb:272:in `eval_block'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/config/routes.rb:1:in `<top (required)>'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.1/lib/active_support/dependencies.rb:245:in `load'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.1/lib/active_support/dependencies.rb:245:in `block in load'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.1/lib/active_support/dependencies.rb:236:in `load_dependency'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.1/lib/active_support/dependencies.rb:245:in `load'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/application/routes_reloader.rb:40:in `block in load_paths'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/application/routes_reloader.rb:40:in `each'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/application/routes_reloader.rb:40:in `load_paths'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/application/routes_reloader.rb:16:in `reload!'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/application/routes_reloader.rb:26:in `block in updater'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.1/lib/active_support/file_update_checker.rb:78:in `call'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.1/lib/active_support/file_update_checker.rb:78:in `execute'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/application/routes_reloader.rb:27:in `updater'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/application/routes_reloader.rb:7:in `execute_if_updated'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/application/finisher.rb:66:in `block in <module:Finisher>'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/initializable.rb:54:in `each'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/initializable.rb:30:in `instance_exec'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/initializable.rb:30:in `run'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/initializable.rb:55:in `block in run_initializers'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/application.rb:136:in `initialize!'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/initializable.rb:54:in `run_initializers'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/railtie/configurable.rb:30:in `method_missing'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/config/environment.rb:5:in `<top (required)>'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/config.ru:4:in `require'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/config.ru:4:in `block in <main>'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/builder.rb:51:in `instance_eval'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/builder.rb:51:in `initialize'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/config.ru:1:in `<main>'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/config.ru:1:in `new'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/builder.rb:40:in `eval'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/builder.rb:40:in `parse_file'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/server.rb:200:in `app'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/commands/server.rb:46:in `app'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/server.rb:301:in `wrapped_app'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/server.rb:252:in `start'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/commands/server.rb:70:in `start'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/commands.rb:55:in `block in <top (required)>'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/commands.rb:50:in `<top (required)>'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/commands.rb:50:in `tap'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from script/rails:6:in `require'
-2012-03-13T03:02:32+00:00 app[web.1]: 	from script/rails:6:in `<main>'
-2012-03-13T03:02:33+00:00 heroku[web.1]: Process exited with status 1
-2012-03-13T03:02:33+00:00 heroku[web.1]: State changed from starting to crashed
-2012-03-13T03:02:36+00:00 heroku[router]: Error H10 (App crashed) -> GET miniloja.herokuapp.com/clientes dyno= queue= wait= service= status=503 bytes=
-2012-03-13T03:03:00+00:00 heroku[router]: Error H10 (App crashed) -> GET miniloja.herokuapp.com/admlojas dyno= queue= wait= service= status=503 bytes=
-2012-03-13T03:03:09+00:00 heroku[router]: Error H10 (App crashed) -> GET miniloja.herokuapp.com/admlojas dyno= queue= wait= service= status=503 bytes=
-2012-03-13T03:03:18+00:00 heroku[router]: Error H10 (App crashed) -> GET miniloja.herokuapp.com/login dyno= queue= wait= service= status=503 bytes=
+2012-03-13T03:15:59+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img02.jpg dyno=web.1 queue=0 wait=0ms service=4ms status=304 bytes=0
+2012-03-13T03:15:59+00:00 app[web.1]: cache: [GET /assets/images2/img04.gif] miss
+2012-03-13T03:15:59+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img04.gif dyno=web.1 queue=0 wait=0ms service=4ms status=200 bytes=80
+2012-03-13T03:16:00+00:00 app[web.1]: cache: [GET /assets/images2/img07.gif] miss
+2012-03-13T03:16:00+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img07.gif dyno=web.1 queue=0 wait=0ms service=7ms status=200 bytes=50
+2012-03-13T03:16:00+00:00 app[web.1]: cache: [GET /assets/images2/img08.jpg] miss
+2012-03-13T03:16:00+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img08.jpg dyno=web.1 queue=0 wait=0ms service=7ms status=200 bytes=16203
+2012-03-13T03:16:04+00:00 app[web.1]: 
+2012-03-13T03:16:04+00:00 app[web.1]: 
+2012-03-13T03:16:04+00:00 app[web.1]: Started GET "/departamentos" for 187.42.203.52 at 2012-03-13 03:16:04 +0000
+2012-03-13T03:16:04+00:00 app[web.1]: Processing by DepartamentosController#index as HTML
+2012-03-13T03:16:04+00:00 app[web.1]:   Rendered departamentos/_formpesq.html.erb (0.1ms)
+2012-03-13T03:16:04+00:00 app[web.1]:   Rendered departamentos/index.html.erb within layouts/pad2 (2.9ms)
+2012-03-13T03:16:04+00:00 app[web.1]: Completed 200 OK in 13ms (Views: 6.5ms | ActiveRecord: 4.9ms)
+2012-03-13T03:16:04+00:00 app[web.1]: cache: [GET /departamentos] miss
+2012-03-13T03:16:04+00:00 app[web.1]: [2012-03-13 03:16:04] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+2012-03-13T03:16:04+00:00 heroku[router]: GET miniloja.herokuapp.com/departamentos dyno=web.1 queue=0 wait=0ms service=21ms status=304 bytes=0
+2012-03-13T03:16:05+00:00 app[web.1]: cache: [GET /assets/application-e766efe4c7b586f25a8b79897e30f9f3.js] miss
+2012-03-13T03:16:05+00:00 app[web.1]: [2012-03-13 03:16:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+2012-03-13T03:16:05+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/application-e766efe4c7b586f25a8b79897e30f9f3.js dyno=web.1 queue=0 wait=0ms service=5ms status=304 bytes=0
+2012-03-13T03:16:05+00:00 app[web.1]: 
+2012-03-13T03:16:05+00:00 app[web.1]: 
+2012-03-13T03:16:05+00:00 app[web.1]: Started GET "/assets/style2-eee9a0b3ffa5de09952e899973cfaf7a.css" for 187.42.203.52 at 2012-03-13 03:16:05 +0000
+2012-03-13T03:16:05+00:00 app[web.1]: cache: [GET /assets/style2-eee9a0b3ffa5de09952e899973cfaf7a.css] miss
+2012-03-13T03:16:05+00:00 app[web.1]: [2012-03-13 03:16:05] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+2012-03-13T03:16:05+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/style2-eee9a0b3ffa5de09952e899973cfaf7a.css dyno=web.1 queue=0 wait=0ms service=4ms status=304 bytes=0
+2012-03-13T03:16:06+00:00 app[web.1]: cache: [GET /assets/mostrar-2e6c792596488b59f01eefa3792694bb.png] miss
+2012-03-13T03:16:06+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/mostrar-2e6c792596488b59f01eefa3792694bb.png dyno=web.1 queue=0 wait=0ms service=38ms status=200 bytes=5247
+2012-03-13T03:16:06+00:00 app[web.1]: cache: [GET /assets/editar-0cd34b0d3604e258432346d409257cd8.png] miss
+2012-03-13T03:16:06+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/editar-0cd34b0d3604e258432346d409257cd8.png dyno=web.1 queue=0 wait=0ms service=5ms status=200 bytes=4517
+2012-03-13T03:16:06+00:00 app[web.1]: cache: [GET /assets/apagar-8797df84ffbffc3d920d77b11a9cd380.png] miss
+2012-03-13T03:16:06+00:00 app[web.1]: [2012-03-13 03:16:06] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+2012-03-13T03:16:06+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/apagar-8797df84ffbffc3d920d77b11a9cd380.png dyno=web.1 queue=0 wait=0ms service=4ms status=304 bytes=0
+2012-03-13T03:16:06+00:00 app[web.1]: cache: [GET /assets/inicio-3d8605e34ea1f2d46a5e71751ce45ee8.png] miss
+2012-03-13T03:16:06+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/inicio-3d8605e34ea1f2d46a5e71751ce45ee8.png dyno=web.1 queue=0 wait=0ms service=6ms status=200 bytes=2224
+2012-03-13T03:16:07+00:00 app[web.1]: cache: [GET /assets/proximo-43eb1b2a5339ac23678f1779c2074bd0.png] miss
+2012-03-13T03:16:07+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/proximo-43eb1b2a5339ac23678f1779c2074bd0.png dyno=web.1 queue=0 wait=0ms service=7ms status=200 bytes=3020
+2012-03-13T03:16:08+00:00 app[web.1]: cache: [GET /assets/anterior-7f42b17b9aef86e80c63ab88f42585db.png] miss
+2012-03-13T03:16:08+00:00 app[web.1]: [2012-03-13 03:16:08] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+2012-03-13T03:16:08+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/anterior-7f42b17b9aef86e80c63ab88f42585db.png dyno=web.1 queue=0 wait=0ms service=4ms status=304 bytes=0
+2012-03-13T03:16:08+00:00 app[web.1]: cache: [GET /assets/fim-7ae721f0f700eb7e42ad02d68eda105d.png] miss
+2012-03-13T03:16:08+00:00 app[web.1]: cache: [GET /assets/novoreg-e06b3743303ca087e8889656c1f0566f.png] miss
+2012-03-13T03:16:09+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/fim-7ae721f0f700eb7e42ad02d68eda105d.png dyno=web.1 queue=0 wait=0ms service=1152ms status=200 bytes=1017
+2012-03-13T03:16:09+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/novoreg-e06b3743303ca087e8889656c1f0566f.png dyno=web.1 queue=0 wait=0ms service=864ms status=200 bytes=6257
+2012-03-13T03:16:10+00:00 app[web.1]: 
+2012-03-13T03:16:10+00:00 app[web.1]: 
+2012-03-13T03:16:10+00:00 app[web.1]: Started GET "/departamentos/15/edit" for 187.42.203.52 at 2012-03-13 03:16:10 +0000
+2012-03-13T03:16:10+00:00 app[web.1]:   Parameters: {"id"=>"15"}
+2012-03-13T03:16:10+00:00 app[web.1]: Processing by DepartamentosController#edit as HTML
+2012-03-13T03:16:10+00:00 app[web.1]:   Rendered departamentos/_form.html.erb (8.4ms)
+2012-03-13T03:16:10+00:00 app[web.1]:   Rendered departamentos/edit.html.erb within layouts/pad2 (10.0ms)
+2012-03-13T03:16:10+00:00 app[web.1]: Completed 200 OK in 21ms (Views: 12.0ms | ActiveRecord: 7.8ms)
+2012-03-13T03:16:10+00:00 app[web.1]: cache: [GET /departamentos/15/edit] miss
+2012-03-13T03:16:10+00:00 heroku[router]: GET miniloja.herokuapp.com/departamentos/15/edit dyno=web.1 queue=0 wait=0ms service=36ms status=200 bytes=5938
+2012-03-13T03:16:11+00:00 app[web.1]: 
+2012-03-13T03:16:11+00:00 app[web.1]: 
+2012-03-13T03:16:11+00:00 app[web.1]: Started GET "/assets/style2-eee9a0b3ffa5de09952e899973cfaf7a.css" for 187.42.203.52 at 2012-03-13 03:16:11 +0000
+2012-03-13T03:16:11+00:00 app[web.1]: cache: [GET /assets/style2-eee9a0b3ffa5de09952e899973cfaf7a.css] miss
+2012-03-13T03:16:11+00:00 app[web.1]: [2012-03-13 03:16:11] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+2012-03-13T03:16:11+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/style2-eee9a0b3ffa5de09952e899973cfaf7a.css dyno=web.1 queue=0 wait=0ms service=5ms status=304 bytes=0
+2012-03-13T03:16:12+00:00 app[web.1]: [2012-03-13 03:16:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+2012-03-13T03:16:12+00:00 app[web.1]: cache: [GET /assets/voltar-f1ba9828bb8551e7db81a272a1b54a15.png] miss
+2012-03-13T03:16:12+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/voltar-f1ba9828bb8551e7db81a272a1b54a15.png dyno=web.1 queue=0 wait=0ms service=5ms status=304 bytes=0
+2012-03-13T03:16:12+00:00 app[web.1]: cache: [GET /assets/images2/img01.jpg] miss
+2012-03-13T03:16:12+00:00 app[web.1]: [2012-03-13 03:16:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+2012-03-13T03:16:12+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img01.jpg dyno=web.1 queue=0 wait=0ms service=4ms status=304 bytes=0
+2012-03-13T03:16:12+00:00 app[web.1]: cache: [GET /assets/images2/img02.jpg] miss
+2012-03-13T03:16:12+00:00 app[web.1]: [2012-03-13 03:16:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+2012-03-13T03:16:12+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img02.jpg dyno=web.1 queue=0 wait=0ms service=3ms status=304 bytes=0
+2012-03-13T03:16:12+00:00 app[web.1]: [2012-03-13 03:16:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+2012-03-13T03:16:12+00:00 app[web.1]: cache: [GET /assets/images2/img08.jpg] miss
+2012-03-13T03:16:12+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img08.jpg dyno=web.1 queue=0 wait=0ms service=3ms status=304 bytes=0
+2012-03-13T03:16:12+00:00 app[web.1]: cache: [GET /assets/images2/img07.gif] miss
+2012-03-13T03:16:12+00:00 app[web.1]: [2012-03-13 03:16:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+2012-03-13T03:16:12+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img07.gif dyno=web.1 queue=0 wait=0ms service=4ms status=304 bytes=0
+2012-03-13T03:16:12+00:00 app[web.1]: cache: [GET /assets/images2/img04.gif] miss
+2012-03-13T03:16:12+00:00 app[web.1]: [2012-03-13 03:16:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+2012-03-13T03:16:12+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img04.gif dyno=web.1 queue=0 wait=0ms service=4ms status=304 bytes=0
+2012-03-13T03:16:18+00:00 app[web.1]: 
+2012-03-13T03:16:18+00:00 app[web.1]: 
+2012-03-13T03:16:18+00:00 app[web.1]: Started GET "/section" for 187.42.203.52 at 2012-03-13 03:16:18 +0000
+2012-03-13T03:16:18+00:00 app[web.1]: Processing by SectionController#index as HTML
+2012-03-13T03:16:18+00:00 app[web.1]:   Rendered section/_formpesq.html.erb (0.3ms)
+2012-03-13T03:16:22+00:00 app[web.1]:   Rendered section/index.html.erb within layouts/pad2 (4456.3ms)
+2012-03-13T03:16:22+00:00 app[web.1]: Completed 500 Internal Server Error in 4473ms
+2012-03-13T03:16:22+00:00 app[web.1]: 
+2012-03-13T03:16:22+00:00 app[web.1]:     55: 	<% @pesq = "" %>
+2012-03-13T03:16:22+00:00 app[web.1]: ActionView::Template::Error (undefined local variable or method `sections_path' for #<#<Class:0x00000003808bf0>:0x00000003812128>):
+2012-03-13T03:16:22+00:00 app[web.1]:     57: 
+2012-03-13T03:16:22+00:00 app[web.1]:     56: <% end %>
+2012-03-13T03:16:22+00:00 app[web.1]:     58: <%= link_to image_tag("inicio.png", :size => "120x40"), sections_path +  "?pag=0&pesq="+@pesq%>
+2012-03-13T03:16:22+00:00 app[web.1]:     59: <%= link_to image_tag("proximo.png", :size => "120x40"), sections_path + "?pag=" + soma(@pag.to_i,@page,@sections.size-1)+ "&pesq="+@pesq %>
+2012-03-13T03:16:22+00:00 app[web.1]:     60: <%= link_to image_tag("anterior.png", :size => "120x40"), sections_path + "?pag=" + minimo(@pag.to_i-@page)+ "&pesq="+@pesq %>
+2012-03-13T03:16:22+00:00 app[web.1]:     61: <%= link_to image_tag("fim.png", :size => "120x40"), sections_path + "?pag=" + (@sections.size - @page).to_s + "&pesq="+@pesq%>
+2012-03-13T03:16:22+00:00 app[web.1]:   app/views/section/index.html.erb:58:in `_app_views_section_index_html_erb__2037997335369405278_29430020'
+2012-03-13T03:16:22+00:00 app[web.1]:   app/controllers/section_controller.rb:21:in `index'
+2012-03-13T03:16:22+00:00 app[web.1]: 
+2012-03-13T03:16:22+00:00 app[web.1]: 
+2012-03-13T03:16:22+00:00 app[web.1]: cache: [GET /section] miss
+2012-03-13T03:16:22+00:00 heroku[router]: GET miniloja.herokuapp.com/section dyno=web.1 queue=0 wait=0ms service=4486ms status=500 bytes=643
