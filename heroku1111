@@ -1,101 +1,101 @@
-2012-03-13T13:39:31+00:00 app[web.1]: Processing by LinksController#index as HTML
-2012-03-13T13:39:31+00:00 app[web.1]:   Rendered links/_formpesq.html.erb (0.3ms)
-2012-03-13T13:39:31+00:00 app[web.1]:   Rendered links/index.html.erb within layouts/pad2 (36.2ms)
-2012-03-13T13:39:31+00:00 app[web.1]: Completed 200 OK in 146ms (Views: 80.0ms | ActiveRecord: 20.4ms)
-2012-03-13T13:39:31+00:00 app[web.1]: cache: [GET /links] miss
-2012-03-13T13:39:31+00:00 app[web.1]: [2012-03-13 13:39:31] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
-2012-03-13T13:39:31+00:00 heroku[router]: GET miniloja.herokuapp.com/links dyno=web.1 queue=0 wait=0ms service=320ms status=304 bytes=0
-2012-03-13T13:39:32+00:00 heroku[web.1]: Process exited with status 137
-2012-03-13T13:39:33+00:00 app[web.1]: cache: [GET /assets/application-e766efe4c7b586f25a8b79897e30f9f3.js] miss
-2012-03-13T13:39:33+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/application-e766efe4c7b586f25a8b79897e30f9f3.js dyno=web.1 queue=0 wait=0ms service=9ms status=200 bytes=99860
-2012-03-13T13:39:33+00:00 app[web.1]: 
-2012-03-13T13:39:33+00:00 app[web.1]: 
-2012-03-13T13:39:33+00:00 app[web.1]: Started GET "/assets/style2-eee9a0b3ffa5de09952e899973cfaf7a.css" for 187.77.15.252 at 2012-03-13 13:39:33 +0000
-2012-03-13T13:39:33+00:00 app[web.1]: [2012-03-13 13:39:33] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
-2012-03-13T13:39:33+00:00 app[web.1]: cache: [GET /assets/style2-eee9a0b3ffa5de09952e899973cfaf7a.css] miss
-2012-03-13T13:39:33+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/style2-eee9a0b3ffa5de09952e899973cfaf7a.css dyno=web.1 queue=0 wait=2ms service=9ms status=304 bytes=0
-2012-03-13T13:39:46+00:00 app[web.1]: cache: [GET /assets/inicio-3d8605e34ea1f2d46a5e71751ce45ee8.png] miss
-2012-03-13T13:39:46+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/inicio-3d8605e34ea1f2d46a5e71751ce45ee8.png dyno=web.1 queue=0 wait=0ms service=4ms status=200 bytes=2224
-2012-03-13T13:39:46+00:00 app[web.1]: cache: [GET /assets/proximo-43eb1b2a5339ac23678f1779c2074bd0.png] miss
-2012-03-13T13:39:46+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/proximo-43eb1b2a5339ac23678f1779c2074bd0.png dyno=web.1 queue=0 wait=0ms service=9ms status=200 bytes=3020
-2012-03-13T13:39:47+00:00 app[web.1]: cache: [GET /assets/anterior-7f42b17b9aef86e80c63ab88f42585db.png] miss
-2012-03-13T13:39:47+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/anterior-7f42b17b9aef86e80c63ab88f42585db.png dyno=web.1 queue=0 wait=0ms service=4ms status=200 bytes=2536
-2012-03-13T13:39:48+00:00 app[web.1]: cache: [GET /assets/fim-7ae721f0f700eb7e42ad02d68eda105d.png] miss
-2012-03-13T13:39:48+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/fim-7ae721f0f700eb7e42ad02d68eda105d.png dyno=web.1 queue=0 wait=0ms service=5ms status=200 bytes=1017
-2012-03-13T13:39:49+00:00 app[web.1]: cache: [GET /assets/novoreg-e06b3743303ca087e8889656c1f0566f.png] miss
-2012-03-13T13:39:49+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/novoreg-e06b3743303ca087e8889656c1f0566f.png dyno=web.1 queue=0 wait=0ms service=9ms status=200 bytes=6257
-2012-03-13T13:39:49+00:00 app[web.1]: cache: [GET /assets/images2/img01.jpg] miss
-2012-03-13T13:39:49+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img01.jpg dyno=web.1 queue=0 wait=0ms service=6ms status=200 bytes=439
-2012-03-13T13:39:49+00:00 app[web.1]: cache: [GET /assets/images2/img02.jpg] miss
-2012-03-13T13:39:49+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img02.jpg dyno=web.1 queue=0 wait=0ms service=9ms status=200 bytes=17330
-2012-03-13T13:39:50+00:00 app[web.1]: cache: [GET /assets/images2/img04.gif] miss
-2012-03-13T13:39:50+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img04.gif dyno=web.1 queue=0 wait=0ms service=5ms status=200 bytes=80
-2012-03-13T13:39:53+00:00 app[web.1]: cache: [GET /assets/images2/img07.gif] miss
-2012-03-13T13:39:53+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img07.gif dyno=web.1 queue=0 wait=0ms service=5ms status=200 bytes=50
-2012-03-13T13:39:54+00:00 app[web.1]: cache: [GET /assets/images2/img08.jpg] miss
-2012-03-13T13:39:54+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img08.jpg dyno=web.1 queue=0 wait=0ms service=5ms status=200 bytes=16203
-2012-03-13T13:40:01+00:00 app[web.1]: 
-2012-03-13T13:40:01+00:00 app[web.1]: 
-2012-03-13T13:40:01+00:00 app[web.1]: Started GET "/links?pesq=texto" for 187.77.15.252 at 2012-03-13 13:40:01 +0000
-2012-03-13T13:40:01+00:00 app[web.1]: Processing by LinksController#index as HTML
-2012-03-13T13:40:01+00:00 app[web.1]:   Parameters: {"pesq"=>"texto"}
-2012-03-13T13:40:01+00:00 app[web.1]:   Rendered links/_formpesq.html.erb (0.3ms)
-2012-03-13T13:40:01+00:00 app[web.1]:   Rendered links/index.html.erb within layouts/pad2 (4.7ms)
-2012-03-13T13:40:01+00:00 app[web.1]: Completed 200 OK in 14ms (Views: 6.2ms | ActiveRecord: 3.7ms)
-2012-03-13T13:40:01+00:00 app[web.1]: cache: [GET /links?pesq=texto] miss
-2012-03-13T13:40:01+00:00 heroku[router]: GET miniloja.herokuapp.com/links dyno=web.1 queue=0 wait=0ms service=21ms status=200 bytes=5279
-2012-03-13T13:40:03+00:00 app[web.1]: cache: [GET /assets/application-e766efe4c7b586f25a8b79897e30f9f3.js] miss
-2012-03-13T13:40:03+00:00 app[web.1]: [2012-03-13 13:40:03] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
-2012-03-13T13:40:03+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/application-e766efe4c7b586f25a8b79897e30f9f3.js dyno=web.1 queue=0 wait=0ms service=3ms status=304 bytes=0
-2012-03-13T13:40:04+00:00 app[web.1]: 
-2012-03-13T13:40:04+00:00 app[web.1]: 
-2012-03-13T13:40:04+00:00 app[web.1]: Started GET "/assets/style2-eee9a0b3ffa5de09952e899973cfaf7a
-.css" for 187.77.15.252 at 2012-03-13 13:40:04 +0000
-2012-03-13T13:40:04+00:00 app[web.1]: cache: [GET /assets/style2-eee9a0b3ffa5de09952e899973cfaf7a.css] miss
-2012-03-13T13:40:04+00:00 app[web.1]: [2012-03-13 13:40:04] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
-2012-03-13T13:40:04+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/style2-eee9a0b3ffa5de09952e899973cfaf7a.css dyno=web.1 queue=0 wait=0ms service=5ms status=304 bytes=0
-2012-03-13T13:40:06+00:00 app[web.1]: [2012-03-13 13:40:06] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
-2012-03-13T13:40:06+00:00 app[web.1]: cache: [GET /assets/inicio-3d8605e34ea1f2d46a5e71751ce45ee8.png] miss
-2012-03-13T13:40:06+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/inicio-3d8605e34ea1f2d46a5e71751ce45ee8.png dyno=web.1 queue=0 wait=0ms service=3ms status=304 bytes=0
-2012-03-13T13:40:06+00:00 app[web.1]: [2012-03-13 13:40:06] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
-2012-03-13T13:40:06+00:00 app[web.1]: cache: [GET /assets/proximo-43eb1b2a5339ac23678f1779c2074bd0.png] miss
-2012-03-13T13:40:06+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/proximo-43eb1b2a5339ac23678f1779c2074bd0.png dyno=web.1 queue=0 wait=0ms service=3ms status=304 bytes=0
-2012-03-13T13:40:07+00:00 app[web.1]: [2012-03-13 13:40:07] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
-2012-03-13T13:40:07+00:00 app[web.1]: cache: [GET /assets/anterior-7f42b17b9aef86e80c63ab88f42585db.png] miss
-2012-03-13T13:40:07+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/anterior-7f42b17b9aef86e80c63ab88f42585db.png dyno=web.1 queue=0 wait=0ms service=4ms status=304 bytes=0
-2012-03-13T13:40:07+00:00 app[web.1]: cache: [GET /assets/fim-7ae721f0f700eb7e42ad02d68eda105d.png] miss
-2012-03-13T13:40:07+00:00 app[web.1]: [2012-03-13 13:40:07] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
-2012-03-13T13:40:07+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/fim-7ae721f0f700eb7e42ad02d68eda105d.png dyno=web.1 queue=0 wait=0ms service=4ms status=304 bytes=0
-2012-03-13T13:40:08+00:00 app[web.1]: [2012-03-13 13:40:08] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
-2012-03-13T13:40:08+00:00 app[web.1]: cache: [GET /assets/novoreg-e06b3743303ca087e8889656c1f0566f.png] miss
-2012-03-13T13:40:08+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/novoreg-e06b3743303ca087e8889656c1f0566f.png dyno=web.1 queue=0 wait=0ms service=12ms status=304 bytes=0
-2012-03-13T13:40:09+00:00 app[web.1]: cache: [GET /assets/images2/img01.jpg] miss
-2012-03-13T13:40:09+00:00 app[web.1]: [2012-03-13 13:40:09] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
-2012-03-13T13:40:09+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img01.jpg dyno=web.1 queue=0 wait=0ms service=4ms status=304 bytes=0
-2012-03-13T13:40:11+00:00 app[web.1]: cache: [GET /assets/images2/img02.jpg] miss
-2012-03-13T13:40:11+00:00 app[web.1]: [2012-03-13 13:40:11] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
-2012-03-13T13:40:11+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img02.jpg dyno=web.1 queue=0 wait=0ms service=4ms status=304 bytes=0
-2012-03-13T13:40:11+00:00 app[web.1]: cache: [GET /assets/images2/img08.jpg] miss
-2012-03-13T13:40:11+00:00 app[web.1]: [2012-03-13 13:40:11] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
-2012-03-13T13:40:11+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img08.jpg dyno=web.1 queue=0 wait=0ms service=4ms status=304 bytes=0
-2012-03-13T13:40:11+00:00 app[web.1]: 
-2012-03-13T13:40:11+00:00 app[web.1]: Started GET "/links/new" for 187.77.15.252 at 2012-03-13 13:40:11 +0000
-2012-03-13T13:40:11+00:00 app[web.1]: 
-2012-03-13T13:40:11+00:00 app[web.1]: Processing by LinksController#new as HTML
-2012-03-13T13:40:11+00:00 app[web.1]:   Rendered links/_form.html.erb (8.0ms)
-2012-03-13T13:40:11+00:00 app[web.1]:   Rendered links/new.html.erb within layouts/pad2 (39.9ms)
-2012-03-13T13:40:11+00:00 app[web.1]: Completed 500 Internal Server Error in 49ms
-2012-03-13T13:40:11+00:00 app[web.1]: 
-2012-03-13T13:40:11+00:00 app[web.1]: ActionController::RoutingError (No route matches {:action=>"show", :controller=>"links"}):
-2012-03-13T13:40:11+00:00 app[web.1]:   app/views/links/new.html.erb:10:in `_app_views_links_new_html_erb__2881121927213585438_40101260'
-2012-03-13T13:40:11+00:00 app[web.1]: 
-2012-03-13T13:40:11+00:00 app[web.1]:   app/controllers/links_controller.rb:86:in `new'
-2012-03-13T13:40:11+00:00 app[web.1]: 
-2012-03-13T13:40:11+00:00 app[web.1]: cache: [GET /links/new] miss
-2012-03-13T13:40:11+00:00 heroku[router]: GET miniloja.herokuapp.com/links/new dyno=web.1 queue=0 wait=0ms service=58ms status=404 bytes=728
-2012-03-13T13:40:12+00:00 app[web.1]: cache: [GET /assets/images2/img07.gif] miss
-2012-03-13T13:40:12+00:00 app[web.1]: [2012-03-13 13:40:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
-2012-03-13T13:40:12+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img07.gif dyno=web.1 queue=0 wait=0ms service=4ms status=304 bytes=0
-2012-03-13T13:40:12+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img04.gif dyno=web.1 queue=0 wait=0ms service=3ms status=304 bytes=0
-2012-03-13T13:40:12+00:00 app[web.1]: cache: [GET /assets/images2/img04.gif] miss
-2012-03-13T13:40:12+00:00 app[web.1]: [2012-03-13 13:40:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+2012-03-13T13:44:25+00:00 app[web.1]:   Rendered links/new.html.erb within layouts/pad2 (12.5ms)
+2012-03-13T13:44:25+00:00 app[web.1]: 
+2012-03-13T13:44:25+00:00 app[web.1]: ActionController::RoutingError (No route matches {:action=>"show", :controller=>"links"}):
+2012-03-13T13:44:25+00:00 app[web.1]:   app/views/links/new.html.erb:10:in `_app_views_links_new_html_erb___1943267190683517220_30736980'
+2012-03-13T13:44:25+00:00 app[web.1]: 
+2012-03-13T13:44:25+00:00 app[web.1]:   app/controllers/links_controller.rb:86:in `new'
+2012-03-13T13:44:25+00:00 app[web.1]: 
+2012-03-13T13:44:25+00:00 app[web.1]: cache: [GET /links/new] miss
+2012-03-13T13:44:25+00:00 heroku[router]: GET miniloja.herokuapp.com/links/new dyno=web.1 queue=0 wait=0ms service=31ms status=404 bytes=728
+2012-03-13T13:52:09+00:00 app[web.1]: 
+2012-03-13T13:52:09+00:00 app[web.1]: 
+2012-03-13T13:52:09+00:00 app[web.1]: Started GET "/links/new" for 187.77.15.252 at 2012-03-13 13:52:09 +0000
+2012-03-13T13:52:09+00:00 app[web.1]: Processing by LinksController#new as HTML
+2012-03-13T13:52:09+00:00 app[web.1]:   Rendered links/_form.html.erb (2.5ms)
+2012-03-13T13:52:09+00:00 app[web.1]: Completed 500 Internal Server Error in 5ms
+2012-03-13T13:52:09+00:00 app[web.1]:   Rendered links/new.html.erb within layouts/pad2 (3.8ms)
+2012-03-13T13:52:09+00:00 heroku[router]: GET miniloja.herokuapp.com/links/new dyno=web.1 queue=0 wait=0ms service=47ms status=404 bytes=728
+2012-03-13T13:52:09+00:00 app[web.1]: 
+2012-03-13T13:52:09+00:00 app[web.1]:   app/views/links/new.html.erb:10:in `_app_views_links_new_html_erb___1943267190683517220_30736980'
+2012-03-13T13:52:09+00:00 app[web.1]: ActionController::RoutingError (No route matches {:action=>"show", :controller=>"links"}):
+2012-03-13T13:52:09+00:00 app[web.1]:   app/controllers/links_controller.rb:86:in `new'
+2012-03-13T13:52:09+00:00 app[web.1]: 
+2012-03-13T13:52:09+00:00 app[web.1]: 
+2012-03-13T13:52:09+00:00 app[web.1]: cache: [GET /links/new] miss
+2012-03-13T13:52:10+00:00 app[web.1]: cache: [GET /assets/novoreg-e06b3743303ca087e8889656c1f0566f.png] miss
+2012-03-13T13:52:10+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/novoreg-e06b3743303ca087e8889656c1f0566f.png dyno=web.1 queue=0 wait=0ms service=10ms status=200 bytes=6257
+2012-03-13T13:52:11+00:00 app[web.1]: cache: [GET /assets/images2/img01.jpg] miss
+2012-03-13T13:52:11+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img01.jpg dyno=web.1 queue=0 wait=0ms service=4ms status=200 bytes=439
+2012-03-13T13:52:12+00:00 app[web.1]: cache: [GET /assets/images2/img02.jpg] miss
+2012-03-13T13:52:12+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img02.jpg dyno=web.1 queue=0 wait=0ms service=5ms status=200 bytes=17330
+2012-03-13T13:52:14+00:00 app[web.1]: cache: [GET /assets/images2/img07.gif] miss
+2012-03-13T13:52:14+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img07.gif dyno=web.1 queue=0 wait=0ms service=4ms status=200 bytes=50
+2012-03-13T13:52:14+00:00 app[web.1]: cache: [GET /assets/images2/img04.gif] miss
+2012-03-13T13:52:14+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img04.gif dyno=web.1 queue=0 wait=0ms service=8ms status=200 bytes=80
+2012-03-13T13:52:15+00:00 app[web.1]: cache: [GET /assets/images2/img08.jpg] miss
+2012-03-13T13:52:15+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img08.jpg dyno=web.1 queue=0 wait=0ms service=5ms status=200 bytes=16203
+2012-03-13T13:53:50+00:00 app[web.1]: 
+2012-03-13T13:53:50+00:00 app[web.1]: 
+2012-03-13T13:53:50+00:00 app[web.1]: Started GET "/links" for 187.77.15.252 at 2012-03-13 13:53:50 +0000
+2012-03-13T13:53:50+00:00 app[web.1]: Processing by LinksController#index as HTML
+2012-03-13T13:53:50+00:00 app[web.1]:   Rendered links/_formpesq.html.erb (0.1ms)
+2012-03-13T13:53:50+00:00 app[web.1]:   Rendered links/index.html.erb within layouts/pad2 (1.5ms)
+2012-03-13T13:53:50+00:00 app[web.1]: Completed 200 OK in 6ms (Views: 2.8ms | ActiveRecord: 1.9ms)
+2012-03-13T13:53:50+00:00 app[web.1]: cache: [GET /links] miss
+2012-03-13T13:53:50+00:00 app[web.1]: [2012-03-13 13:53:50] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+2012-03-13T13:53:50+00:00 heroku[router]: GET miniloja.herokuapp.com/links dyno=web.1 queue=0 wait=0ms service=11ms status=304 bytes=0
+2012-03-13T13:53:51+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/application-e766efe4c7b586f25a8b79897e30f9f3.js dyno=web.1 queue=0 wait=0ms service=4ms status=304 bytes=0
+2012-03-13T13:53:51+00:00 app[web.1]: cache: [GET /assets/application-e766efe4c7b586f25a8b79897e30f9f3.js] miss
+2012-03-13T13:53:51+00:00 app[web.1]: [2012-03-13 13:53:51] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+2012-03-13T13:53:51+00:00 app[web.1]: 
+2012-03-13T13:53:51+00:00 app[web.1]: 
+2012-03-13T13:53:51+00:00 app[web.1]: Started GET "/assets/style2-eee9a0b3ffa5de09952e899973cfaf7a.css" for 187.77.15.252 at 2012-03-13 13:53:51 +0000
+2012-03-13T13:53:51+00:00 app[web.1]: cache: [GET /assets/style2-eee9a0b3ffa5de09952e899973cfaf7a.css] miss
+2012-03-13T13:53:51+00:00 app[web.1]: [2012-03-13 13:53:51] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+2012-03-13T13:53:51+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/style2-eee9a0b3ffa5de09952e899973cfaf7a.css dyno=web.1 queue=0 wait=0ms service=16ms status=304 bytes=0
+2012-03-13T13:53:51+00:00 app[web.1]: cache: [GET /assets/inicio-3d8605e34ea1f2d46a5e71751ce45ee8.png] miss
+2012-03-13T13:53:51+00:00 app[web.1]: [2012-03-13 13:53:51] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+2012-03-13T13:53:51+00:00 heroku[router]: GET miniloja.herokuapp.
+com/assets/inicio-3d8605e34ea1f2d46a5e71751ce45ee8.png dyno=web.1 queue=0 wait=0ms service=3ms status=304 bytes=0
+2012-03-13T13:53:51+00:00 app[web.1]: [2012-03-13 13:53:51] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+2012-03-13T13:53:51+00:00 app[web.1]: cache: [GET /assets/proximo-43eb1b2a5339ac23678f1779c2074bd0.png] miss
+2012-03-13T13:53:51+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/proximo-43eb1b2a5339ac23678f1779c2074bd0.png dyno=web.1 queue=0 wait=0ms service=3ms status=304 bytes=0
+2012-03-13T13:53:52+00:00 app[web.1]: cache: [GET /assets/fim-7ae721f0f700eb7e42ad02d68eda105d.png] miss
+2012-03-13T13:53:52+00:00 app[web.1]: [2012-03-13 13:53:52] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+2012-03-13T13:53:52+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/fim-7ae721f0f700eb7e42ad02d68eda105d.png dyno=web.1 queue=0 wait=0ms service=3ms status=304 bytes=0
+2012-03-13T13:53:52+00:00 app[web.1]: cache: [GET /assets/anterior-7f42b17b9aef86e80c63ab88f42585db.png] miss
+2012-03-13T13:53:52+00:00 app[web.1]: [2012-03-13 13:53:52] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+2012-03-13T13:53:52+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/anterior-7f42b17b9aef86e80c63ab88f42585db.png dyno=web.1 queue=0 wait=0ms service=4ms status=304 bytes=0
+2012-03-13T13:53:52+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/novoreg-e06b3743303ca087e8889656c1f0566f.png dyno=web.1 queue=0 wait=0ms service=3ms status=304 bytes=0
+2012-03-13T13:53:52+00:00 app[web.1]: cache: [GET /assets/novoreg-e06b3743303ca087e8889656c1f0566f.png] miss
+2012-03-13T13:53:52+00:00 app[web.1]: [2012-03-13 13:53:52] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+2012-03-13T13:53:53+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img02.jpg dyno=web.1 queue=0 wait=0ms service=9ms status=304 bytes=0
+2012-03-13T13:53:53+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img01.jpg dyno=web.1 queue=0 wait=0ms service=4ms status=304 bytes=0
+2012-03-13T13:53:53+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img08.jpg dyno=web.1 queue=0 wait=0ms service=10ms status=304 bytes=0
+2012-03-13T13:53:53+00:00 app[web.1]: [2012-03-13 13:53:53] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+2012-03-13T13:53:53+00:00 app[web.1]: cache: [GET /assets/images2/img01.jpg] miss
+2012-03-13T13:53:53+00:00 app[web.1]: cache: [GET /assets/images2/img02.jpg] miss
+2012-03-13T13:53:53+00:00 app[web.1]: [2012-03-13 13:53:53] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+2012-03-13T13:53:53+00:00 app[web.1]: cache: [GET /assets/images2/img08.jpg] miss
+2012-03-13T13:53:53+00:00 app[web.1]: [2012-03-13 13:53:53] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+2012-03-13T13:53:53+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img07.gif dyno=web.1 queue=0 wait=0ms service=3ms status=304 bytes=0
+2012-03-13T13:53:53+00:00 app[web.1]: cache: [GET /assets/images2/img07.gif] miss
+2012-03-13T13:53:53+00:00 app[web.1]: [2012-03-13 13:53:53] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+2012-03-13T13:53:53+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img04.gif dyno=web.1 queue=0 wait=0ms service=3ms status=304 bytes=0
+2012-03-13T13:53:53+00:00 app[web.1]: [2012-03-13 13:53:53] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+2012-03-13T13:53:53+00:00 app[web.1]: cache: [GET /assets/images2/img04.gif] miss
+2012-03-13T14:01:45+00:00 app[web.1]: 
+2012-03-13T14:01:45+00:00 app[web.1]: 
+2012-03-13T14:01:45+00:00 app[web.1]: Started GET "/links/new" for 187.77.15.252 at 2012-03-13 14:01:45 +0000
+2012-03-13T14:01:45+00:00 app[web.1]: Processing by LinksController#new as HTML
+2012-03-13T14:01:45+00:00 app[web.1]:   Rendered links/_form.html.erb (2.2ms)
+2012-03-13T14:01:45+00:00 app[web.1]: Completed 500 Internal Server Error in 4ms
+2012-03-13T14:01:45+00:00 app[web.1]:   Rendered links/new.html.erb within layouts/pad2 (3.5ms)
+2012-03-13T14:01:45+00:00 app[web.1]: 
+2012-03-13T14:01:45+00:00 app[web.1]:   app/views/links/new.html.erb:10:in `_app_views_links_new_html_erb___1943267190683517220_30736980'
+2012-03-13T14:01:45+00:00 app[web.1]:   app/controllers/links_controller.rb:86:in `new'
+2012-03-13T14:01:45+00:00 app[web.1]: ActionController::RoutingError (No route matches {:action=>"show", :controller=>"links"}):
+2012-03-13T14:01:45+00:00 app[web.1]: 
+2012-03-13T14:01:45+00:00 app[web.1]: cache: [GET /links/new] miss
+2012-03-13T14:01:45+00:00 app[web.1]: 
+2012-03-13T14:01:45+00:00 heroku[router]: GET miniloja.herokuapp.com/links/new dyno=web.1 queue=0 wait=0ms service=17ms status=404 bytes=728

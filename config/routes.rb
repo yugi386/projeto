@@ -86,6 +86,7 @@ Projeto::Application.routes.draw do
 	# rotas para links
 	resources :links
 	match 'links/:id' => 'links#show'		# Exemplo de rota mapeada pelo controler e pela ID do registro...
+	match 'links/new' => 'links#index'		
 	
   # The priority is based upon order of creation:
   # first created -> highest priority.
