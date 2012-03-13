@@ -20,13 +20,13 @@
 		end
 		
 		if @dataini == "" and @datafim == ""
-			@vendas = Venda.where('status = 'C'').all	# Somente vendas confirmadas.
+			@vendas = Venda.where("status = 'C'").all	# Somente vendas confirmadas.
 		elsif @dataini != "" and @datafim == ""	
-			@vendas = Venda.where('status = 'C' and data >= ?',@dataini).all	# Somente vendas confirmadas.
+			@vendas = Venda.where("status = 'C' and data >= ?",@dataini).all	# Somente vendas confirmadas.
 		elsif @dataini == "" and @datafim != ""	
-			@vendas = Venda.where('status = 'C' and data <= ?',@datafim).all	# Somente vendas confirmadas.
+			@vendas = Venda.where("status = 'C' and data <= ?",@datafim).all	# Somente vendas confirmadas.
 		else
-			@vendas = Venda.where('status = 'C' and data <= ? and data >= ?',@dataini,@datafim).all	# Somente vendas confirmadas.
+			@vendas = Venda.where("status = 'C' and data <= ? and data >= ?",@dataini,@datafim).all	# Somente vendas confirmadas.
 		end		
 		
 		@totCli = @vendas.size		# Aqui temos o total de vendas
