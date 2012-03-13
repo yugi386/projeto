@@ -84,10 +84,12 @@
 	# CRIANDO UM NOVO REGISTRO VAZIO:	
 	def new
 		@section = Section.new
+=begin		
 		respond_to do |format|
 			format.html # new.html.erb
 			format.xml {render :xml => @section}
 		end
+=end		
 	end
 	
 	# FUncao UXILIAR DE EDIcao:	
