@@ -61,10 +61,10 @@
 <% end %>
 
 <CENTER>
-<%= link_to image_tag("inicio.png", :size => "120x40"), loja_path + "?pag=0&pesq="+@pesq+"&dep="+@dep+"&sec="+@sec +"&ordem="+@ordem %>
-<%= link_to image_tag("proximo.png", :size => "120x40"), loja_path + "?pag=" + soma(@pag.to_i,@page,@produtos.size-1) + "&pesq="+@pesq+"&dep="+@dep+"&sec="+@sec +"&ordem="+@ordem %>
-<%= link_to image_tag("anterior.png", :size => "120x40"), loja_path + "?pag=" + minimo(@pag.to_i-@page) + "&pesq="+@pesq+"&dep="+@dep+"&sec="+@sec  +"&ordem="+@ordem %>
-<%= link_to image_tag("fim.png", :size => "120x40"), loja_path + "?pag=" + (@produtos.size - @page).to_s  +  "&pesq="+@pesq+"&dep="+@dep+"&sec="+@sec +"&ordem="+@ordem %>
+<%= link_to image_tag("inicio.png", :size => "120x40"), "/loja" + "?pag=0&pesq="+@pesq+"&dep="+@dep+"&sec="+@sec +"&ordem="+@ordem %>
+<%= link_to image_tag("proximo.png", :size => "120x40"), "/loja" + "?pag=" + soma(@pag.to_i,@page,@produtos.size-1) + "&pesq="+@pesq+"&dep="+@dep+"&sec="+@sec +"&ordem="+@ordem %>
+<%= link_to image_tag("anterior.png", :size => "120x40"), "/loja" + "?pag=" + minimo(@pag.to_i-@page) + "&pesq="+@pesq+"&dep="+@dep+"&sec="+@sec  +"&ordem="+@ordem %>
+<%= link_to image_tag("fim.png", :size => "120x40"), "/loja" + "?pag=" + (@produtos.size - @page).to_s  +  "&pesq="+@pesq+"&dep="+@dep+"&sec="+@sec +"&ordem="+@ordem %>
 </CENTER>
 
 
@@ -191,8 +191,8 @@
 <% end %>
 
 <CENTER>
-<%= link_to image_tag("inicio.png", :size => "120x40"), loja_path + "?pag=0&pesq="+@pesq+"&dep="+@dep+"&sec="+@sec +"&ordem="+@ordem %>
-<%= link_to image_tag("proximo.png", :size => "120x40"), loja_path + "?pag=" + soma(@pag.to_i,@page,@produtos.size-1) + "&pesq="+@pesq+"&dep="+@dep+"&sec="+@sec +"&ordem="+@ordem %>
-<%= link_to image_tag("anterior.png", :size => "120x40"), loja_path + "?pag=" + minimo(@pag.to_i-@page) + "&pesq="+@pesq+"&dep="+@dep+"&sec="+@sec  +"&ordem="+@ordem %>
-<%= link_to image_tag("fim.png", :size => "120x40"), loja_path + "?pag=" + (@produtos.size - @page).to_s  +  "&pesq="+@pesq+"&dep="+@dep+"&sec="+@sec +"&ordem="+@ordem %>
+<%= link_to image_tag("inicio.png", :size => "120x40"), "/loja" + "?pag=0&pesq="+@pesq+"&dep="+@dep+"&sec="+@sec +"&ordem="+@ordem %>
+<%= link_to image_tag("proximo.png", :size => "120x40"), "/loja" + "?pag=" + soma(@pag.to_i,@page,@produtos.size-1) + "&pesq="+@pesq+"&dep="+@dep+"&sec="+@sec +"&ordem="+@ordem %>
+<%= link_to image_tag("anterior.png", :size => "120x40"), "/loja" + "?pag=" + minimo(@pag.to_i-@page) + "&pesq="+@pesq+"&dep="+@dep+"&sec="+@sec  +"&ordem="+@ordem %>
+<%= link_to image_tag("fim.png", :size => "120x40"), "/loja" + "?pag=" + (@produtos.size - @page).to_s  +  "&pesq="+@pesq+"&dep="+@dep+"&sec="+@sec +"&ordem="+@ordem %>
 </CENTER>
