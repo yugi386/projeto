@@ -1,78 +1,3 @@
-2012-03-13T15:28:28+00:00 app[web.1]: 
-2012-03-13T15:28:28+00:00 app[web.1]: Started GET "/section" for 187.77.15.252 at 2012-03-13 15:28:28 +0000
-2012-03-13T15:28:28+00:00 app[web.1]: Processing by SectionController#index as HTML
-2012-03-13T15:28:28+00:00 app[web.1]:   Rendered section/_formpesq.html.erb (0.1ms)
-2012-03-13T15:28:28+00:00 app[web.1]:   Rendered section/index.html.erb within layouts/pad2 (3.8ms)
-2012-03-13T15:28:28+00:00 app[web.1]: cache: [GET /section] miss
-2012-03-13T15:28:28+00:00 app[web.1]: Completed 200 OK in 25ms (Views: 5.2ms | ActiveRecord: 18.5ms)
-2012-03-13T15:28:28+00:00 app[web.1]: [2012-03-13 15:28:28] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
-2012-03-13T15:28:28+00:00 heroku[router]: GET miniloja.herokuapp.com/section dyno=web.1 queue=0 wait=0ms service=33ms status=304 bytes=0
-2012-03-13T15:28:29+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/application-e766efe4c7b586f25a8b79897e30f9f3.js dyno=web.1 queue=0 wait=0ms service=8ms status=304 bytes=0
-2012-03-13T15:28:29+00:00 app[web.1]: cache: [GET /assets/application-e766efe4c7b586f25a8b79897e30f9f3.js] miss
-2012-03-13T15:28:29+00:00 app[web.1]: [2012-03-13 15:28:29] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
-2012-03-13T15:28:29+00:00 app[web.1]: 
-2012-03-13T15:28:29+00:00 app[web.1]: 
-2012-03-13T15:28:29+00:00 app[web.1]: Started GET "/assets/style2-eee9a0b3ffa5de09952e899973cfaf7a.css" for 187.77.15.252 at 2012-03-13 15:28:29 +0000
-2012-03-13T15:28:29+00:00 app[web.1]: cache: [GET /assets/style2-eee9a0b3ffa5de09952e899973cfaf7a.css] miss
-2012-03-13T15:28:29+00:00 app[web.1]: [2012-03-13 15:28:29] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
-2012-03-13T15:28:30+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/style2-eee9a0b3ffa5de09952e899973cfaf7a.css dyno=web.1 queue=0 wait=0ms service=6ms status=304 bytes=0
-2012-03-13T15:28:30+00:00 app[web.1]: cache: [GET /assets/mostrar-2e6c792596488b59f01eefa3792694bb.png] miss
-2012-03-13T15:28:30+00:00 app[web.1]: [2012-03-13 15:28:30] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
-2012-03-13T15:28:30+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/mostrar-2e6c792596488b59f01eefa3792694bb.png dyno=web.1 queue=0 wait=0ms service=7ms status=304 bytes=0
-2012-03-13T15:28:32+00:00 app[web.1]: cache: [GET /assets/editar-0cd34b0d3604e258432346d409257cd8.png] miss
-2012-03-13T15:28:32+00:00 app[web.1]: [2012-03-13 15:28:32] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
-2012-03-13T15:28:32+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/editar-0cd34b0d3604e258432346d409257cd8.png dyno=web.1 queue=0 wait=0ms service=5ms status=304 bytes=0
-2012-03-13T15:28:32+00:00 app[web.1]: cache: [GET /assets/apagar-8797df84ffbffc3d920d77b11a9cd380.png] miss
-2012-03-13T15:28:32+00:00 app[web.1]: [2012-03-13 15:28:32] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
-2012-03-13T15:28:32+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/apagar-8797df84ffbffc3d920d77b11a9cd380.png dyno=web.1 queue=0 wait=0ms service=6ms status=304 bytes=0
-2012-03-13T15:28:33+00:00 app[web.1]: cache: [GET /assets/inicio-3d8605e34ea1f2d46a5e71751ce45ee8.png] miss
-2012-03-13T15:28:33+00:00 app[web.1]: [2012-03-13 15:28:33] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
-2012-03-13T15:28:33+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/inicio-3d8605e34ea1f2d46a5e71751ce45ee8.png dyno=web.1 queue=0 wait=0ms service=3ms status=304 bytes=0
-2012-03-13T15:28:33+00:00 app[web.1]: cache: [GET /assets/proximo-43eb1b2a5339ac23678f1779c2074bd0.png] miss
-2012-03-13T15:28:33+00:00 app[web.1]: [2012-03-13 15:28:33] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
-2012-03-13T15:28:33+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/proximo-43eb1b2a5339ac23678f1779c2074bd0.png dyno=web.1 queue=0 wait=0ms service=5ms status=304 bytes=0
-2012-03-13T15:28:33+00:00 app[web.1]: [2012-03-13 15:28:33] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
-2012-03-13T15:28:33+00:00 app[web.1]: cache: [GET /assets/anterior-7f42b17b9aef86e80c63ab88f42585db.png] miss
-2012-03-13T15:28:33+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/anterior-7f42b17b9aef86e80c63ab88f42585db.png dyno=web.1 queue=0 wait=0ms service=5ms status=304 bytes=0
-2012-03-13T15:28:34+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/fim-7ae721f0f700eb7e42ad02d68eda105d.png dyno=web.1 queue=0 wait=0ms service=5ms status=304 bytes=0
-2012-03-13T15:28:34+00:00 app[web.1]: [2012-03-13 15:28:34] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
-2012-03-13T15:28:34+00:00 app[web.1]: cache: [GET /assets/fim-7ae721f0f700eb7e42ad02d68eda105d.png] miss
-2012-03-13T15:28:35+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/novoreg-e06b3743303ca087e8889656c1f0566f.png dyno=web.1 queue=0 wait=0ms service=5ms status=304 bytes=0
-2012-03-13T15:28:35+00:00 app[web.1]: cache: [GET /assets/novoreg-e06b3743303ca087e8889656c1f0566f.png] miss
-2012-03-13T15:28:35+00:00 app[web.1]: [2012-03-13 15:28:35] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
-2012-03-13T15:28:35+00:00 app[web.1]: cache: [GET /assets/images2/img01.jpg
-] miss
-2012-03-13T15:28:35+00:00 app[web.1]: [2012-03-13 15:28:35] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
-2012-03-13T15:28:35+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img01.jpg dyno=web.1 queue=0 wait=0ms service=5ms status=304 bytes=0
-2012-03-13T15:28:36+00:00 app[web.1]: [2012-03-13 15:28:36] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
-2012-03-13T15:28:36+00:00 app[web.1]: cache: [GET /assets/images2/img02.jpg] miss
-2012-03-13T15:28:36+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img02.jpg dyno=web.1 queue=0 wait=0ms service=4ms status=304 bytes=0
-2012-03-13T15:28:37+00:00 app[web.1]: cache: [GET /assets/images2/img08.jpg] miss
-2012-03-13T15:28:37+00:00 app[web.1]: [2012-03-13 15:28:37] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
-2012-03-13T15:28:37+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img08.jpg dyno=web.1 queue=0 wait=0ms service=5ms status=304 bytes=0
-2012-03-13T15:28:37+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img07.gif dyno=web.1 queue=0 wait=0ms service=5ms status=304 bytes=0
-2012-03-13T15:28:37+00:00 app[web.1]: [2012-03-13 15:28:37] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
-2012-03-13T15:28:37+00:00 app[web.1]: cache: [GET /assets/images2/img07.gif] miss
-2012-03-13T15:28:37+00:00 app[web.1]: cache: [GET /assets/images2/img04.gif] miss
-2012-03-13T15:28:37+00:00 app[web.1]: [2012-03-13 15:28:37] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
-2012-03-13T15:28:37+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img04.gif dyno=web.1 queue=0 wait=0ms service=5ms status=304 bytes=0
-2012-03-13T15:39:08+00:00 heroku[slugc]: Slug compilation started
-2012-03-13T15:40:05+00:00 heroku[api]: Release v44 created by yugi386@yahoo.com.br
-2012-03-13T15:40:05+00:00 heroku[api]: Deploy 919c590 by yugi386@yahoo.com.br
-2012-03-13T15:40:05+00:00 heroku[web.1]: State changed from up to bouncing
-2012-03-13T15:40:05+00:00 heroku[web.1]: State changed from bouncing to created
-2012-03-13T15:40:05+00:00 heroku[web.1]: State changed from created to starting
-2012-03-13T15:40:06+00:00 heroku[slugc]: Slug compilation finished
-2012-03-13T15:40:09+00:00 app[web.1]: 	/app/vendor/ruby-1.9.3-p0/lib/ruby/1.9.1/webrick/server.rb:98:in `select'
-2012-03-13T15:40:09+00:00 heroku[web.1]: Stopping process with SIGTERM
-2012-03-13T15:40:09+00:00 app[web.1]: [2012-03-13 15:40:09] ERROR SignalException: SIGTERM
-2012-03-13T15:40:14+00:00 heroku[web.1]: Starting process with command `bundle exec rails server -p 9416`
-2012-03-13T15:40:16+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/01/04/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-03-13T15:40:16+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/01/04/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-03-13T15:40:17+00:00 app[web.1]: => Booting WEBrick
-2012-03-13T15:40:17+00:00 app[web.1]: => Call with -d to detach
-2012-03-13T15:40:17+00:00 app[web.1]: => Rails 3.2.1 application starting in production on http://0.0.0.0:9416
-2012-03-13T15:40:17+00:00 app[web.1]: => Ctrl-C to shutdown server
 2012-03-13T15:40:17+00:00 app[web.1]: [paperclip] Duplicate URL for arquivo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Departamento class
 2012-03-13T15:40:17+00:00 app[web.1]: [paperclip] Duplicate URL for arquivo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Link class
 2012-03-13T15:40:17+00:00 app[web.1]: [paperclip] Duplicate URL for arquivo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Produt class
@@ -99,3 +24,79 @@
 2012-03-13T15:45:39+00:00 app[web.1]: 
 2012-03-13T15:45:39+00:00 app[web.1]: cache: [GET /loja] miss
 2012-03-13T15:45:39+00:00 heroku[router]: GET miniloja.herokuapp.com/loja dyno=web.1 queue=0 wait=0ms service=379ms status=404 bytes=728
+2012-03-13T15:47:33+00:00 heroku[slugc]: Slug compilation started
+2012-03-13T15:48:23+00:00 heroku[api]: Release v45 created by yugi386@yahoo.com.br
+2012-03-13T15:48:23+00:00 heroku[api]: Deploy 1c4c7ee by yugi386@yahoo.com.br
+2012-03-13T15:48:23+00:00 heroku[web.1]: State changed from up to bouncing
+2012-03-13T15:48:23+00:00 heroku[web.1]: State changed from bouncing to created
+2012-03-13T15:48:23+00:00 heroku[web.1]: State changed from created to starting
+2012-03-13T15:48:25+00:00 heroku[slugc]: Slug compilation finished
+2012-03-13T15:48:26+00:00 heroku[web.1]: Stopping process with SIGTERM
+2012-03-13T15:48:26+00:00 app[web.1]: [2012-03-13 15:48:26] ERROR SignalException: SIGTERM
+2012-03-13T15:48:26+00:00 app[web.1]: 	/app/vendor/ruby-1.9.3-p0/lib/ruby/1.9.1/webrick/server.rb:98:in `select'
+201
+2-03-13T15:48:30+00:00 heroku[web.1]: Stopping process with SIGTERM
+2012-03-13T15:48:30+00:00 app[web.1]: [2012-03-13 15:48:30] ERROR SignalException: SIGTERM
+2012-03-13T15:48:30+00:00 app[web.1]: 	/app/vendor/ruby-1.9.3-p0/lib/ruby/1.9.1/webrick/server.rb:98:in `select'
+2012-03-13T15:48:33+00:00 heroku[web.1]: Starting process with command `bundle exec rails server -p 17187`
+2012-03-13T15:48:35+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/01/04/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
+2012-03-13T15:48:35+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/01/04/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
+2012-03-13T15:48:36+00:00 heroku[web.1]: Error R12 (Exit timeout) -> Process failed to exit within 10 seconds of SIGTERM
+2012-03-13T15:48:36+00:00 heroku[web.1]: Stopping process with SIGKILL
+2012-03-13T15:48:37+00:00 app[web.1]: => Booting WEBrick
+2012-03-13T15:48:37+00:00 app[web.1]: => Rails 3.2.1 application starting in production on http://0.0.0.0:17187
+2012-03-13T15:48:37+00:00 app[web.1]: => Call with -d to detach
+2012-03-13T15:48:37+00:00 app[web.1]: => Ctrl-C to shutdown server
+2012-03-13T15:48:37+00:00 app[web.1]: [paperclip] Duplicate URL for arquivo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Departamento class
+2012-03-13T15:48:37+00:00 app[web.1]: [paperclip] Duplicate URL for arquivo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Link class
+2012-03-13T15:48:37+00:00 app[web.1]: [paperclip] Duplicate URL for arquivo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Produt class
+2012-03-13T15:48:37+00:00 app[web.1]: [2012-03-13 15:48:37] INFO  WEBrick 1.3.1
+2012-03-13T15:48:37+00:00 app[web.1]: [2012-03-13 15:48:37] INFO  ruby 1.9.3 (2011-10-30) [x86_64-linux]
+2012-03-13T15:48:37+00:00 app[web.1]: [2012-03-13 15:48:37] INFO  WEBrick::HTTPServer#start: pid=1 port=17187
+2012-03-13T15:48:38+00:00 heroku[web.1]: Process exited with status 137
+2012-03-13T15:48:38+00:00 heroku[web.1]: State changed from starting to up
+2012-03-13T15:51:14+00:00 app[web.1]: 
+2012-03-13T15:51:14+00:00 app[web.1]: 
+2012-03-13T15:51:14+00:00 app[web.1]: Started GET "/loja" for 187.77.15.252 at 2012-03-13 15:51:14 +0000
+2012-03-13T15:51:14+00:00 app[web.1]: Processing by LojaController#index as HTML
+2012-03-13T15:51:15+00:00 app[web.1]:   Rendered loja/_formpesq.html.erb (0.8ms)
+2012-03-13T15:51:15+00:00 app[web.1]:   Rendered loja/_order.html.erb (0.9ms)
+2012-03-13T15:51:15+00:00 app[web.1]:   Rendered loja/index.html.erb within layouts/loja (22.6ms)
+2012-03-13T15:51:15+00:00 app[web.1]: Completed 500 Internal Server Error in 312ms
+2012-03-13T15:51:15+00:00 app[web.1]: 
+2012-03-13T15:51:15+00:00 app[web.1]: ActionView::Template::Error (PG::Error: ERROR:  column "t" does not exist
+2012-03-13T15:51:15+00:00 app[web.1]: LINE 1: SELECT COUNT(*) FROM "departamentos"  WHERE (ativo  = "t")
+2012-03-13T15:51:15+00:00 app[web.1]:                                                               ^
+2012-03-13T15:51:15+00:00 app[web.1]:     104: 
+2012-03-13T15:51:15+00:00 app[web.1]: : SELECT COUNT(*) FROM "departamentos"  WHERE (ativo  = "t")):
+2012-03-13T15:51:15+00:00 app[web.1]:     105: 							<li><strong> <a href="/loja?dep=&ordem=<%=@ordem%>&pesq=<%=@pesq%>" >TODOS OS DEPARTAMENTOS</a></strong></li>						
+2012-03-13T15:51:15+00:00 app[web.1]:     106: 							<% cont = 0 
+2012-03-13T15:51:15+00:00 app[web.1]:     107: 								tam = @departamentos.size - 1	
+2012-03-13T15:51:15+00:00 app[web.1]:     108: 								limite = Admloja.first.maxdep - 1	#  maximo de departamentos a exibir 
+2012-03-13T15:51:15+00:00 app[web.1]:     109: 								if tam > limite
+2012-03-13T15:51:15+00:00 app[web.1]:     110: 									tam = limite
+2012-03-13T15:51:15+00:00 app[web.1]:   app/views/layouts/loja.html.erb:107:in `_app_views_layouts_loja_html_erb___4567856046216391658_15580920'
+2012-03-13T15:51:15+00:00 app[web.1]:   app/controllers/loja_controller.rb:120:in `index'
+2012-03-13T15:51:15+00:00 app[web.1]: 
+2012-03-13T15:51:15+00:00 app[web.1]: 
+2012-03-13T15:51:15+00:00 app[web.1]: cache: [GET /loja] miss
+2012-03-13T15:51:15+00:00 heroku[router]: GET miniloja.herokuapp.com/loja dyno=web.1 queue=0 wait=0ms service=521ms status=500 bytes=643
+2012-03-13T15:51:28+00:00 app[web.1]: 
+2012-03-13T15:51:28+00:00 app[web.1]: Started GET "/clientes" for 187.77.15.252 at 2012-03-13 15:51:28 +0000
+2012-03-13T15:51:28+00:00 app[web.1]: 
+2012-03-13T15:51:28+00:00 app[web.1]: Processing by ClientesController#index as HTML
+2012-03-13T15:51:28+00:00 app[web.1]:   Rendered clientes/_formpesq.html.erb (0.3ms)
+2012-03-13T15:51:28+00:00 app[web.1]:   Rendered clientes/index.html.erb within layouts/pad2 (4.6ms)
+2012-03-13T15:51:28+00:00 app[web.1]: Completed 200 OK in 18ms (Views: 11.0ms | ActiveRecord: 4.3ms)
+2012-03-13T15:51:28+00:00 app[web.1]: cache: [GET /clientes] miss
+2012-03-13T15:51:28+00:00 app[web.1]: [2012-03-13 15:51:28] WARN  Could not determine content-length of response body. Set content-length of the resp
+onse or set Response#chunked = true
+2012-03-13T15:51:28+00:00 heroku[router]: GET miniloja.herokuapp.com/clientes dyno=web.1 queue=0 wait=0ms service=27ms status=304 bytes=0
+2012-03-13T15:51:29+00:00 app[web.1]: cache: [GET /assets/application-e766efe4c7b586f25a8b79897e30f9f3.js] miss
+2012-03-13T15:51:29+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/application-e766efe4c7b586f25a8b79897e30f9f3.js dyno=web.1 queue=0 wait=0ms service=7ms status=200 bytes=99860
+2012-03-13T15:51:30+00:00 app[web.1]: 
+2012-03-13T15:51:30+00:00 app[web.1]: 
+2012-03-13T15:51:30+00:00 app[web.1]: Started GET "/assets/style2-eee9a0b3ffa5de09952e899973cfaf7a.css" for 187.77.15.252 at 2012-03-13 15:51:30 +0000
+2012-03-13T15:51:30+00:00 app[web.1]: cache: [GET /assets/style2-eee9a0b3ffa5de09952e899973cfaf7a.css] miss
+2012-03-13T15:51:30+00:00 app[web.1]: [2012-03-13 15:51:30] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+2012-03-13T15:51:30+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/style2-eee9a0b3ffa5de09952e899973cfaf7a.css dyno=web.1 queue=0 wait=0ms service=5ms status=304 bytes=0
