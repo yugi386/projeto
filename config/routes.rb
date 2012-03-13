@@ -23,6 +23,7 @@ Projeto::Application.routes.draw do
 	# ROTAS SEÇÕES
 	resources :section
 	match 'section/:id' => 'section#show'		
+	match 'section/new' => 'section#new'		
 	
 	# ROTAS PRODUTOS
 	resources :produts
