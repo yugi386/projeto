@@ -75,7 +75,7 @@
 	end
 
 	def gerenciaMovimento	# verificando movimentacao no estoque...
-		@produt2 = Produt.where('verif = "f" or verif = "F" or verif = NULL').all	
+		@produt2 = Produt.where("verif = 'f' or verif = 'F' or verif = NULL").all	
 		
 		@produt2.each do |reg|
 			tcod = (reg.entrada - reg.baixa)
