@@ -1,6 +1,8 @@
 ﻿<!-- FORMULÁRIO PARA CADASTRAR OU EDITAR LINKS E ARQUIVOS ANEXOS -->
 
-<%= form_for(@link, :url => links_path,  :html => {:multipart => true}) do |f| %>
+<%= form_for(@link,  :html => {:multipart => true}) do |f| %>
+
+<!--  :url => links_path, -->
 
 	<!- GERENCIAMENTO DE MENSAGENS DE ERRO -->
 	<% if @link.errors.any? %> 
