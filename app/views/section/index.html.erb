@@ -55,9 +55,9 @@
 	<% @pesq = "" %>
 <% end %>
 
-<%= link_to image_tag("inicio.png", :size => "120x40"), section_path +  "?pag=0&pesq="+@pesq%>
-<%= link_to image_tag("proximo.png", :size => "120x40"), section_path + "?pag=" + soma(@pag.to_i,@page,@sections.size-1)+ "&pesq="+@pesq %>
-<%= link_to image_tag("anterior.png", :size => "120x40"), section_path + "?pag=" + minimo(@pag.to_i-@page)+ "&pesq="+@pesq %>
-<%= link_to image_tag("fim.png", :size => "120x40"), section_path + "?pag=" + (@sections.size - @page).to_s + "&pesq="+@pesq%>
+<%= link_to image_tag("inicio.png", :size => "120x40"), sections_path +  "?pag=0&pesq="+@pesq%>
+<%= link_to image_tag("proximo.png", :size => "120x40"), sections_path + "?pag=" + soma(@pag.to_i,@page,@sections.size-1)+ "&pesq="+@pesq %>
+<%= link_to image_tag("anterior.png", :size => "120x40"), sections_path + "?pag=" + minimo(@pag.to_i-@page)+ "&pesq="+@pesq %>
+<%= link_to image_tag("fim.png", :size => "120x40"), sections_path + "?pag=" + (@sections.size - @page).to_s + "&pesq="+@pesq%>
 </center><HR SIZE = 5 color="blue">
 <%= link_to image_tag("novoreg.png", :size => "200x50"), new_section_path %>
