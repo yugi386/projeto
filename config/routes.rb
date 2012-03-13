@@ -13,6 +13,7 @@ Projeto::Application.routes.draw do
 
 	# ROTAS CLIENTES
 	resources :clientes
+	map.resources :clientes
 	match 'clientes/:id' => 'clientes#show'		# Exemplo de rota mapeada pelo controler e pela ID do registro...
 	
 	# ROTAS DEPARTAMENTOS
