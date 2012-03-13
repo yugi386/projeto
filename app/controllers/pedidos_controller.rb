@@ -6,8 +6,8 @@
 	# Apresentando todos os pedidos do cliente...
 	def index
 		# Mapeando Departamentos e Seções ativas
-		@secoes = Section.where('ativo  = "t"')
-		@departamentos = Departamento.where('ativo  = "t"')
+		@secoes = Section.where("ativo = 't'")
+		@departamentos = Departamento.where("ativo = 't'")
 
 		@pedidos = Venda.where("cliente = ?",session[:logcli]).all		# Aqui é a apresentação de todos os Registros dlo cliente logado...
 
@@ -22,8 +22,8 @@
 	# APRESENTANDO UMA FICHA INDIVIDUAL:
 	def show
 		# Mapeando Departamentos e Seções ativas
-		@secoes = Section.where('ativo  = "t"')
-		@departamentos = Departamento.where('ativo  = "t"')
+		@secoes = Section.where("ativo = 't'")
+		@departamentos = Departamento.where("ativo = 't'")
 
 		@pedido = Venda.find(params[:id])
 		@item = Item.where('venda_id = ?',@pedido.id.to_s).all
@@ -36,8 +36,8 @@
 	
 	def CancelarPedido	# Cancela o pedido de um cliente...
 	# Mapeando Departamentos e Seções ativas
-		@secoes = Section.where('ativo  = "t"')
-		@departamentos = Departamento.where('ativo  = "t"')
+		@secoes = Section.where("ativo = 't'")
+		@departamentos = Departamento.where("ativo = 't'")
 
 		@pedido = Venda.find(params[:id])
 		@item = Item.where('venda_id = ?',@pedido.id.to_s).all
