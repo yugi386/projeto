@@ -56,7 +56,8 @@
 	
 	# Metodo utilizado depois da criação do registro necessario para gerar o código do produto
 	def gera_codigo_do_produto
-		@produt2 = Produt.where('codigo = "0" or codigo = NULL or codigo = ""').all	
+		# @produt2 = Produt.where('codigo = "0" or codigo = NULL or codigo = ""').all	
+		@produt2 = Produt.where("codigo = '0' or codigo = NULL").all	
 		
 		@produt2.each do |reg|
 			tcod = 	reg.departamento_id.to_s + "." + reg.section_id.to_s + "." + reg.id.to_s
