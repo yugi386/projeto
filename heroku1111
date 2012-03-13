@@ -1,101 +1,101 @@
-2012-03-11T00:12:30+00:00 app[web.1]: [paperclip] Duplicate URL for arquivo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Link class
-2012-03-11T00:12:30+00:00 app[web.1]: [paperclip] Duplicate URL for arquivo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Produt class
-2012-03-11T00:12:31+00:00 app[web.1]: [2012-03-11 00:12:31] INFO  WEBrick 1.3.1
-2012-03-11T00:12:31+00:00 app[web.1]: [2012-03-11 00:12:31] INFO  WEBrick::HTTPServer#start: pid=1 port=43243
-2012-03-11T00:12:31+00:00 app[web.1]: [2012-03-11 00:12:31] INFO  ruby 1.9.3 (2011-10-30) [x86_64-linux]
-2012-03-11T00:12:32+00:00 heroku[web.1]: State changed from starting to up
-2012-03-11T00:12:33+00:00 heroku[run.1]: State changed from created to starting
-2012-03-11T00:12:41+00:00 app[run.1]: Awaiting client
-2012-03-11T00:12:42+00:00 app[run.1]: Starting process with command `bundle exec rake db:migrate`
-2012-03-11T00:12:42+00:00 heroku[run.1]: State changed from starting to up
-2012-03-11T00:12:46+00:00 heroku[run.1]: Process exited with status 0
-2012-03-11T00:12:48+00:00 heroku[run.1]: State changed from up to complete
-2012-03-11T00:13:00+00:00 heroku[run.1]: State changed from created to starting
-2012-03-11T00:13:11+00:00 app[run.1]: Awaiting client
-2012-03-11T00:13:11+00:00 app[run.1]: Starting process with command `bundle exec rake db:seed`
-2012-03-11T00:13:11+00:00 heroku[run.1]: State changed from starting to up
-2012-03-11T00:13:15+00:00 heroku[run.1]: Process exited with status 0
-2012-03-11T00:13:15+00:00 heroku[run.1]: State changed from up to complete
-2012-03-11T00:13:28+00:00 heroku[run.1]: State changed from created to starting
-2012-03-11T00:13:37+00:00 app[run.1]: Awaiting client
-2012-03-11T00:13:38+00:00 heroku[run.1]: State changed from starting to up
-2012-03-11T00:13:39+00:00 app[run.1]: Starting process with command `bundle exec rake db:restart`
-2012-03-11T00:13:41+00:00 heroku[run.1]: Process exited with status 1
-2012-03-11T00:13:41+00:00 heroku[run.1]: State changed from up to complete
-2012-03-11T00:14:42+00:00 heroku[web.1]: State changed from up to bouncing
-2012-03-11T00:14:42+00:00 heroku[web.1]: State changed from bouncing to created
-2012-03-11T00:14:42+00:00 heroku[web.1]: State changed from created to starting
-2012-03-11T00:14:45+00:00 heroku[web.1]: Stopping process with SIGTERM
-2012-03-11T00:14:45+00:00 app[web.1]: [2012-03-11 00:14:45] ERROR SignalException: SIGTERM
-2012-03-11T00:14:45+00:00 app[web.1]: 	/app/vendor/ruby-1.9.3-p0/lib/ruby/1.9.1/webrick/server.rb:98:in `select'
-2012-03-11T00:14:54+00:00 heroku[web.1]: Starting process with command `bundle exec rails server -p 18172`
-2012-03-11T00:14:55+00:00 heroku[web.1]: Stopping process with SIGKILL
-2012-03-11T00:14:55+00:00 heroku[web.1]: Error R12 (Exit timeout) -> Process failed to exit within 10 seconds of SIGTERM
-2012-03-11T00:14:56+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.o
-rg/2012/01/04/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-03-11T00:14:56+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/01/04/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-03-11T00:14:56+00:00 heroku[web.1]: Process exited with status 137
-2012-03-11T00:14:58+00:00 app[web.1]: => Booting WEBrick
-2012-03-11T00:14:58+00:00 app[web.1]: => Call with -d to detach
-2012-03-11T00:14:58+00:00 app[web.1]: => Rails 3.2.1 application starting in production on http://0.0.0.0:18172
-2012-03-11T00:14:58+00:00 app[web.1]: => Ctrl-C to shutdown server
-2012-03-11T00:14:58+00:00 app[web.1]: [paperclip] Duplicate URL for arquivo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Departamento class
-2012-03-11T00:14:58+00:00 app[web.1]: [paperclip] Duplicate URL for arquivo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Link class
-2012-03-11T00:14:58+00:00 app[web.1]: [paperclip] Duplicate URL for arquivo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Produt class
-2012-03-11T00:14:58+00:00 app[web.1]: [2012-03-11 00:14:58] INFO  WEBrick 1.3.1
-2012-03-11T00:14:58+00:00 app[web.1]: [2012-03-11 00:14:58] INFO  ruby 1.9.3 (2011-10-30) [x86_64-linux]
-2012-03-11T00:14:58+00:00 app[web.1]: [2012-03-11 00:14:58] INFO  WEBrick::HTTPServer#start: pid=1 port=18172
-2012-03-11T00:14:59+00:00 heroku[web.1]: State changed from starting to up
-2012-03-11T00:15:23+00:00 app[web.1]: cache: [GET /] miss, store
-2012-03-11T00:15:23+00:00 heroku[router]: GET miniloja.herokuapp.com/ dyno=web.1 queue=0 wait=0ms service=69ms status=200 bytes=5906
-2012-03-11T00:15:25+00:00 app[web.1]: cache: [GET /assets/rails.png] miss, store
-2012-03-11T00:15:25+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/rails.png dyno=web.1 queue=0 wait=0ms service=7ms status=200 bytes=6646
-2012-03-11T00:15:58+00:00 app[web.1]: 
-2012-03-11T00:15:58+00:00 app[web.1]: 
-2012-03-11T00:15:58+00:00 app[web.1]: Started GET "/lojA" for 187.43.229.212 at 2012-03-11 00:15:58 +0000
-2012-03-11T00:15:58+00:00 app[web.1]: 
-2012-03-11T00:15:58+00:00 app[web.1]: ActionController::RoutingError (No route matches [GET] "/lojA"):
-2012-03-11T00:15:58+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
-2012-03-11T00:15:58+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/request_id.rb:22:in `call'
-2012-03-11T00:15:58+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
-2012-03-11T00:15:58+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/rack/logger.rb:26:in `call_app'
-2012-03-11T00:15:58+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/rack/logger.rb:16:in `call'
-2012-03-11T00:15:58+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/methodoverride.rb:21:in `call'
-2012-03-11T00:15:58+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/runtime.rb:17:in `call'
-2012-03-11T00:15:58+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/lock.rb:15:in `call'
-2012-03-11T00:15:58+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/static.rb:53:in `call'
-2012-03-11T00:15:58+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:136:in `forward'
-2012-03-11T00:15:58+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.1/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
-2012-03-11T00:15:58+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:245:in `fetch'
-2012-03-11T00:15:58+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:185:in `lookup'
-2012-03-11T00:15:58+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:66:in `call!'
-2012-03-11T00:15:58+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:51:in `call'
-2012-03-11T00:15:58+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/engine.rb:479:in `call'
-2012-03-11T00:15:58+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/application.rb:220:in `call'
-2012-03-11T00:15:58+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.1/lib/rails/rack/log_tailer.rb:14:in `call'
-2012-03-11T00:15:58+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/content_length.rb:14:in `call'
-2012-03-11T00:15:58+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/handler/webrick.rb:59:in `service'
-2012-03-11T00:15:58+00:00 app[web.1]:   vendor/ruby-1.9.3-p0/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
-2012-03-11T00:15:58+00:00 app[web.1]:   vendor/ruby-1.9.3-p0/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
-2012-03-11T00:15:58+00:00 app[web.1]:   vendor/ruby-1.9.3-p0/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
-2012-03-11T00:15:58+00:00 app[web.1]: 
-2012-03-11T00:15:58+00:00 app[web.1]: 
-2012-03-11T00:15:58+00:00 app[web.1]: cache: [GET /lojA] miss
-2012-03-11T00:15:58+00:00 heroku[router]: GET miniloja.herokuapp.com/lojA dyno=web.1 queue=0 wait=0ms service=86ms status=404 bytes=728
-2012-03-11T00:16:08+00:00 app[web.1]: 
-2012-03-11T00:16:08+00:00 app[web.1]: Started GET "/loja" for 187.43.229.212 at 2012-03-11 00:16:08 +0000
-2012-03-11T00:16:08+00:00 app[web.1]: 
-2012-03-11T00:16:08+00:00 app[web.1]: Processing by LojaController#index as HTML
-2012-03-11T00:16:08+00:00 app[web.1]: Completed 500 Internal Server Error in 11ms
-2012-03-11T00:16:08+00:00 app[web.1]: ActiveRecord::StatementInvalid (PG::Error: ERROR:  function upper(boolean) does not exist
-2012-03-11T00:16:08+00:00 app[web.1]: 
-2012-03-11T00:16:08+00:00 app[web.1]: LINE 1: SELECT "produts".* FROM "produts"  WHERE (upper(ativo) = 'T'...
-2012-03-11T00:16:08+00:00 app[web.1]:                                                   ^
-2012-03-11T00:16:08+00:00 app[web.1]: HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
-2012-03-11T00:16:08+00:00 app[web.1]: : SELECT "produts".* FROM "produts"  WHERE (upper(ativo) = 'T') ORDER BY destaque DESC):
-2012-03-11T00:16:08+00:00 app[web.1]:   app/controllers/loja_controller.rb:33:in `block in index'
-2012-03-11T00:16:08+00:00 app[web.1]:   app/controllers/loja_controller.rb:31:in `index'
-2012-03-11T00:16:08+00:00 app[web.1]: 
-2012-03-11T00:16:08+00:00 app[web.1]: cache: [GET /loja] miss
-2012-03-11T00:16:08+00:00 app[web.1]: 
-2012-03-11T00:16:08+00:00 heroku[router]: GET miniloja.herokuapp.com/loja dyno=web.1 queue=0 wait=0ms service=26ms status=500 bytes=643
+2012-03-11T00:38:38+00:00 app[web.1]: 
+2012-03-11T00:38:38+00:00 app[web.1]: 
+2012-03-11T00:38:38+00:00 app[web.1]: Started GET "/loja" for 187.43.229.212 at 2012-03-11 00:38:38 +0000
+2012-03-11T00:38:38+00:00 app[web.1]: Processing by LojaController#index as HTML
+2012-03-11T00:38:38+00:00 app[web.1]: NoMethodError (undefined method `departamento_id' for nil:NilClass):
+2012-03-11T00:38:38+00:00 app[web.1]: Completed 500 Internal Server Error in 3ms
+2012-03-11T00:38:38+00:00 app[web.1]: 
+2012-03-11T00:38:38+00:00 app[web.1]: 
+2012-03-11T00:38:38+00:00 app[web.1]: 
+2012-03-11T00:38:38+00:00 app[web.1]:   app/controllers/loja_controller.rb:84:in `index'
+2012-03-11T00:38:38+00:00 app[web.1]: cache: [GET /loja] miss
+2012-03-11T00:38:38+00:00 heroku[router]: GET miniloja.herokuapp.com/loja dyno=web.1 queue=0 wait=0ms service=12ms status=500 bytes=643
+2012-03-11T01:45:01+00:00 heroku[web.1]: Idling
+2012-03-11T01:45:05+00:00 heroku[web.1]: Stopping process with SIGTERM
+2012-03-11T01:45:05+00:00 app[web.1]: [2012-03-11 01:45:05] ERROR SignalException: SIGTERM
+2012-03-11T01:45:05+00:00 app[web.1]: 	/app/vendor/ruby-1.9.3-p0/lib/ruby/1.9.1/webrick/server.rb:98:in `select'
+2012-03-11T01:45:15+00:00 heroku[web.1]: Error R12 (Exit timeout) -> Process failed to exit within 10 seconds of SIGTERM
+2012-03-11T01:45:15+00:00 heroku[web.1]: Stopping process with SIGKILL
+2012-03-11T01:45:17+00:00 heroku[web.1]: Process exited with status 137
+2012-03-11T01:45:17+00:00 heroku[web.1]: State changed from up to down
+2012-03-11T01:45:17+00:00 heroku[web.1]: State changed from down to created
+2012-03-11T01:45:17+00:00 heroku[web.1]: State changed from created to starting
+2012-03-11T01:45:28+00:00 heroku[web.1]: Starting process with command `bundle exec rails server -p 23528`
+2012-03-11T01:45:31+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/01/04/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
+2012-03-11T01:45:31+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/01/04/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
+2012-03-11T01:45:33+00:00 app[web.1]: => Booting WEBrick
+2012-03-11T01:45:33+00:00 app[web.1]: => Call with -d to detach
+2012-03-11T01:45:33+00:00 app[web.1]: => Rails 3.2.1 application starting in production on http://0.0.0.0:23528
+2012-03-11T01:45:33+00:00 app[web.1]: => Ctrl-C to shutdown server
+2012-03-11T01:45:33+00:00 app[web.1]: [paperclip] Duplicate URL for arquivo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Departamento class
+2012-03-11T01:45:33+00:00 app[web.1]: [paperclip] Duplicate URL for arquivo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Link class
+2012-03-11T01:45:33+00:00 app[web.1]: [paperclip] Duplicate URL for arquivo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Produt class
+2012-03-11T01:45:34+00:00 app[web.1]: [2012-03-11 01:45:34] INFO  WEBrick 1.3.1
+2012-03-11T01:45:34+00:00 app[web.1]: [2012-03-11 01:45:34] INFO  WEBrick::HTTPServer#start: pid=1 port=23528
+2012-03-11T01:45:34+00:00 app[web.1]: [2012-03-11 01:45:34] INFO  ruby 1.9.3 (2011-10-30) [x86_64-linux]
+2012-03-11T01:45:34+00:00 heroku[web.1]: State changed from starting to up
+2012-03-11T02:49:28+00:00 heroku[web.1]: Idling
+2012-03-11T02:49:31+00:00 heroku[web.1]: Stopping process with SIGTERM
+2012-03-11T02:49:31+00:00 app[web.1]: [2012-03-11 02:49:31] ERROR SignalException: SIGTERM
+2012-03-11T02:49:31+00:00 app[web.1]: 	/app/vendor/ruby-1.9.3-p0/lib/ruby/1.9.1/webrick/server.rb:98:in `select'
+2012-03-11T02:49:41+00:00 heroku[web.1]: Error R12 (Exit timeout) -> Process failed to exit within 10 seconds of SIGTERM
+2012-03-11T02:49:41+00:00 heroku[web.1]: Stopping process with SIGKILL
+2012-03-11T02:49:43+00:00 heroku[web.1]: Process exited with status 137
+2012-03-11T02:49:43+00:00 heroku[web.1]: State changed from up to down
+2012-03-12T19:07:06+00:00 heroku[web.1]: Unidling
+2012-03-12T19:07:06+00:00 heroku[web.1]: State changed from down to created
+2012-03-12T19:07:06+00:00 heroku[web.1]: State changed from created to starting
+2012-03-12T19:07:20+00:00 heroku[web.1]: Starting process with command `bundle exec rails server -p 39088`
+2012-03-12T19:07:22+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/01/04/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
+2012-03-12T19:07:22+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/01/04/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
+2012-03-12T19:07:25+00:00 app[web.1]: => Booting WEBrick
+2012-03-12T19:07:25+00:00 app[web.1]: => Rails 3.2.1 application starting in production on http://0.0.0.0:39088
+2012-03-12T19:07:25+00:00 app[web.1]: => Call with -d to detach
+2012-03-12T19:07:25+00:00 app[web.1]: => Ctrl-C to shutdown server
+2012-03-12T19:07:25+00:00 app[web.1]: [paperclip] Duplicate URL for arquivo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Departamento class
+2012-03-12T19:07:25+00:00 app[web.1]: [paperclip] Duplicate URL for arquivo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Link class
+2012-03-12T19:07:25+00:00 app[web.1]: [paperclip] Duplicate URL for arquivo with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Produt class
+2012-03-12T19:07:25+00:00 app[web.1]: [2012-03-12 19:07:25] INFO  WEBrick 1.3.1
+2012-03-12T19:07:25+00:00 app[web.1]: [2012-03-12 19:07:25] INFO  ruby 1.9.3 (2011-10-30) [x86_64-linux]
+2012-03-12T19:07:25+00:00 app[web.1]: [2012-03-12 19:07:25] INFO  WEBrick::HTTPServer#start: pid=1 port=39088
+2012-03-12T19:07:26+00:00 heroku[web.1]: State changed from starting to up
+2012-03-12T19:07:28+00:00 app[web.1]: cache: [GET /] miss, store
+2012-03-12T19:07:28+00:00 heroku[router]: GET miniloja.herokuapp.com/ dyno=web.1 queue=0 wait=0ms service=50ms status=200 bytes=5906
+2012-03-12T19:07:30+00:00 app[web.1]: cache: [GET /assets/rails.png] miss, store
+2012-03-12T19:07:30+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/rails.png dyno=web.1 queue=0 wait=0ms service=22ms status=200 bytes=6646
+2012-03-12T19:07:31+00:00 heroku[router]: GET miniloja.herokuapp.com/favicon.ico dyno=web.1 queue=0 wait=0ms service=17ms status=200 bytes=0
+2012-03-12T19:07:31+00:00 app[web.1]: cache: [GET /favicon.ico] miss, store
+2012-03-12T19:07:45+00:00 app[web.1]: 
+2012-03-12T19:07:45+00:00 app[web.1]: 
+2012-03-12T19:07:45+00:00 app[web.1]: Started GET "/loja" for 187.43.207.4 at 2012-03-12 19:07:45 +0000
+2012-03-12T19:07:45+00:00 app[web.1]: Processing by LojaController#index as HTML
+2012-03-12T19:07:45+00:00 app[web.1]: Completed 500 Internal Server Error
+ in 30ms
+2012-03-12T19:07:45+00:00 app[web.1]: 
+2012-03-12T19:07:45+00:00 app[web.1]: NoMethodError (undefined method `departamento_id' for nil:NilClass):
+2012-03-12T19:07:45+00:00 app[web.1]:   app/controllers/loja_controller.rb:84:in `index'
+2012-03-12T19:07:45+00:00 app[web.1]: 
+2012-03-12T19:07:45+00:00 app[web.1]: 
+2012-03-12T19:07:45+00:00 app[web.1]: cache: [GET /loja] miss
+2012-03-12T19:07:45+00:00 heroku[router]: GET miniloja.herokuapp.com/loja dyno=web.1 queue=0 wait=0ms service=194ms status=500 bytes=643
+2012-03-12T19:12:43+00:00 app[web.1]: 
+2012-03-12T19:12:43+00:00 app[web.1]: 
+2012-03-12T19:12:43+00:00 app[web.1]: Started GET "/login" for 187.43.207.4 at 2012-03-12 19:12:43 +0000
+2012-03-12T19:12:43+00:00 app[web.1]: Processing by SessionsController#new as HTML
+2012-03-12T19:12:43+00:00 app[web.1]:   Rendered sessions/new.html.erb within layouts/pad2 (3.2ms)
+2012-03-12T19:12:43+00:00 app[web.1]: Completed 200 OK in 43ms (Views: 42.7ms | ActiveRecord: 0.0ms)
+2012-03-12T19:12:43+00:00 app[web.1]: cache: [GET /login] miss
+2012-03-12T19:12:43+00:00 heroku[router]: GET miniloja.herokuapp.com/login dyno=web.1 queue=0 wait=0ms service=49ms status=200 bytes=2821
+2012-03-12T19:12:43+00:00 app[web.1]: cache: [GET /assets/application-e766efe4c7b586f25a8b79897e30f9f3.js] miss
+2012-03-12T19:12:43+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/application-e766efe4c7b586f25a8b79897e30f9f3.js dyno=web.1 queue=0 wait=0ms service=12ms status=200 bytes=99860
+2012-03-12T19:12:44+00:00 app[web.1]: 
+2012-03-12T19:12:44+00:00 app[web.1]: 
+2012-03-12T19:12:44+00:00 app[web.1]: Started GET "/assets/style2-eee9a0b3ffa5de09952e899973cfaf7a.css" for 187.43.207.4 at 2012-03-12 19:12:44 +0000
+2012-03-12T19:12:44+00:00 app[web.1]: cache: [GET /assets/style2-eee9a0b3ffa5de09952e899973cfaf7a.css] miss, store
+2012-03-12T19:12:44+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/style2-eee9a0b3ffa5de09952e899973cfaf7a.css dyno=web.1 queue=0 wait=0ms service=18ms status=200 bytes=5925
+2012-03-12T19:12:57+00:00 app[web.1]: cache: [GET /assets/images2/img01.jpg] miss
+2012-03-12T19:12:57+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img01.jpg dyno=web.1 queue=0 wait=0ms service=5ms status=200 bytes=439
+2012-03-12T19:12:58+00:00 app[web.1]: cache: [GET /assets/images2/img02.jpg] miss
+2012-03-12T19:12:58+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img02.jpg dyno=web.1 queue=0 wait=0ms service=6ms status=200 bytes=17330
+2012-03-12T19:12:58+00:00 app[web.1]: cache: [GET /assets/images2/img08.jpg] miss
+2012-03-12T19:12:58+00:00 heroku[router]: GET miniloja.herokuapp.com/assets/images2/img08.jpg dyno=web.1 queue=0 wait=0ms service=4ms status=200 bytes=16203

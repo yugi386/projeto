@@ -3,6 +3,7 @@
 class Admloja < ActiveRecord::Base
 default_scope order('upper(admlojas.nome) ASC')	# ordem de listagem dos clientes
 	
+
 	# ROTINAS DE VALIDAÇÃO DE DADOS:
 
 	# Validação do Nome - Razão Social:
@@ -212,5 +213,6 @@ default_scope order('upper(admlojas.nome) ASC')	# ordem de listagem dos clientes
 		
 	# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	
+
 
 end

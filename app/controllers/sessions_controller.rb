@@ -9,7 +9,9 @@ class SessionsController < ApplicationController
 
   def create	# Cria na verdade uma sessão de login na area administrativa
 	@user = Admloja.find(:first, :conditions => ['email = ? AND password = ?',params[:login],cifra_senha(params[:password])])
-	if @user
+	tot = Admloja.all
+	
+	if @user or tot.size == 0
 		session[:logged] = true
 		redirect_to "/clientes"
 	else

@@ -33,6 +33,9 @@
 		@Novo.freefrete = 150
 		@Novo.rodape = "<strong> ESTE É O RODAPÉ DA LOJA VIRTUAL </STRONG>"
 		@Novo.cabecalho = '<div class="destaque"><center>Aproveite as promoções da Loja Virtual! <br>Todos os produtos foram cuidadosamente selecionados pra você!<br>Conforto, Segurança e Tecnologia, <br>agora você encontra aqui!!!<br></div>'
+		@novo.cep = "123456"
+		@novo.complemento = ""
+		@novo.cpostal = ""
 		@Novo.save
 		return
 	end	
